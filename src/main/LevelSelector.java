@@ -36,7 +36,7 @@ public class LevelSelector extends JFrame {
 	 */
 	public LevelSelector() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 960, 720);
+		setBounds(10, 10, 960, 720);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -49,7 +49,7 @@ public class LevelSelector extends JFrame {
 		
 		JButton btnLevel_3 = new JButton("Level 4");
 		
-		JButton btnLevel_4 = new JButton("Level5");
+		JButton btnLevel_4 = new JButton("Level 5");
 		
 		JButton btnLevel_5 = new JButton("Level 6");
 		
