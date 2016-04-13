@@ -331,6 +331,7 @@ public class LevelSelector extends JFrame {
 		textPane_2.setText("# Star Unlock");
 		panel_13.add(textPane_2);
 		
+		
 		JTextPane textPane_1 = new JTextPane();
 		textPane_1.setText("# Star Unlock");
 		panel_12.add(textPane_1);
