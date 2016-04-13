@@ -22,7 +22,7 @@ public class PlayerSelector extends JPanel {
 	public PlayerSelector(PlayerApplication app){
 		this.app=app;
 		
-		setBounds(10, 10, 960, 720);
+		setBounds(10, 10, 1280, 720);
 		setBorder(new EmptyBorder(5, 5, 5, 5));
 		
 		JButton btnLevel = new JButton("Level 1");
