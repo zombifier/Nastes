@@ -7,6 +7,7 @@ import java.awt.event.ActionListener;
 import javax.swing.GroupLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextPane;
 import javax.swing.GroupLayout.Alignment;
@@ -101,18 +102,18 @@ public class PlayerSelector extends JPanel {
 		JPanel panel_14 = new JPanel();
 		panel_14.setBackground(Color.PINK);
 		
-		JTextPane txtpnTotalStar = new JTextPane();
+		JLabel txtpnTotalStar = new JLabel();
 		txtpnTotalStar.setText("Total Star: 0/45");
 		
-		JTextPane txtpnKabasuji = new JTextPane();
+		JLabel txtpnKabasuji = new JLabel();
 		txtpnKabasuji.setText("Kabasuji");
 		GroupLayout gl_contentPane = new GroupLayout(this);
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addContainerGap(144, Short.MAX_VALUE)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addGroup(Alignment.TRAILING, gl_contentPane.createSequentialGroup()
+				.addGroup(Alignment.TRAILING, gl_contentPane.createSequentialGroup()
+					.addContainerGap(331, Short.MAX_VALUE)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
+						.addGroup(gl_contentPane.createSequentialGroup()
 							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
 								.addComponent(btnLevel)
 								.addComponent(btnLevel_5)
@@ -159,69 +160,60 @@ public class PlayerSelector extends JPanel {
 									.addComponent(panel_9, GroupLayout.PREFERRED_SIZE, 78, GroupLayout.PREFERRED_SIZE))
 								.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
 									.addComponent(btnLevel_14)
-									.addComponent(panel_4, GroupLayout.PREFERRED_SIZE, 78, GroupLayout.PREFERRED_SIZE)))
-							.addGap(169))
-						.addGroup(Alignment.TRAILING, gl_contentPane.createSequentialGroup()
+									.addComponent(panel_4, GroupLayout.PREFERRED_SIZE, 78, GroupLayout.PREFERRED_SIZE))))
+						.addGroup(gl_contentPane.createSequentialGroup()
 							.addComponent(txtpnTotalStar, GroupLayout.PREFERRED_SIZE, 148, GroupLayout.PREFERRED_SIZE)
-							.addGap(333))
-						.addGroup(Alignment.TRAILING, gl_contentPane.createSequentialGroup()
+							.addGap(164))
+						.addGroup(gl_contentPane.createSequentialGroup()
 							.addComponent(txtpnKabasuji, GroupLayout.PREFERRED_SIZE, 146, GroupLayout.PREFERRED_SIZE)
-							.addGap(335))))
+							.addGap(166)))
+					.addGap(320))
 		);
 		gl_contentPane.setVerticalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addContainerGap()
+				.addGroup(Alignment.TRAILING, gl_contentPane.createSequentialGroup()
+					.addContainerGap(116, Short.MAX_VALUE)
 					.addComponent(txtpnKabasuji, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE)
 					.addGap(65)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
 						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGroup(gl_contentPane.createSequentialGroup()
-								.addComponent(btnLevel_4)
-								.addPreferredGap(ComponentPlacement.RELATED)
-								.addComponent(panel_14, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE))
+							.addComponent(btnLevel_4)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(panel_14, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE)
 							.addGap(23)
-							.addGroup(gl_contentPane.createSequentialGroup()
-								.addComponent(btnLevel_9)
-								.addPreferredGap(ComponentPlacement.RELATED)
-								.addComponent(panel_9, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE))
+							.addComponent(btnLevel_9)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(panel_9, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE)
 							.addGap(28)
-							.addGroup(gl_contentPane.createSequentialGroup()
-								.addComponent(btnLevel_14)
-								.addPreferredGap(ComponentPlacement.RELATED)
-								.addComponent(panel_4, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE)))
+							.addComponent(btnLevel_14)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(panel_4, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE))
 						.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
 							.addGroup(gl_contentPane.createSequentialGroup()
-								.addGroup(gl_contentPane.createSequentialGroup()
-									.addComponent(btnLevel_3)
-									.addPreferredGap(ComponentPlacement.RELATED)
-									.addComponent(panel_13, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE))
+								.addComponent(btnLevel_3)
+								.addPreferredGap(ComponentPlacement.RELATED)
+								.addComponent(panel_13, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE)
 								.addGap(23)
-								.addGroup(gl_contentPane.createSequentialGroup()
-									.addComponent(btnLevel_8)
-									.addPreferredGap(ComponentPlacement.RELATED)
-									.addComponent(panel_8, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE))
+								.addComponent(btnLevel_8)
+								.addPreferredGap(ComponentPlacement.RELATED)
+								.addComponent(panel_8, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE)
 								.addGap(28)
-								.addGroup(gl_contentPane.createSequentialGroup()
-									.addComponent(btnLevel_13)
-									.addPreferredGap(ComponentPlacement.RELATED)
-									.addComponent(panel_3, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE)))
+								.addComponent(btnLevel_13)
+								.addPreferredGap(ComponentPlacement.RELATED)
+								.addComponent(panel_3, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE))
 							.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
 								.addGroup(gl_contentPane.createSequentialGroup()
-									.addGroup(gl_contentPane.createSequentialGroup()
-										.addComponent(btnLevel)
-										.addPreferredGap(ComponentPlacement.RELATED)
-										.addComponent(panel_10, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE))
+									.addComponent(btnLevel)
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addComponent(panel_10, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE)
 									.addGap(23)
-									.addGroup(gl_contentPane.createSequentialGroup()
-										.addComponent(btnLevel_5)
-										.addPreferredGap(ComponentPlacement.RELATED)
-										.addComponent(panel_5, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE))
+									.addComponent(btnLevel_5)
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addComponent(panel_5, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE)
 									.addGap(28)
-									.addGroup(gl_contentPane.createSequentialGroup()
-										.addComponent(btnLevel_10)
-										.addPreferredGap(ComponentPlacement.RELATED)
-										.addComponent(panel, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE)))
+									.addComponent(btnLevel_10)
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addComponent(panel, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE))
 								.addGroup(gl_contentPane.createSequentialGroup()
 									.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
 										.addGroup(gl_contentPane.createSequentialGroup()
@@ -254,67 +246,67 @@ public class PlayerSelector extends JPanel {
 											.addComponent(panel_2, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE)))))))
 					.addGap(110)
 					.addComponent(txtpnTotalStar, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(143, Short.MAX_VALUE))
+					.addGap(87))
 		);
 		
-		JTextPane textPane_13 = new JTextPane();
+		JLabel textPane_13 = new JLabel();
 		textPane_13.setText("# Star Unlock");
 		panel_14.add(textPane_13);
 		
-		JTextPane textPane_12 = new JTextPane();
+		JLabel textPane_12 = new JLabel();
 		textPane_12.setText("# Star Unlock");
 		panel_9.add(textPane_12);
 		
-		JTextPane textPane_11 = new JTextPane();
+		JLabel textPane_11 = new JLabel();
 		textPane_11.setText("# Star Unlock");
 		panel_4.add(textPane_11);
 		
-		JTextPane textPane_10 = new JTextPane();
+		JLabel textPane_10 = new JLabel();
 		textPane_10.setText("# Star Unlock");
 		panel_3.add(textPane_10);
 		
-		JTextPane textPane_9 = new JTextPane();
+		JLabel textPane_9 = new JLabel();
 		textPane_9.setText("# Star Unlock");
 		panel_2.add(textPane_9);
 		
-		JTextPane textPane_8 = new JTextPane();
+		JLabel textPane_8 = new JLabel();
 		textPane_8.setText("# Star Unlock");
 		panel_1.add(textPane_8);
 		
-		JTextPane textPane_7 = new JTextPane();
+		JLabel textPane_7 = new JLabel();
 		textPane_7.setText("# Star Unlock");
 		panel.add(textPane_7);
 		
-		JTextPane textPane_6 = new JTextPane();
+		JLabel textPane_6 = new JLabel();
 		textPane_6.setText("# Star Unlock");
 		panel_8.add(textPane_6);
 		
-		JTextPane textPane_5 = new JTextPane();
+		JLabel textPane_5 = new JLabel();
 		textPane_5.setText("# Star Unlock");
 		panel_7.add(textPane_5);
 		
-		JTextPane textPane_4 = new JTextPane();
+		JLabel textPane_4 = new JLabel();
 		textPane_4.setText("# Star Unlock");
 		panel_6.add(textPane_4);
 		
-		JTextPane textPane_3 = new JTextPane();
+		JLabel textPane_3 = new JLabel();
 		textPane_3.setText("# Star Unlock");
 		panel_5.add(textPane_3);
 		
-		JTextPane textPane_2 = new JTextPane();
+		JLabel textPane_2 = new JLabel();
 		textPane_2.setText("# Star Unlock");
 		panel_13.add(textPane_2);
 		
 		
-		JTextPane textPane_1 = new JTextPane();
+		JLabel textPane_1 = new JLabel();
 		textPane_1.setText("# Star Unlock");
 		panel_12.add(textPane_1);
 		
-		JTextPane textPane = new JTextPane();
+		JLabel textPane = new JLabel();
 		textPane.setText("# Star Unlock");
 		panel_11.add(textPane);
 		
-		JTextPane txtpnStarUnlock = new JTextPane();
+		JLabel txtpnStarUnlock = new JLabel();
 		txtpnStarUnlock.setText("# Star Unlock");
 		panel_10.add(txtpnStarUnlock);
 		setLayout(gl_contentPane);
