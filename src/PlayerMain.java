@@ -6,7 +6,7 @@ import javax.swing.JFrame;
 import view.PlayerApplication;
 
 public class PlayerMain {
-	JFrame app;
+	PlayerApplication app;
 	
 	public static void main(String[] args){
 		PlayerApplication app=new PlayerApplication();
