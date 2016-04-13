@@ -1,6 +1,8 @@
 package view;
 
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.GroupLayout;
 import javax.swing.JButton;
@@ -11,18 +13,46 @@ import javax.swing.JTextPane;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.border.EmptyBorder;
+import javax.swing.Timer;
 
 import controller.ReturnSelectLevel;
 import javax.swing.JComboBox;
 import javax.swing.JTextField;
 import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
+import javax.swing.Timer;
 
 public class BuilderApplication extends JFrame {
 	private JTextField txtSetLimit;
+	JPanel frame;
 	
 	public BuilderApplication(){
+		setTitle("Kabasuji Editor");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 1280, 720);
+		frame = new SplashScreen();
+		redraw();
+		repaint();
+		Timer timer = new Timer(2000,new ActionListener(){
+			@Override
+			public void actionPerformed(ActionEvent e){
+				frame.setVisible(false);
+				redraw();
+				repaint();
+				initialize();
+			}
+			
+		});
 		
+		timer.setRepeats(false);
+		timer.start();
+		
+		
+	}
+	
+	void initialize(){
+		
+
 		JButton btnHintaddremove = new JButton("Hint (add/remove)");
 		
 		JComboBox comboBox = new JComboBox();
@@ -133,12 +163,24 @@ public class BuilderApplication extends JFrame {
 		);
 		panel.setLayout(gl_panel);
 		getContentPane().setLayout(groupLayout);
-		initialize();
 	}
-	
-	void initialize(){
-		setTitle("Kabasuji Editor");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1280, 720);
+	void redraw(){
+		getContentPane().removeAll();
+		GroupLayout groupLayout = new GroupLayout(getContentPane());
+		groupLayout.setHorizontalGroup(
+			groupLayout.createParallelGroup(Alignment.LEADING)
+				.addGroup(groupLayout.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(frame, GroupLayout.DEFAULT_SIZE, 958, Short.MAX_VALUE)
+					.addContainerGap())
+		);
+		groupLayout.setVerticalGroup(
+			groupLayout.createParallelGroup(Alignment.LEADING)
+				.addGroup(groupLayout.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(frame, GroupLayout.DEFAULT_SIZE, 927, Short.MAX_VALUE)
+					.addContainerGap())
+		);
+		getContentPane().setLayout(groupLayout);
 	}
 }
