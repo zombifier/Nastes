@@ -42,7 +42,7 @@ public class PlayerWindow {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 960, 720);
+		frame.setBounds(10, 10, 960, 720);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JButton btnBack = new JButton("Back");

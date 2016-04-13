@@ -46,12 +46,12 @@ public class TopLevelApp extends JFrame {
 	public TopLevelApp() {
 		setTitle("WindowBuilder");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(10, 10, 960, 720);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		
-		JButton btnTuturu = new JButton("Tuturu !!");
+		JButton btnTuturu = new JButton("Tuturu~ !!");
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
