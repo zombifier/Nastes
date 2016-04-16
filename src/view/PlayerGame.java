@@ -31,9 +31,6 @@ public class PlayerGame extends JPanel {
 		
 		JButton btnReset = new JButton("Reset");
 		
-		JPanel panel_1 = new JPanel();
-		panel_1.setBackground(Color.ORANGE);
-		
 		JButton btnHint = new JButton("Hint");
 		
 		JTextPane txtpnType = new JTextPane();
@@ -45,10 +42,9 @@ public class PlayerGame extends JPanel {
 		JTextPane txtpnLimit = new JTextPane();
 		txtpnLimit.setText("Limit");
 		
-		JPanel test = new JPanel();
-		test.setBackground(Color.YELLOW);
-		
 		BoardView boardView_1 = new BoardView();
+		
+		BullpenView bullpenView = new BullpenView();
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
@@ -65,15 +61,13 @@ public class PlayerGame extends JPanel {
 							.addComponent(txtpnLevelNumber, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 							.addGap(37)
 							.addComponent(txtpnLimit, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.RELATED, 550, Short.MAX_VALUE)
+							.addPreferredGap(ComponentPlacement.RELATED, 555, Short.MAX_VALUE)
 							.addComponent(btnReset))
-						.addGroup(groupLayout.createSequentialGroup()
+						.addGroup(Alignment.LEADING, groupLayout.createSequentialGroup()
 							.addContainerGap()
-							.addComponent(boardView_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(test, GroupLayout.PREFERRED_SIZE, 102, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.RELATED, 224, Short.MAX_VALUE)
-							.addComponent(panel_1, GroupLayout.PREFERRED_SIZE, 501, GroupLayout.PREFERRED_SIZE)))
+							.addComponent(boardView_1, GroupLayout.PREFERRED_SIZE, 697, GroupLayout.PREFERRED_SIZE)
+							.addGap(47)
+							.addComponent(bullpenView, GroupLayout.DEFAULT_SIZE, 502, Short.MAX_VALUE)))
 					.addContainerGap())
 		);
 		groupLayout.setVerticalGroup(
@@ -88,51 +82,12 @@ public class PlayerGame extends JPanel {
 						.addComponent(txtpnType, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 						.addComponent(txtpnLevelNumber, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 						.addComponent(txtpnLimit, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addGroup(groupLayout.createSequentialGroup()
-							.addGap(32)
-							.addComponent(test, GroupLayout.PREFERRED_SIZE, 56, GroupLayout.PREFERRED_SIZE))
-						.addGroup(groupLayout.createSequentialGroup()
-							.addGap(18)
-							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-								.addComponent(boardView_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-								.addComponent(panel_1, GroupLayout.PREFERRED_SIZE, 622, GroupLayout.PREFERRED_SIZE))))
-					.addContainerGap(21, Short.MAX_VALUE))
+					.addGap(18)
+					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
+						.addComponent(boardView_1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+						.addComponent(bullpenView, GroupLayout.DEFAULT_SIZE, 608, Short.MAX_VALUE))
+					.addContainerGap(35, Short.MAX_VALUE))
 		);
-		
-		JLabel lblPieceWillBe = new JLabel("Pieces will be here first");
-		
-		JLabel lblBullpen = new JLabel("Bullpen");
-		
-		PieceView pieceView = new PieceView();
-		GroupLayout gl_panel_1 = new GroupLayout(panel_1);
-		gl_panel_1.setHorizontalGroup(
-			gl_panel_1.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_panel_1.createSequentialGroup()
-					.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_panel_1.createSequentialGroup()
-							.addGap(153)
-							.addComponent(lblPieceWillBe))
-						.addGroup(gl_panel_1.createSequentialGroup()
-							.addGap(182)
-							.addComponent(lblBullpen))
-						.addGroup(gl_panel_1.createSequentialGroup()
-							.addContainerGap()
-							.addComponent(pieceView, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
-					.addContainerGap(36, Short.MAX_VALUE))
-		);
-		gl_panel_1.setVerticalGroup(
-			gl_panel_1.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_panel_1.createSequentialGroup()
-					.addContainerGap()
-					.addComponent(lblBullpen)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(pieceView, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-					.addGap(47)
-					.addComponent(lblPieceWillBe)
-					.addContainerGap(400, Short.MAX_VALUE))
-		);
-		panel_1.setLayout(gl_panel_1);
 		
 		
 		
