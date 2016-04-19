@@ -128,7 +128,7 @@ public class LevelSelector extends JFrame {
 		panel_14.setBackground(Color.PINK);
 		
 		JTextPane txtpnTotalStar = new JTextPane();
-		txtpnTotalStar.setText("Total Star: 0/45");
+		txtpnTotalStar.setText("Total Stars: 0/45");
 		
 		JTextPane txtpnKabasuji = new JTextPane();
 		txtpnKabasuji.setText("Kabasuji");
