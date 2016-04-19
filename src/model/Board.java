@@ -37,7 +37,7 @@ public class Board {
 		return legal;
 	}
 	
-	public boolean removePiece(Piece piece) {
+	public Piece removePiece(Piece piece) {
 		int xPos, yPos;
 
 		BoardPosition position = pieces.remove(piece);
@@ -47,9 +47,9 @@ public class Board {
 				yPos = position.getY() + s.getY();
 				tiles[xPos][yPos].removeSquare();
 			}
-			return true;
+			return piece;
 		}
-		else return false;
+		else return null;
 	}
 	
 	
