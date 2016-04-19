@@ -16,7 +16,7 @@ public class PuzzleTile extends Tile {
 		isCovered = false;
 	}
 	
-	public boolean valid() {
+	public boolean playable() {
 		return (isValid && !isCovered);
 	}
 	

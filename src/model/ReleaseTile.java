@@ -16,7 +16,7 @@ public class ReleaseTile extends Tile {
 		isCovered = true;
 	}
 	
-	public boolean valid() {
+	public boolean playable() {
 		return (isValid && !isCovered);
 	}
 	

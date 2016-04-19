@@ -1,6 +1,6 @@
 package model;
 
-public class Level {
+public abstract class Level {
 	Board board;
 	Bullpen bullpen;
 	Piece pieceBeingDragged;
@@ -29,5 +29,15 @@ public class Level {
 		Piece p=pieceBeingDragged;
 		pieceBeingDragged=null;
 		return p;
+	}
+	
+	abstract public boolean hasWon();
+	
+	abstract public String name();
+	
+	abstract public String getLimit();
+	
+	public String getLevelNum() {
+		return "#"+Integer.toString(levelNum);
 	}
 }
