@@ -1,6 +1,6 @@
 package model;
 
-public class ReleaseTile extends Tile {
+public class TileRelease extends Tile {
 	int releaseNumber;
 	int color;
 	boolean isCovered;
