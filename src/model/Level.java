@@ -13,12 +13,19 @@ public class Level {
 		board=new Board();
 		bullpen=new Bullpen();
 		pieceBeingDragged=null;
+		starEarned=0;
+		isUnlocked=false;
+		levelNum=0;
+		
 	}
 
-	public Level(Board b,Bullpen p){
+	public Level(Board b,Bullpen p,int levelNum){
 		board=b;
 		bullpen=p;
 		pieceBeingDragged=null;
+		starEarned=0;
+		isUnlocked=false;
+		this.levelNum=levelNum;
 	}
 	
 	public void holdPiece(Piece p){
@@ -30,4 +37,6 @@ public class Level {
 		pieceBeingDragged=null;
 		return p;
 	}
+	
+	
 }
