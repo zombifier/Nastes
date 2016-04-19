@@ -13,6 +13,6 @@ public class LightningTile extends Tile {
 	}
 	
 	public boolean valid() {
-		return (isValid && !isColored);
+		return (isValid);
 	}
 }

@@ -11,4 +11,7 @@ abstract public class Tile {
 	abstract public boolean valid(); // whether you can add a square to this tile
 	
 	abstract public void addSquare();
+	public void removeSquare(){
+		
+	}
 }

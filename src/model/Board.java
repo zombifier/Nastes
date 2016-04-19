@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Board {
 	Tile[][] tiles;
-	ArrayList<Piece> pieces;
+	HashMap<Piece,BoardPosition> pieces;
 	public Board(){
 		this(new Tile[12][12]);
 	}
@@ -27,7 +27,7 @@ public class Board {
 			}
 		}
 		if (legal) { // add the piece and notify the tiles that a square is added on top
-			pieces.add(piece);
+			pieces.put(piece, position);
 			for (Square s:piece.getSquares()) {
 				xPos = position.getX() + s.getX();
 				yPos = position.getY() + s.getY();
@@ -36,5 +36,21 @@ public class Board {
 		}
 		return legal;
 	}
+	
+	public boolean removePiece(Piece piece) {
+		int xPos, yPos;
+
+		BoardPosition position = pieces.remove(piece);
+		if (position!=null) {
+			for (Square s:piece.getSquares()) {
+				xPos = position.getX() + s.getX();
+				yPos = position.getY() + s.getY();
+				tiles[xPos][yPos].removeSquare();
+			}
+			return true;
+		}
+		else return false;
+	}
+	
 	
 }
