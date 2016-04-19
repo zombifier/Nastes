@@ -1,9 +1,9 @@
 package model;
 
-public class PuzzleTile extends Tile {
+public class TilePuzzle extends Tile {
 	boolean isCovered;
 	
-	public PuzzleTile(boolean isValid) {
+	public TilePuzzle(boolean isValid) {
 		super(isValid);
 		isCovered = false;
 	}
