@@ -1,9 +1,9 @@
 package model;
 
-public class TileLightning extends Tile {
+public class LightningTile extends Tile {
 	boolean isColored;
 	
-	public TileLightning(boolean isValid) {
+	public LightningTile(boolean isValid) {
 		super(isValid);
 		isColored = false;
 	}
