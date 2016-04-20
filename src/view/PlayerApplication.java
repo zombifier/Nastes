@@ -20,7 +20,7 @@ public class PlayerApplication extends JFrame {
 		PlayerApplication dummy = this;
 		setTitle("Kabasuji");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1280, 720);
+		setBounds(100, 100, 1280, 768);
 		
 		frame = new SplashScreen();
 		redraw();

@@ -4,6 +4,8 @@ import javax.swing.JPanel;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import java.awt.Color;
+import java.awt.Dimension;
+
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JLabel;
 
@@ -14,7 +16,7 @@ public class BullpenView extends JPanel {
 	 */
 	public BullpenView() {
 		setBackground(new Color(221, 160, 221));
-		
+		setPreferredSize(new Dimension(430,600));
 		PieceView pieceView = new PieceView();
 		
 		PieceView pieceView_1 = new PieceView();

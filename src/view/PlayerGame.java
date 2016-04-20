@@ -23,7 +23,7 @@ public class PlayerGame extends JPanel {
 	public PlayerGame(PlayerApplication app){
 		this.app=app;
 		
-		setBounds(10, 10, 1280, 720);
+		setBounds(10, 10, 1280, 768);
 		setBorder(new EmptyBorder(5, 5, 5, 5));
 		
 		JButton btnBack = new JButton("Back");
@@ -49,7 +49,7 @@ public class PlayerGame extends JPanel {
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
-					.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
+					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 						.addGroup(groupLayout.createSequentialGroup()
 							.addGap(24)
 							.addComponent(btnBack)
@@ -61,13 +61,13 @@ public class PlayerGame extends JPanel {
 							.addComponent(txtpnLevelNumber, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 							.addGap(37)
 							.addComponent(txtpnLimit, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.RELATED, 555, Short.MAX_VALUE)
+							.addPreferredGap(ComponentPlacement.RELATED, 550, Short.MAX_VALUE)
 							.addComponent(btnReset))
-						.addGroup(Alignment.LEADING, groupLayout.createSequentialGroup()
+						.addGroup(groupLayout.createSequentialGroup()
 							.addContainerGap()
-							.addComponent(boardView_1, GroupLayout.PREFERRED_SIZE, 697, GroupLayout.PREFERRED_SIZE)
-							.addGap(47)
-							.addComponent(bullpenView, GroupLayout.DEFAULT_SIZE, 502, Short.MAX_VALUE)))
+							.addComponent(boardView_1, GroupLayout.PREFERRED_SIZE, 699, GroupLayout.PREFERRED_SIZE)
+							.addGap(54)
+							.addComponent(bullpenView, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
 					.addContainerGap())
 		);
 		groupLayout.setVerticalGroup(
@@ -83,10 +83,10 @@ public class PlayerGame extends JPanel {
 						.addComponent(txtpnLevelNumber, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 						.addComponent(txtpnLimit, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 					.addGap(18)
-					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
-						.addComponent(boardView_1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(bullpenView, GroupLayout.DEFAULT_SIZE, 608, Short.MAX_VALUE))
-					.addContainerGap(35, Short.MAX_VALUE))
+					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+						.addComponent(boardView_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(bullpenView, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addContainerGap(91, Short.MAX_VALUE))
 		);
 		
 		
