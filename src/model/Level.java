@@ -40,4 +40,6 @@ public abstract class Level {
 	public String getLevelNum() {
 		return "#"+Integer.toString(levelNum);
 	}
+	
+	
 }
