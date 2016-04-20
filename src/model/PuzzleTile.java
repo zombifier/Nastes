@@ -12,7 +12,11 @@ public class PuzzleTile extends Tile {
 		isCovered = true;
 	}
 	
-	public boolean valid() {
+	public void removeSquare() {
+		isCovered = false;
+	}
+	
+	public boolean playable() {
 		return (isValid && !isCovered);
 	}
 	

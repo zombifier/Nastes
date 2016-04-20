@@ -12,7 +12,7 @@ public class LightningTile extends Tile {
 		isColored = true;
 	}
 	
-	public boolean valid() {
-		return (isValid && !isColored);
+	public boolean playable() {
+		return (isValid);
 	}
 }
