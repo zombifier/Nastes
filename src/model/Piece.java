@@ -10,6 +10,7 @@ public class Piece {
 	public Piece(int pieceID, int type, Square[] squares) {
 		this.pieceID = pieceID;
 		this.type = type;
+		
 		this.squares = squares;
 	}
 	
