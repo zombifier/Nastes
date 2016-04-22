@@ -1,36 +1,29 @@
 package view;
 
 import javax.swing.JPanel;
-import java.awt.Color;
-import javax.swing.GroupLayout;
-import javax.swing.GroupLayout.Alignment;
-import javax.swing.JLabel;
 
-public class PieceView extends JPanel {
+import model.Piece;
 
+
+public class PieceView extends JPanel{
+	Piece piece;
+	SquareView squareView[] = new SquareView[6]; 
 	/**
 	 * Create the panel.
 	 */
-	public PieceView() {
-		setBackground(Color.GREEN);
+	public PieceView(Piece piece) {
+		this.piece = piece;
+		this.initialize();
+	}
+	
+	void initialize(){
+		setLayout(null);
+		SquareView dummySquareView = new SquareView();
+		for(int i=0;i<=5;i++){
+			squareView[i] = new SquareView();
+			squareView[i].setBounds(dummySquareView.getWidth()*piece.getSquares()[i].getX(),dummySquareView.getHeight()*piece.getSquares()[i].getY(),45,45);
+			add(squareView[i]);
+		}
 		
-		JLabel lblThisIsA = new JLabel("This is a Piece View");
-		GroupLayout groupLayout = new GroupLayout(this);
-		groupLayout.setHorizontalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(groupLayout.createSequentialGroup()
-					.addGap(42)
-					.addComponent(lblThisIsA)
-					.addContainerGap(49, Short.MAX_VALUE))
-		);
-		groupLayout.setVerticalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(groupLayout.createSequentialGroup()
-					.addContainerGap()
-					.addComponent(lblThisIsA)
-					.addContainerGap(38, Short.MAX_VALUE))
-		);
-		setLayout(groupLayout);
-
 	}
 }
