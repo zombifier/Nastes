@@ -1,5 +1,18 @@
 package model;
 
+/**
+ * Class Piece
+ * 
+ * @param pieceID	The identifier for the piece within the level
+ * @param type		THe type of the piece. Refering to the accual shape of this kind of piece.
+ * 					there can be more than one piece in a level with the same type. 
+ *
+ *		The creation of a piece uses the array below. There is a double array / multi array
+ * with all the 36 different types of pieces. When someone wants to create a piece they only use
+ * the ID and type. Using the type it will fetch the the position of the squares within the array. 
+ *
+ */
+
 public class Piece {
 	BoardPosition boardPosition;
 	int pieceID;
