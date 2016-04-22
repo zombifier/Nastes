@@ -24,11 +24,12 @@ public class BullpenView extends JPanel {
 		
 		setBackground(new Color(221, 160, 221));
 		setPreferredSize(new Dimension(430,600));
-		PieceView pieceView = new PieceView();
 		
-		PieceView pieceView_1 = new PieceView();
+		PieceView pieceView = new PieceView(null);
 		
-		PieceView pieceView_2 = new PieceView();
+		PieceView pieceView_1 = new PieceView(null);
+		
+		PieceView pieceView_2 = new PieceView(null);
 		
 		JLabel lblThisIsBullpenview = new JLabel("This is BullPenView");
 		GroupLayout groupLayout = new GroupLayout(this);
