@@ -7,14 +7,21 @@ import java.awt.Color;
 import java.awt.Dimension;
 
 import javax.swing.LayoutStyle.ComponentPlacement;
+
+import model.*;
+
 import javax.swing.JLabel;
 
 public class BullpenView extends JPanel {
 
+	Bullpen bullpen;
+	
 	/**
 	 * Create the panel.
 	 */
-	public BullpenView() {
+	public BullpenView(Bullpen bullpen) {
+		this.bullpen = bullpen;
+		
 		setBackground(new Color(221, 160, 221));
 		setPreferredSize(new Dimension(430,600));
 		PieceView pieceView = new PieceView();

@@ -3,7 +3,7 @@ package view;
 import javax.swing.JPanel;
 import java.awt.Color;
 
-public class TileView_Release extends JPanel {
+public class TileView_Release extends TileView {
 
 	/**
 	 * Create the panel.

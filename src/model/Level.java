@@ -41,5 +41,11 @@ public abstract class Level {
 		return "#"+Integer.toString(levelNum);
 	}
 	
+	public Board getBoard(){
+		return board;
+	}
 	
+	public Bullpen getBullpen(){
+		return bullpen;
+	}
 }

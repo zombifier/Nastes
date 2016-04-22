@@ -12,6 +12,8 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.border.EmptyBorder;
 
 import controller.ReturnSelectLevel;
+import model.*;
+
 import java.awt.Color;
 import javax.swing.JTextPane;
 import javax.swing.JLabel;
@@ -19,15 +21,17 @@ import javax.swing.JTabbedPane;
 
 public class PlayerGame extends JPanel {
 	PlayerApplication app;
+	Level level;
 	
-	public PlayerGame(PlayerApplication app){
-		this.app=app;
+	public PlayerGame(Level level, Game game, PlayerApplication app){
+		this.app = app;
+		this.level = level;
 		
 		setBounds(10, 10, 1280, 768);
 		setBorder(new EmptyBorder(5, 5, 5, 5));
 		
 		JButton btnBack = new JButton("Back");
-		btnBack.addActionListener(new ReturnSelectLevel(app));
+		btnBack.addActionListener(new ReturnSelectLevel(game, app));
 		
 		JButton btnReset = new JButton("Reset");
 		
@@ -42,9 +46,9 @@ public class PlayerGame extends JPanel {
 		JTextPane txtpnLimit = new JTextPane();
 		txtpnLimit.setText("Limit");
 		
-		BoardView boardView_1 = new BoardView();
+		BoardView boardView_1 = new BoardView(this.level.getBoard());
 		
-		BullpenView bullpenView = new BullpenView();
+		BullpenView bullpenView = new BullpenView(this.level.getBullpen());
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
