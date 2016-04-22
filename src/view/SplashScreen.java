@@ -30,7 +30,7 @@ public class SplashScreen extends JPanel {
 		
 		JLabel lblNewLabel = new JLabel("Chaiwat Ekkaewnumchai");
 		
-		JLabel lblJefferyBardon = new JLabel("Jeffery Bardon");
+		JLabel lblJeffreyBardon = new JLabel("Jeffrey Bardon");
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.TRAILING)
@@ -43,7 +43,7 @@ public class SplashScreen extends JPanel {
 					.addComponent(lblTeamNastes)
 					.addGap(342)
 					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addComponent(lblJefferyBardon)
+						.addComponent(lblJeffreyBardon)
 						.addComponent(lblNewLabel)
 						.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING, false)
 							.addComponent(lblDuongNguyen)
@@ -70,7 +70,7 @@ public class SplashScreen extends JPanel {
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addComponent(lblNewLabel)
 					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(lblJefferyBardon)
+					.addComponent(lblJeffreyBardon)
 					.addContainerGap(294, Short.MAX_VALUE))
 		);
 		setLayout(groupLayout);
