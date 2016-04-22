@@ -15,19 +15,22 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.border.EmptyBorder;
 
 import controller.SelectLevel;
+import model.*;
 
 public class PlayerSelector extends JPanel {
 	
 	PlayerApplication app;
+	Game game;
 	
-	public PlayerSelector(PlayerApplication app){
-		this.app=app;
+	public PlayerSelector(Game game, PlayerApplication app){
+		this.app = app;
+		this.game = game;
 		
 		setBounds(10, 10, 1280, 720);
 		setBorder(new EmptyBorder(5, 5, 5, 5));
 		
 		JButton btnLevel = new JButton("Level 1");
-		btnLevel.addActionListener(new SelectLevel(app));
+		btnLevel.addActionListener(new SelectLevel(this.game.getLevel(0), game, app));
 		
 		JButton btnLevel_1 = new JButton("Level 2");
 		

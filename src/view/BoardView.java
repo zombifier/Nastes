@@ -5,16 +5,23 @@ import java.awt.Dimension;
 
 import javax.swing.JPanel;
 
+import model.*;
+
 public class BoardView extends JPanel {
-	TileView_Puzzle tileView_Puzzle[] = new TileView_Puzzle[156];
+	// Should not be here because it is a model
+	// TileView_Puzzle tileView_Puzzle[] = new TileView_Puzzle[156];
+	
+	Board board;
 	/**
 	 * Create the panel.
 	 */
-	public BoardView() {
+	public BoardView(Board board) {
+		this.board = board;
 		setPreferredSize(new Dimension(700, 600));
 		setBackground(Color.PINK);
 		setLayout(null);
-		int k = 0;
+		// Should call the data in board variable
+		/* int k = 0;
 		for (int i=0;i<=11;i++){
 			for (int j=0;j<=12;j++){
 				tileView_Puzzle[k] = new TileView_Puzzle();
@@ -22,7 +29,7 @@ public class BoardView extends JPanel {
 				add(tileView_Puzzle[k]);
 				k++;
 			}
-		}
+		}*/
 
 		
 		
