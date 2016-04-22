@@ -6,7 +6,7 @@ import java.awt.Dimension;
 import javax.swing.JPanel;
 
 public class BoardView extends JPanel {
-	TileView_Puzzle tileView_Puzzle[] = new TileView_Puzzle[156];
+	TileView_Puzzle tileView_Puzzle[] = new TileView_Puzzle[144];
 	/**
 	 * Create the panel.
 	 */
@@ -16,7 +16,7 @@ public class BoardView extends JPanel {
 		setLayout(null);
 		int k = 0;
 		for (int i=0;i<=11;i++){
-			for (int j=0;j<=12;j++){
+			for (int j=0;j<=11;j++){
 				tileView_Puzzle[k] = new TileView_Puzzle();
 				tileView_Puzzle[k].setBounds(77+46*j,25+46*i,45,45);
 				add(tileView_Puzzle[k]);
