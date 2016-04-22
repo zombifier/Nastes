@@ -9,6 +9,7 @@ import model.*;
 
 public class BoardView extends JPanel {
 	// Should not be here because it is a model
+	// Also, should not be too specific to only one type
 	// TileView_Puzzle tileView_Puzzle[] = new TileView_Puzzle[144];
 	
 	Board board;
