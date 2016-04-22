@@ -6,6 +6,13 @@ public class Piece {
 	int type;
 	int orientation;
 	Square[] squares;
+	PiecePosition[][] multi = new PiecePosition[][]{
+		{new PiecePosition(0,0),new PiecePosition(0,1),new PiecePosition(0,2),new PiecePosition(0,3),new PiecePosition(0,4),new PiecePosition(0,5)},
+		{}
+		
+		
+	};
+	
 	
 	public Piece(int pieceID, int type, Square[] squares) {
 		this.pieceID = pieceID;
