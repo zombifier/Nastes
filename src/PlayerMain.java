@@ -3,13 +3,16 @@ import java.awt.event.WindowEvent;
 
 import javax.swing.JFrame;
 
-import view.PlayerApplication;
+import model.*;
+import view.*;
 
 public class PlayerMain {
-	PlayerApplication app;
 	
 	public static void main(String[] args){
-		PlayerApplication app=new PlayerApplication();
+		
+		Game game = new Game();
+		
+		PlayerApplication app=new PlayerApplication(game);
 		app.addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent e) {
 				app.dispose();

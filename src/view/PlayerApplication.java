@@ -3,6 +3,9 @@ package view;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.Timer;
+
+import model.*;
+
 import java.awt.BorderLayout;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
@@ -11,8 +14,10 @@ import java.awt.event.ActionListener;
 
 public class PlayerApplication extends JFrame {
 	JPanel frame;
+	Game game;
 	
-	public PlayerApplication(){
+	public PlayerApplication(Game game){
+		this.game = game;
 		initialize();
 	}
 	
@@ -28,7 +33,7 @@ public class PlayerApplication extends JFrame {
 		Timer timer = new Timer(2000,new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e){
-				frame = new PlayerSelector(dummy);
+				frame = new PlayerSelector(game, dummy);
 				
 				redraw();
 				repaint();

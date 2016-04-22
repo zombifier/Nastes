@@ -4,7 +4,7 @@ import javax.swing.JPanel;
 import java.awt.Color;
 import java.awt.Dimension;
 
-public class TileView_Puzzle extends JPanel {
+public class TileView_Puzzle extends TileView {
 	
 	/**
 	 * Create the panel.
