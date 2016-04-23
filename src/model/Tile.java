@@ -8,11 +8,26 @@ abstract public class Tile {
 		this.isValid = isValid;
 	}
 	
+	/** 
+	 * Return validity of the tile if the tile is added to the level or not.
+	 * @return true if it is valid; otherwise, false.
+	 */
 	public boolean isValid() { return isValid; }
 	
+	/**
+	 * Return playability of the tile if piece can be place on the tile.
+	 * @return true if it is playable; otherwise, false.
+	 */
 	abstract public boolean playable(); // whether you can add a square to this tile
 	
+	/**
+	 * Add the square to the tile, changing the state of the tile.
+	 */
 	abstract public void addSquare();
+	
+	/**
+	 * Remove the square to the tile, changing the state of the tile.
+	 */
 	public void removeSquare(){
 		
 	}

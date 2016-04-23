@@ -22,6 +22,10 @@ public class Board {
 		this.tiles=tiles;
 	}
 	
+	/**
+	 * Count the valid tiles on the board.
+	 * @return the number of valid tiles
+	 */
 	public int validTiles() {
 		int count = 0;
 		for (int i = 0; i < 12; i++)
@@ -31,6 +35,12 @@ public class Board {
 		return count;
 	}
 	
+	/**
+	 * Check whether it is legal to move the piece to the board at the specific position.
+	 * @param piece Piece considered to move to the board
+	 * @param position Position piece goes
+	 * @return true if it is legal; otherwise, false.
+	 */
 	public boolean isLegal(Piece piece, BoardPosition position) {
 		boolean legal = true;
 		int xPos;
@@ -47,6 +57,12 @@ public class Board {
 		return legal;
 	}
 	
+	/**
+	 * Add piece to the board if it is legal; otherwise, the board stays the same.
+	 * @param piece Piece added
+	 * @param position Position piece goes
+	 * @return true if it is legal; otherwise, false.
+	 */
 	public boolean addPiece(Piece piece, BoardPosition position) {
 		int xPos;
 		int yPos;
@@ -62,6 +78,11 @@ public class Board {
 		return false;
 	}
 	
+	/**
+	 * Remove piece from the board if there is the piece.
+	 * @param piece Piece removed
+	 * @return the removed piece if it is regal; otherwise, null.
+	 */
 	public Piece removePiece(Piece piece) {
 		int xPos, yPos;
 

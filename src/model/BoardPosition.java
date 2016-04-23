@@ -18,10 +18,18 @@ public class BoardPosition {
 		this.y = y;
 	}
 	
+	/**
+	 * Return vertically coordinate position considered as y in the view.
+	 * @return vertically coordinate position
+	 */
 	public int getX() {
 		return x;
 	}
 	
+	/**
+	 * Return horizontally coordinate position considered as x in the view.
+	 * @return horizontally coordinate position
+	 */
 	public int getY() {
 		return y;
 	}

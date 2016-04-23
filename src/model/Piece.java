@@ -73,16 +73,28 @@ public class Piece {
 		}
 	}
 	
+	/**
+	 * Return the squares belonging to the piece
+	 * @return Squares in the piece
+	 */
 	public Square[] getSquares() {
 		return squares;
 	}
 	
+	/**
+	 * Rotate the coordinate of the piece
+	 * @param direction true for clockwise; otherwise, counterclockwise
+	 */
 	public void rotate(boolean direction) { // true for clockwise, false for counterclockwise
 		for(Square sq:squares){
 			sq.rotate(direction);
 		}
 	}
-	
+
+	/**
+	 * Flip the coordinate of the piece
+	 * @param direction true for horizontal; otherwise, vertical
+	 */
 	public void flip(boolean direction) { // true for horizontal, false for vertical
 		for(Square sq:squares){
 			sq.flip(direction);

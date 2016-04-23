@@ -22,6 +22,11 @@ public class Game {
 		this.levels=levels;
 	}
 	
+	/**
+	 * return the level corresponding to the number.
+	 * @param stage Number of level in the game
+	 * @return Level corresponding to the stage
+	 */
 	public Level getLevel(int stage){
 		return levels[stage];
 	}
