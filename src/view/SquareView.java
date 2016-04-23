@@ -20,7 +20,7 @@ public class SquareView extends JPanel {
 		return 45;
 	}
 	
-	public int getWeight(){
+	public int getWidth(){
 		return 45;
 	}
 }

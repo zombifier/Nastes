@@ -18,10 +18,12 @@ public class PieceView extends JPanel{
 	
 	void initialize(){
 		setLayout(null);
-		SquareView dummySquareView = new SquareView();
+		
+		setOpaque(false);
+		
 		for(int i=0;i<=5;i++){
 			squareView[i] = new SquareView();
-			squareView[i].setBounds(dummySquareView.getWidth()*piece.getSquares()[i].getX(),dummySquareView.getHeight()*piece.getSquares()[i].getY(),45,45);
+			squareView[i].setBounds(45*piece.getSquares()[i].getX(),45*piece.getSquares()[i].getY(),45,45);
 			add(squareView[i]);
 		}
 		

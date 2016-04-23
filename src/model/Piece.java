@@ -5,7 +5,7 @@ public class Piece {
 	int pieceID;
 	int type;
 	int orientation;
-	Square[] squares;
+	Square[] squares = new Square[6];
 	PiecePosition[][] multi = new PiecePosition[][]{
 		//PIECES 1-5
 		{new PiecePosition(0,0),new PiecePosition(0,1),new PiecePosition(0,2),new PiecePosition(0,3),new PiecePosition(0,4),new PiecePosition(0,5)},
@@ -52,11 +52,12 @@ public class Piece {
 	};
 	
 	
-	public Piece(int pieceID, int type, Square[] squares) {
+	public Piece(int pieceID, int type) {
 		this.pieceID = pieceID;
 		this.type = type;
-		
-		this.squares = squares;
+		for (int i=0;i<=5;i++){
+			this.squares[i] = new Square(multi[type][i]);
+		}
 	}
 	
 	public Square[] getSquares() {
