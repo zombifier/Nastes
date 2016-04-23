@@ -13,7 +13,8 @@ public class PieceView extends JPanel{
 	 */
 	public PieceView(Piece piece) {
 		this.piece = piece;
-		this.initialize();
+		if(this.piece != null)
+			this.initialize();
 	}
 	
 	void initialize(){

@@ -1,5 +1,14 @@
 package model;
 
+/**
+ * 
+ * @param levels 	These are the levels that go into the gmae. There must be at least one
+ * 					for our game there is always 15. 
+ * 
+ * The top level class. It is our game. 
+ *
+ */
+
 public class Game {
 	Level[] levels;
 	

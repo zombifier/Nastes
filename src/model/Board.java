@@ -2,6 +2,15 @@ package model;
 
 import java.util.*;
 
+/**
+ * @param tiles
+ * 
+ * The Board class. 
+ * A board is made of a double array of tiles. 12 x 12. Even if a tile is not "active" or 
+ * being used, it is still part of the board. 
+ *
+ */
+
 public class Board {
 	Tile[][] tiles;
 	HashMap<Piece,BoardPosition> pieces;
