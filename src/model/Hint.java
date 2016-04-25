@@ -10,7 +10,13 @@ package model;
  *
  */
 
-public class Hint {
+public class Hint implements java.io.Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1397071225868933842L;
+	
+	
 	Piece piece;
 	BoardPosition boardPosition;
 	

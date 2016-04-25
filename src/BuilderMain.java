@@ -3,15 +3,15 @@ import java.awt.event.WindowEvent;
 
 import javax.swing.JFrame;
 
-import view.BuilderApplication;
-import view.PlayerApplication;
+import model.*;
+import view.*;
 
 public class BuilderMain {
 
 	BuilderApplication app;
 	
 	public static void main(String[] args){
-		BuilderApplication app=new BuilderApplication();
+		BuilderApplication app=new BuilderApplication(new Game());
 		app.addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent e) {
 				app.dispose();

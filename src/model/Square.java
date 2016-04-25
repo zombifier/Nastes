@@ -1,6 +1,12 @@
 package model;
 
-public class Square {
+public class Square implements java.io.Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 419883477850643614L;
+	
+	
 	PiecePosition piecePosition;
 	boolean isCoverATile;
 	

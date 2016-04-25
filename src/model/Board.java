@@ -11,7 +11,13 @@ import java.util.*;
  *
  */
 
-public class Board {
+public class Board implements java.io.Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3839076323758829272L;
+	
+	
 	Tile[][] tiles;
 	HashMap<Piece,BoardPosition> pieces;
 	public Board(){
@@ -98,5 +104,18 @@ public class Board {
 		else return null;
 	}
 	
-	
+
+	/**
+	 * return the copy of the board
+	 * @return Copied board
+	 */
+	public Board copy(){
+		Tile[][] tiles;
+		tiles = new Tile[12][12];
+		for(int i = 0; i < 12; i++)
+			for(int j = 0; j < 12; j++)
+				tiles[i][j] = this.tiles[i][j].copy();
+		
+		return new Board(tiles);
+	}
 }

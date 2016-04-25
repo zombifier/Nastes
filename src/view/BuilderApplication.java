@@ -15,7 +15,9 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.border.EmptyBorder;
 import javax.swing.Timer;
 
-import controller.ReturnSelectLevel;
+import controller.*;
+import model.*;
+
 import javax.swing.JComboBox;
 import javax.swing.JTextField;
 import javax.swing.JScrollPane;
@@ -25,8 +27,12 @@ import javax.swing.Timer;
 public class BuilderApplication extends JFrame {
 	private JTextField txtSetLimit;
 	JPanel frame;
+	Game game;
+	Level level;
 	
-	public BuilderApplication(){
+	public BuilderApplication(Game game){
+		this.game=game;
+		
 		setTitle("Kabasuji Editor");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1280, 720);
@@ -52,16 +58,26 @@ public class BuilderApplication extends JFrame {
 	
 	void initialize(){
 		
+		level = new Puzzle(10); // instantiate level
 
 		JButton btnHintaddremove = new JButton("Hint (add/remove)");
 		
-		JComboBox comboBox = new JComboBox();
+		JComboBox<String> comboBox = new JComboBox<String>();
+		comboBox.addItem("Puzzle");
+		comboBox.addItem("Lightning");
+		comboBox.addItem("Release");
 		
 		txtSetLimit = new JTextField();
 		txtSetLimit.setText("Set Limit");
 		txtSetLimit.setColumns(10);
 		
 		JButton btnSave = new JButton("Save");
+		final BuilderApplication THIS = this;
+		btnSave.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent ae){
+				new SaveController(game,level,THIS);
+			}
+		});
 		
 		JButton btnLoad = new JButton("Load");
 		
@@ -136,10 +152,12 @@ public class BuilderApplication extends JFrame {
 					.addContainerGap())
 		);
 		
-		JLabel lblBoard = new JLabel("Board");
+		//JLabel lblBoard = new JLabel("Board");
+		BoardView lblBoard = new BoardView(level.getBoard());
 		panel_2.add(lblBoard);
 		
-		JLabel lblBullpen = new JLabel("BullPen");
+		//JLabel lblBullpen = new JLabel("BullPen");
+		BullpenView lblBullpen = new BullpenView(level.getBullpen());
 		panel_3.add(lblBullpen);
 		
 		JPanel panel = new JPanel();
@@ -164,7 +182,8 @@ public class BuilderApplication extends JFrame {
 		panel.setLayout(gl_panel);
 		getContentPane().setLayout(groupLayout);
 	}
-	void redraw(){
+	
+	public void redraw(){
 		getContentPane().removeAll();
 		GroupLayout groupLayout = new GroupLayout(getContentPane());
 		groupLayout.setHorizontalGroup(

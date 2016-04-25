@@ -1,6 +1,12 @@
 package model;
 
 public class LightningTile extends Tile {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 4433633684814536552L;
+	
+	
 	boolean isColored;
 	
 	public LightningTile(boolean isValid) {
@@ -14,5 +20,9 @@ public class LightningTile extends Tile {
 	
 	public boolean playable() {
 		return (isValid);
+	}
+	
+	public Tile copy(){
+		return new LightningTile(this.isValid);
 	}
 }

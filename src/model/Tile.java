@@ -1,6 +1,12 @@
 package model;
 
-abstract public class Tile {
+abstract public class Tile implements java.io.Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -2360380133845519730L;
+	
+	
 	boolean isValid;
 	boolean hasSquare;
 	
@@ -31,4 +37,10 @@ abstract public class Tile {
 	public void removeSquare(){
 		
 	}
+
+	/**
+	 * return the copy of the tile
+	 * @return Copied tile
+	 */
+	abstract public Tile copy();
 }

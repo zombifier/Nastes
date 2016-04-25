@@ -10,7 +10,13 @@ package model;
  *
  */
 
-public class BoardPosition {
+public class BoardPosition implements java.io.Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6646980816657643296L;
+	
+	
 	int x;
 	int y;
 	public BoardPosition(int x, int y) {

@@ -13,13 +13,19 @@ package model;
  *
  */
 
-public class Piece {
+public class Piece implements java.io.Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -3744611337874218968L;
+	
+	
 	BoardPosition boardPosition;
 	int pieceID;
 	int type;
 	int orientation;
 	Square[] squares = new Square[6];
-	PiecePosition[][] multi = new PiecePosition[][]{
+	final static PiecePosition[][] multi = new PiecePosition[][]{
 		//PIECES 1-5
 		{new PiecePosition(0,0),new PiecePosition(0,1),new PiecePosition(0,2),new PiecePosition(0,3),new PiecePosition(0,4),new PiecePosition(0,5)},
 		{new PiecePosition(0,0),new PiecePosition(0,1),new PiecePosition(0,2),new PiecePosition(0,3),new PiecePosition(0,4),new PiecePosition(1,0)},
@@ -100,4 +106,13 @@ public class Piece {
 			sq.flip(direction);
 		}
 	}
+	
+	/**
+	 * return the copy of the piece
+	 * @return Copied piece
+	 */
+	public Piece copy(){
+		return new Piece(this.pieceID, this.type);
+	}
+	
 }

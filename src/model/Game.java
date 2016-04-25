@@ -9,7 +9,13 @@ package model;
  *
  */
 
-public class Game {
+public class Game implements java.io.Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -5284714301610333022L;
+	
+	
 	Level[] levels;
 	
 	public Game(){
@@ -29,5 +35,14 @@ public class Game {
 	 */
 	public Level getLevel(int stage){
 		return levels[stage];
+	}
+	
+	/**
+	 * Put the level corresponding to the number
+	 * @param stage Number of level in the game
+	 * @param level Level put in the corresponding stage number
+	 */
+	public void setLevel(int stage, Level level){
+		levels[stage] = level;
 	}
 }

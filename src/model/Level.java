@@ -1,6 +1,12 @@
 package model;
 
-public abstract class Level {
+public abstract class Level implements java.io.Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -5998873478522304717L;
+	
+	
 	Board board;
 	Bullpen bullpen;
 	Piece pieceBeingDragged;
@@ -80,4 +86,10 @@ public abstract class Level {
 	public Bullpen getBullpen(){
 		return bullpen;
 	}
+	
+	/**
+	 * return the copy of the level
+	 * @return Copied level
+	 */
+	abstract public Level copy();
 }

@@ -1,6 +1,12 @@
 package model;
 
 public class ReleaseTile extends Tile {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2349359474387386315L;
+	
+	
 	int releaseNumber;
 	int color;
 	boolean isCovered;
@@ -20,4 +26,7 @@ public class ReleaseTile extends Tile {
 		return (isValid && !isCovered);
 	}
 	
+	public Tile copy(){
+		return new ReleaseTile(this.isValid, this.releaseNumber, this.color);
+	}
 }

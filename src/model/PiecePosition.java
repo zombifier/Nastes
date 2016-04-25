@@ -1,6 +1,12 @@
 package model;
 
-public class PiecePosition {
+public class PiecePosition implements java.io.Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -5144906033202040591L;
+	
+	
 	int x;
 	int y;
 	
