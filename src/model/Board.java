@@ -118,4 +118,14 @@ public class Board implements java.io.Serializable{
 		
 		return new Board(tiles);
 	}
+	
+	/**
+	 * Return the specific tile of the board
+	 * @param x Row
+	 * @param y Column
+	 * @return Tile at the row x and column y
+	 */
+	public Tile getTile(int x, int y){
+		return tiles[x][y];
+	}
 }

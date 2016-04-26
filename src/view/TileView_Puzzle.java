@@ -1,6 +1,9 @@
 package view;
 
 import javax.swing.JPanel;
+
+import model.*;
+
 import java.awt.Color;
 import java.awt.Dimension;
 
@@ -9,7 +12,8 @@ public class TileView_Puzzle extends TileView {
 	/**
 	 * Create the panel.
 	 */
-	public TileView_Puzzle() {
+	public TileView_Puzzle(Tile tile) {
+		super(tile);
 		setBackground(new Color(255, 0, 255));
 		setPreferredSize(new Dimension(45, 45));
 	}

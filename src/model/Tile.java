@@ -43,4 +43,11 @@ abstract public class Tile implements java.io.Serializable {
 	 * @return Copied tile
 	 */
 	abstract public Tile copy();
+	
+	/**
+	 * Convert the validity of the tile
+	 */
+	public void convertValid(){
+		isValid = !isValid;
+	}
 }
