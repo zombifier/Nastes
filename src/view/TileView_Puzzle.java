@@ -10,8 +10,8 @@ public class TileView_Puzzle extends TileView {
 	 * Create the panel.
 	 */
 	public TileView_Puzzle() {
-		setBackground(new Color(255, 0, 255));
-		setPreferredSize(new Dimension(45, 45));
+//		setBackground(new Color(255, 0, 255));
+//		setPreferredSize(new Dimension(45, 45));
 	}
 
 }
