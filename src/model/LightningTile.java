@@ -25,4 +25,7 @@ public class LightningTile extends Tile {
 	public Tile copy(){
 		return new LightningTile(this.isValid);
 	}
+	public int levelType(){
+		return 1;
+	}
 }

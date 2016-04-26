@@ -35,7 +35,7 @@ public class BuilderApplication extends JFrame {
 		
 		setTitle("Kabasuji Editor");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1280, 720);
+		setBounds(100, 100, 1280, 840);
 		frame = new SplashScreen();
 		redraw();
 		repaint();

@@ -29,4 +29,7 @@ public class ReleaseTile extends Tile {
 	public Tile copy(){
 		return new ReleaseTile(this.isValid, this.releaseNumber, this.color);
 	}
+	public int levelType(){
+		return 2;
+	}
 }

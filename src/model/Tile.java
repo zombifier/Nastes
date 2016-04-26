@@ -9,6 +9,7 @@ abstract public class Tile implements java.io.Serializable {
 	
 	boolean isValid;
 	boolean hasSquare;
+	abstract int levelType();
 	
 	public Tile(boolean isValid) {
 		this.isValid = isValid;

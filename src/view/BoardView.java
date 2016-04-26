@@ -5,7 +5,7 @@ import java.awt.Dimension;
 
 import javax.swing.JPanel;
 
-import controller.builder.TileController;
+import controller.builder.BoardController;
 import model.*;
 
 public class BoardView extends JPanel {
@@ -23,7 +23,7 @@ public class BoardView extends JPanel {
 		this.board = board;
 		
 		if(this.board == null) // sanity check
-			board = new Board();
+			board = new Board(0);
 			
 		setPreferredSize(new Dimension(700, 600));
 		setBackground(Color.PINK);
@@ -31,15 +31,22 @@ public class BoardView extends JPanel {
 		
 		for (int i=0;i<=11;i++){
 			for (int j=0;j<=11;j++){
-				tileView[i][j] = new TileView_Puzzle(board.getTile(i, j));
+				if (this.board.getLevelType()==0){
+					tileView[i][j] = new TileView_Puzzle(board.getTile(i, j));
+				} else if (this.board.getLevelType()==1){
+					tileView[i][j] = new TileView_Lightning(board.getTile(i, j));
+				} else if (this.board.getLevelType()==2){
+					tileView[i][j] = new TileView_Release(board.getTile(i, j));
+				}
+				
 				tileView[i][j].setBounds(77+46*j,25+46*i,45,45);
 				add(tileView[i][j]);
-				TileController tl = new TileController(board.getTile(i, j), tileView[i][j]);
-				tileView[i][j].addMouseListener(tl);
+				
 				//k++;
 			}
 		}
-
+		BoardController tl = new BoardController(this.board, this);
+		this.addMouseListener(tl);
 		
 		
 	}

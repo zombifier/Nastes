@@ -18,10 +18,24 @@ public class Board implements java.io.Serializable{
 	private static final long serialVersionUID = 3839076323758829272L;
 	
 	
-	Tile[][] tiles;
+	Tile tiles[][] = new Tile[12][12];
 	HashMap<Piece,BoardPosition> pieces;
-	public Board(){
-		this(new Tile[12][12]);
+	public Board(int levelType){
+		
+		for (int i=0;i<=11;i++){
+			for (int j=0;j<=11;j++){
+				if (levelType == 0){
+					tiles[i][j] = new PuzzleTile(false);
+				} else if (levelType == 1){
+					tiles[i][j] = new LightningTile(false);
+				} else if (levelType == 2){
+					tiles[i][j] = new ReleaseTile(false,0,0);
+				}
+			}
+		}
+	
+			
+		
 	}
 	
 	public Board(Tile[][] tiles){
@@ -127,5 +141,20 @@ public class Board implements java.io.Serializable{
 	 */
 	public Tile getTile(int x, int y){
 		return tiles[x][y];
+	}
+	/**
+	 * Return level type of the level
+	 * @return an integer that represent the level type
+	 */
+	public int getLevelType(){
+		
+		return this.tiles[0][0].levelType();
+	}
+	/**
+	 * Return the array of tile
+	 * @return an array of tile
+	 */
+	public Tile[][] getArrayTile(){
+		return this.tiles;
 	}
 }

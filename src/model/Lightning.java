@@ -12,7 +12,7 @@ public class Lightning extends Level{
 	int timeElapsed;
 	int tilesUncolored;
 	
-	public Lightning(int timeLimit) {
+	public Lightning() {
 		super();
 		this.timeLimit = timeLimit;
 		this.timeElapsed = 0;
@@ -36,6 +36,11 @@ public class Lightning extends Level{
 
 	public Level copy(){
 		return new Lightning(board.copy(), bullpen.copy(), this.timeLimit);
+	}
+	
+	public int levelType(){
+		return 1;
+		
 	}
 	
 }

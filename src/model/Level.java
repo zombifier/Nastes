@@ -14,9 +14,11 @@ public abstract class Level implements java.io.Serializable{
 	boolean isUnlocked;
 	int levelNum;
 	Hint hint;
+	abstract int levelType();
 	
 	public Level(){
-		board=new Board();
+		
+		board=new Board(levelType());
 		bullpen=new Bullpen();
 		pieceBeingDragged=null;
 	}

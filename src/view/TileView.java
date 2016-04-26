@@ -22,4 +22,8 @@ public class TileView extends JPanel {
 		else
 			this.setBackground(new Color(255, 0, 255));
 	}
+	
+	public void convertValid(){
+		this.tile.convertValid();
+	}
 }

@@ -36,4 +36,8 @@ public class Puzzle extends Level{
 	public Level copy(){
 		return new Puzzle(board.copy(), bullpen.copy(), moveLimit);
 	}
+	
+	public int levelType(){
+		return 0;
+	}
 }

@@ -36,4 +36,8 @@ public class Release extends Level{
 	public Level copy(){
 		return new Release(board.copy(), bullpen.copy());
 	}
+	
+	public int levelType(){
+		return 2;
+	}
 }
