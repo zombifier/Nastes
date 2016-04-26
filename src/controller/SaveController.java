@@ -15,7 +15,7 @@ public class SaveController {
 	}
 	
 	public void process(){
-		game.setLevel(0,level.copy());
+		game.setLevel(0,level.copy()); // not load directly because there may be changes
 		builderApplication.redraw();
 		builderApplication.repaint();
 	}
