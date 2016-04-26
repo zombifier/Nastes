@@ -22,7 +22,6 @@ public class PlayerApplication extends JFrame {
 	}
 	
 	private void initialize(){
-		PlayerApplication dummy = this;
 		setTitle("Kabasuji");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1280, 768);
@@ -33,7 +32,7 @@ public class PlayerApplication extends JFrame {
 		Timer timer = new Timer(2000,new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e){
-				frame = new PlayerSelector(game, dummy);
+				frame = new PlayerSelector(game, PlayerApplication.this);
 				
 				redraw();
 				repaint();
