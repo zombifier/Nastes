@@ -14,8 +14,8 @@ public class TileView_Puzzle extends TileView {
 	 */
 	public TileView_Puzzle(Tile tile) {
 		super(tile);
-		setBackground(new Color(255, 0, 255));
-		setPreferredSize(new Dimension(45, 45));
+//		setBackground(new Color(255, 0, 255));
+//		setPreferredSize(new Dimension(45, 45));
 	}
 
 }
