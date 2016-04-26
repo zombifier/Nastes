@@ -2,7 +2,9 @@ package model;
 
 abstract public class Tile implements java.io.Serializable {
 	/**
-	 * 
+	 * Tile class for Kabasuji.
+	 * Each tile knows if it is a valid place for a piece, and if it contains a Square.
+	 * Is extended by specific tile types for each level type.
 	 */
 	private static final long serialVersionUID = -2360380133845519730L;
 	
@@ -18,7 +20,9 @@ abstract public class Tile implements java.io.Serializable {
 	 * Return validity of the tile if the tile is added to the level or not.
 	 * @return true if it is valid; otherwise, false.
 	 */
-	public boolean isValid() { return isValid; }
+	public boolean isValid(){
+		return isValid;
+	}
 	
 	/**
 	 * Return playability of the tile if piece can be place on the tile.

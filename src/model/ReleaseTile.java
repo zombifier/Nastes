@@ -7,14 +7,14 @@ public class ReleaseTile extends Tile {
 	private static final long serialVersionUID = 2349359474387386315L;
 	
 	
-	int releaseNumber;
-	int color;
+	int releaseNumber; // Valid range: 0-6
+	int color; // Valid range: 0-3
 	boolean isCovered;
 	
 	public ReleaseTile(boolean isValid, int releaseNumber, int color) {
 		super(isValid);
 		this.releaseNumber = releaseNumber;
-		this.color = color;
+		this.color = color; 
 		this.isCovered = false;
 	}
 	
