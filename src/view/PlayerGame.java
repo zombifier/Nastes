@@ -22,10 +22,12 @@ import javax.swing.JTabbedPane;
 public class PlayerGame extends JPanel {
 	PlayerApplication app;
 	Level level;
+	Level original;
 	
 	public PlayerGame(Level level, Game game, PlayerApplication app){
 		this.app = app;
 		this.level = level;
+		this.original = level.copy();
 		
 		setBounds(10, 10, 1280, 768);
 		setBorder(new EmptyBorder(5, 5, 5, 5));

@@ -35,7 +35,7 @@ public class Game implements java.io.Serializable {
 	 * @return Level corresponding to the stage
 	 */
 	public Level getLevel(int stage){
-		return levels[stage];
+		return levels[stage].copy();
 	}
 	
 	/**
