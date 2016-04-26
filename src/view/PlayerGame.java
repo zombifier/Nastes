@@ -11,6 +11,7 @@ import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.border.EmptyBorder;
 
+import controller.ResetLevel;
 import controller.ReturnSelectLevel;
 import model.*;
 
@@ -36,6 +37,7 @@ public class PlayerGame extends JPanel {
 		btnBack.addActionListener(new ReturnSelectLevel(game, app));
 		
 		JButton btnReset = new JButton("Reset");
+		btnReset.addActionListener(new ResetLevel(original, game, app));
 		
 		JButton btnHint = new JButton("Hint");
 		
