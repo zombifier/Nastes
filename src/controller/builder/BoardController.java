@@ -20,9 +20,15 @@ public class BoardController extends MouseAdapter {
 	public void mousePressed(MouseEvent ae){
 		TileView t = (TileView) boardView.findComponentAt(ae.getPoint());
 		if(t != null){
-			t.convertValid();
-			t.redraw();
-			System.out.println("Working");
+			if (ae.getModifiers()==InputEvent.BUTTON1_MASK){
+				t.convertValid();
+				t.redraw();
+				System.out.println("Working");
+			}
+			if (ae.getModifiers()==InputEvent.BUTTON3_MASK){
+				System.out.println("Right Mouse is Working");
+				
+			}
 		}
 	}
 }
