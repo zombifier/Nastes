@@ -33,32 +33,46 @@ public class PlayerSelector extends JPanel {
 		btnLevel.addActionListener(new SelectLevel(this.game.getLevel(0), game, app));
 		
 		JButton btnLevel_1 = new JButton("Level 2");
+		btnLevel_1.addActionListener(new SelectLevel(this.game.getLevel(1), game, app));
 		
 		JButton btnLevel_2 = new JButton("Level 3");
+		btnLevel_2.addActionListener(new SelectLevel(this.game.getLevel(2), game, app));
 		
 		JButton btnLevel_3 = new JButton("Level 4");
+		btnLevel_3.addActionListener(new SelectLevel(this.game.getLevel(3), game, app));
 		
 		JButton btnLevel_4 = new JButton("Level 5");
+		btnLevel_4.addActionListener(new SelectLevel(this.game.getLevel(4), game, app));
 		
 		JButton btnLevel_5 = new JButton("Level 6");
+		btnLevel_5.addActionListener(new SelectLevel(this.game.getLevel(5), game, app));
 		
 		JButton btnLevel_6 = new JButton("Level 7");
+		btnLevel_6.addActionListener(new SelectLevel(this.game.getLevel(6), game, app));
 		
 		JButton btnLevel_7 = new JButton("Level 8");
+		btnLevel_7.addActionListener(new SelectLevel(this.game.getLevel(7), game, app));
 		
 		JButton btnLevel_8 = new JButton("Level 9");
+		btnLevel_8.addActionListener(new SelectLevel(this.game.getLevel(8), game, app));
 		
 		JButton btnLevel_9 = new JButton("Level 10");
+		btnLevel_9.addActionListener(new SelectLevel(this.game.getLevel(9), game, app));
 		
 		JButton btnLevel_10 = new JButton("Level 11");
+		btnLevel_10.addActionListener(new SelectLevel(this.game.getLevel(10), game, app));
 		
 		JButton btnLevel_11 = new JButton("Level 12");
+		btnLevel_11.addActionListener(new SelectLevel(this.game.getLevel(11), game, app));
 		
 		JButton btnLevel_12 = new JButton("Level 13");
+		btnLevel_12.addActionListener(new SelectLevel(this.game.getLevel(12), game, app));
 		
 		JButton btnLevel_13 = new JButton("Level 14");
+		btnLevel_13.addActionListener(new SelectLevel(this.game.getLevel(13), game, app));
 		
 		JButton btnLevel_14 = new JButton("Level 15");
+		btnLevel_14.addActionListener(new SelectLevel(this.game.getLevel(14), game, app));
 		
 		JPanel panel = new JPanel();
 		panel.setBackground(Color.PINK);

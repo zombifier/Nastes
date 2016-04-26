@@ -21,7 +21,8 @@ public class Game implements java.io.Serializable {
 	public Game(){
 		// Put the levels here
 		levels = new Level[15];
-		levels[0] = new Puzzle(8); // The number needs to be changed
+		for(int i = 0; i < 15; i++)
+			levels[i] = new Puzzle(8); // The number needs to be changed
 	}
 	
 	public Game(Level[] levels){
@@ -34,7 +35,7 @@ public class Game implements java.io.Serializable {
 	 * @return Level corresponding to the stage
 	 */
 	public Level getLevel(int stage){
-		return levels[stage];
+		return levels[stage].copy();
 	}
 	
 	/**

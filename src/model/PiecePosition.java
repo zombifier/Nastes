@@ -16,16 +16,16 @@ public class PiecePosition implements java.io.Serializable {
 	}
 
 	/**
-	 * Return vertically coordinate position of the square related to the piece considered as y in the view.
-	 * @return vertically coordinate position
+	 * Return horizontal coordinate position of the square related to the piece considered as x in the view.
+	 * @return horizontal coordinate position
 	 */
 	public int getX() {
 		return x;
 	}
 
 	/**
-	 * Return horizontally coordinate position of the square related to the piece considered as x in the view.
-	 * @return horizontally coordinate position
+	 * Return vertical coordinate position of the square related to the piece considered as y in the view.
+	 * @return vertical coordinate position
 	 */
 	public int getY() {
 		return y;

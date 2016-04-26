@@ -128,7 +128,8 @@ public class Board implements java.io.Serializable{
 		tiles = new Tile[12][12];
 		for(int i = 0; i < 12; i++)
 			for(int j = 0; j < 12; j++)
-				tiles[i][j] = this.tiles[i][j].copy();
+				if(this.tiles[i][j] != null)
+					tiles[i][j] = this.tiles[i][j].copy();
 		
 		return new Board(tiles);
 	}

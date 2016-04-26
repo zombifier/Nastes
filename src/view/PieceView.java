@@ -1,5 +1,7 @@
 package view;
 
+import java.awt.Dimension;
+
 import javax.swing.JPanel;
 
 import model.Piece;
@@ -28,5 +30,10 @@ public class PieceView extends JPanel{
 			add(squareView[i]);
 		}
 		
+	}
+	
+	@Override
+	public Dimension getPreferredSize(){
+		return new Dimension(45*6,45*6); // The smallest size that can keep long hexomino
 	}
 }
