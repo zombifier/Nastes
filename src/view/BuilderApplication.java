@@ -72,12 +72,11 @@ public class BuilderApplication extends JFrame {
 		txtSetLimit.setColumns(10);
 		
 		JButton btnSave = new JButton("Save");
-		final BuilderApplication THIS = this; // to use as this in the ActionListeners below
 		btnSave.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent ae){
 				// subject to be changed in the later application
-				new SaveController(game,level,THIS);
+				new SaveController(game,level,BuilderApplication.this);
 			}
 		});
 		
@@ -86,7 +85,7 @@ public class BuilderApplication extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent ae){
 				// subject to be changed in the later application
-				new LoadController(game,THIS).process();
+				new LoadController(game,BuilderApplication.this).process();
 			}
 		});
 		
