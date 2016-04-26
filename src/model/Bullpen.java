@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  * 
@@ -20,13 +21,23 @@ public class Bullpen implements java.io.Serializable {
 	ArrayList<Piece> pieces;
 	
 	public Bullpen(){
-		this(new ArrayList<Piece>());
+		/*
+		ArrayList<Piece> test = new ArrayList<Piece>();
+		test.add(new Piece(1,3));
+		test.add(new Piece(1,4));
+		pieces = test;
+		*/
+		pieces = new ArrayList<Piece>();
 	}
 	
 	public Bullpen(ArrayList<Piece> pieces){
 		this.pieces = pieces;
+		
 	}
 	
+	public Iterable<Piece> getPieces(){
+		return pieces;
+	}
 
 	/**
 	 * return the copy of the bullpen
@@ -37,5 +48,6 @@ public class Bullpen implements java.io.Serializable {
 		for(Piece piece: this.pieces)
 			pieces.add(piece.copy());
 		return new Bullpen(pieces);
+		
 	}
 }
