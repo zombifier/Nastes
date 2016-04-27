@@ -57,7 +57,7 @@ public class BuilderApplication extends JFrame {
 	}
 	
 	public void initialize(Level level){
-		getContentPane().setLayout(null);
+		getContentPane().removeAll();;
 		
 		this.level = level; // instantiate level
 
