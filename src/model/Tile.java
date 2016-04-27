@@ -35,6 +35,11 @@ abstract public class Tile implements java.io.Serializable {
 	abstract public void addSquare();
 	
 	/**
+	 * Check if any Square has been placed on the tile.
+	 * @return true if the tile is valid and filled by Square already; otherwise, false.
+	 */
+	abstract public boolean isFilled();
+	/**
 	 * Remove the square to the tile, changing the state of the tile.
 	 */
 	public void removeSquare(){

@@ -44,4 +44,11 @@ public class Puzzle extends Level{
 	public int levelType(){
 		return 0;
 	}
+	
+	public int resultStar(){
+		if(bullpen.numRemainPiece() <= 0) return 3;
+		else if(bullpen.numRemainPiece() <= 1) return 2;
+		else if(bullpen.numRemainPiece() <= 2) return 1;
+		return 0;
+	}
 }

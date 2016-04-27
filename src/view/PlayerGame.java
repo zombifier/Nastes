@@ -27,6 +27,9 @@ public class PlayerGame extends JPanel {
 	Level level;
 	Level original;
 	
+	String emptyStar = "images/EmptyStar";
+	String filledStar = "images/FilledStar";
+	
 	public PlayerGame(Level level, Game game, PlayerApplication app){
 		this.app = app;
 		this.level = level;

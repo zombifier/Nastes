@@ -159,4 +159,13 @@ public class Board implements java.io.Serializable{
 	public Tile[][] getArrayTile(){
 		return this.tiles;
 	}
+
+	public int numRemainTile() {
+		int number = 0;
+		for(int i = 0; i < 12; i++)
+			for(int j = 0; j < 12; j++)
+				if(tiles[i][j] != null && tiles[i][j].playable())
+					number++;
+		return number;
+	}
 }

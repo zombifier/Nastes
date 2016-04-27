@@ -50,4 +50,9 @@ public class Bullpen implements java.io.Serializable {
 		return new Bullpen(pieces);
 		
 	}
+
+	public int numRemainPiece() {
+		return pieces.size();
+	}
+
 }

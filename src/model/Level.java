@@ -83,6 +83,7 @@ public abstract class Level implements java.io.Serializable{
 	 */
 	abstract public String getUnit();
 	
+	abstract public int resultStar();
 	/**
 	 * Get string which contains the level number used for the view.
 	 * @return String of stage number
