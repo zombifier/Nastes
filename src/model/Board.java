@@ -1,5 +1,6 @@
 package model;
 
+import java.awt.Point;
 import java.util.*;
 
 /**
@@ -168,4 +169,5 @@ public class Board implements java.io.Serializable{
 					number++;
 		return number;
 	}
+
 }

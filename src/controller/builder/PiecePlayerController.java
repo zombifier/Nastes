@@ -47,7 +47,7 @@ public class PiecePlayerController extends MouseAdapter{
 		System.out.println("being Move");
 		ae.translatePoint(ae.getComponent().getLocation().x-pieceView.getX(), ae.getComponent().getLocation().y-pieceView.getY());
 		this.app.setMovingPiece(this.pieceView, ae.getX(), ae.getY());
-		
+		//this.pieceView.setLocation(ae.getX(),ae.getY());
 		//pieceView.setLocation(ae.getX(),ae.getY());
 	}
 }

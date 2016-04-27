@@ -2,10 +2,12 @@ package view;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Point;
 
 import javax.swing.JPanel;
 
 import controller.builder.BoardController;
+import controller.builder.PiecePlayerController;
 import model.*;
 
 public class BoardView extends JPanel {
@@ -16,6 +18,8 @@ public class BoardView extends JPanel {
 	Board board;
 	
 	TileView tileView[][] = new TileView[12][12];
+	
+	PieceView pieceView[] = new PieceView[24];
 	/**
 	 * Create the panel.
 	 */
@@ -55,4 +59,16 @@ public class BoardView extends JPanel {
 		
 		
 	}
+	public void drawPieceView(PieceView pw, Point mousePosition) {
+		// TODO Auto-generated method stub
+		Dimension d = pw.getPreferredSize();
+		pw.setBounds(mousePosition.x, mousePosition.y, d.width, d.height);
+		add(pw);
+		//PiecePlayerController m = new PiecePlayerController(this.app,pieceView);
+		//pw.addMouseListener(m);
+		//pw.addMouseMotionListener(m);
+		this.repaint();
+	}
+	
+	
 }

@@ -66,10 +66,8 @@ public class BuilderApplication extends JFrame {
 	
 	public void initialize(Level lv){
 		getContentPane().removeAll();
-		this.pieceBeingDragged = new PieceView(null);
-		Dimension d = this.pieceBeingDragged.getPreferredSize();
-		this.pieceBeingDragged.setBounds(1280, 840, d.width, d.height);
-		add(this.pieceBeingDragged);
+		
+		
 		
 		
 		this.level = lv; // instantiate level
@@ -273,7 +271,9 @@ public class BuilderApplication extends JFrame {
 	
 	public void setMovingPiece(PieceView pw, int x, int y){
 		this.pieceBeingDragged = pw;
-		this.pieceBeingDragged.setLocation(x, y);
+		Dimension d = this.pieceBeingDragged.getPreferredSize();
+		this.pieceBeingDragged.setBounds(x, y, d.width, d.height);
+		this.add(this.pieceBeingDragged);
 		this.pieceBeingDragged.setVisible(true);
 		this.repaint();
 	}
