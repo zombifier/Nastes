@@ -22,6 +22,7 @@ public class BoardView extends JPanel {
 	public BoardView(Board board) {
 		this.board = board;
 		
+		System.out.println(this.board);
 		if(this.board == null) // sanity check
 			board = new Board(0);
 			
@@ -29,21 +30,26 @@ public class BoardView extends JPanel {
 		setBackground(Color.PINK);
 		setLayout(null);
 		
-		for (int i=0;i<=11;i++){
-			for (int j=0;j<=11;j++){
-				if (this.board.getLevelType()==0){
-					tileView[i][j] = new TileView_Puzzle(board.getTile(i, j));
-				} else if (this.board.getLevelType()==1){
-					tileView[i][j] = new TileView_Lightning(board.getTile(i, j));
-				} else if (this.board.getLevelType()==2){
-					tileView[i][j] = new TileView_Release(board.getTile(i, j));
+		try {
+			for (int i=0;i<=11;i++){
+				for (int j=0;j<=11;j++){
+					//System.out.println(board.getTile(i, j));
+					if(this.board.getLevelType()==0){
+						tileView[i][j] = new TileView_Puzzle(board.getTile(i, j));
+					} else if (this.board.getLevelType()==1){
+						tileView[i][j] = new TileView_Lightning(board.getTile(i, j));
+					} else if (this.board.getLevelType()==2){
+						tileView[i][j] = new TileView_Release(board.getTile(i, j));
+					}
+					
+					tileView[i][j].setBounds(77+46*j,25+46*i,45,45);
+					add(tileView[i][j]);
+					
+					//k++;
 				}
-				
-				tileView[i][j].setBounds(77+46*j,25+46*i,45,45);
-				add(tileView[i][j]);
-				
-				//k++;
 			}
+		} catch (Exception e){
+			System.out.println("...");
 		}
 		BoardController tl = new BoardController(this.board, this);
 		this.addMouseListener(tl);

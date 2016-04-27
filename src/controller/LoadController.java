@@ -13,6 +13,9 @@ public class LoadController {
 	}
 	
 	public void process(){
-		
+		Level level = game.getLevel(0); // 0 for now, subject to change
+		if(level != null){
+			builderApplication.initialize(level);
+		}
 	}
 }

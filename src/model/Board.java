@@ -20,8 +20,9 @@ public class Board implements java.io.Serializable{
 	
 	Tile tiles[][] = new Tile[12][12];
 	HashMap<Piece,BoardPosition> pieces;
+	
 	public Board(int levelType){
-		
+		tiles = new Tile[12][12];
 		for (int i=0;i<=11;i++){
 			for (int j=0;j<=11;j++){
 				if (levelType == 0){
@@ -33,7 +34,6 @@ public class Board implements java.io.Serializable{
 				}
 			}
 		}
-	
 			
 		
 	}
@@ -127,10 +127,11 @@ public class Board implements java.io.Serializable{
 		Tile[][] tiles;
 		tiles = new Tile[12][12];
 		for(int i = 0; i < 12; i++)
-			for(int j = 0; j < 12; j++)
-				if(this.tiles[i][j] != null)
+			for(int j = 0; j < 12; j++){
+				if(this.tiles[i][j] != null){
 					tiles[i][j] = this.tiles[i][j].copy();
-		
+				}
+			}
 		return new Board(tiles);
 	}
 	

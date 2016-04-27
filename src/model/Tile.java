@@ -45,7 +45,10 @@ abstract public class Tile implements java.io.Serializable {
 	 * return the copy of the tile
 	 * @return Copied tile
 	 */
-	abstract public Tile copy();
+	public Tile copy(){
+		System.out.println("Errors occur");
+		return null;
+	}
 	
 	/**
 	 * Convert the validity of the tile

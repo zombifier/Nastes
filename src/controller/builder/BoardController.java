@@ -23,10 +23,10 @@ public class BoardController extends MouseAdapter {
 			if (ae.getModifiers()==InputEvent.BUTTON1_MASK){
 				t.convertValid();
 				t.redraw();
-				System.out.println("Working");
+				//System.out.println("Working");
 			}
 			if (ae.getModifiers()==InputEvent.BUTTON3_MASK){
-				System.out.println("Right Mouse is Working");
+				//System.out.println("Right Mouse is Working");
 				
 			}
 		}

@@ -12,7 +12,10 @@ public class TileView extends JPanel {
 	
 	public TileView(Tile tile){
 		this.tile = tile;
-		setBackground(new Color(255, 0, 255));
+		if(tile.isValid())
+			this.setBackground(new Color(255, 255, 255)); // subject to change
+		else
+			this.setBackground(new Color(255, 0, 255));
 		setPreferredSize(new Dimension(45, 45));
 	}
 	

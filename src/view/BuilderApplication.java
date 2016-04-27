@@ -31,7 +31,7 @@ public class BuilderApplication extends JFrame {
 	Level level;
 	
 	public BuilderApplication(Game game){
-		this.game=game;
+		this.game = game;
 		
 		setTitle("Kabasuji Editor");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -45,7 +45,7 @@ public class BuilderApplication extends JFrame {
 				frame.setVisible(false);
 				redraw();
 				repaint();
-				initialize();
+				initialize(new Puzzle(10));
 			}
 			
 		});
@@ -56,10 +56,16 @@ public class BuilderApplication extends JFrame {
 		
 	}
 	
-	void initialize(){
+	public void initialize(Level level){
+		getContentPane().setLayout(null);
 		
-		level = new Puzzle(10); // instantiate level
+		this.level = level; // instantiate level
 
+		System.out.println(this.level);
+		
+		if(this.level == null)
+			this.level = new Puzzle(10);
+		
 		JButton btnHintaddremove = new JButton("Hint (add/remove)");
 		
 		JComboBox<String> comboBox = new JComboBox<String>();
@@ -76,7 +82,7 @@ public class BuilderApplication extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent ae){
 				// subject to be changed in the later application
-				new SaveController(game,level,BuilderApplication.this);
+				new SaveController(game,level,BuilderApplication.this).process();
 			}
 		});
 		
