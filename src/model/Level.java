@@ -127,7 +127,7 @@ public abstract class Level implements java.io.Serializable{
 	public void undoMove() {
 		if (!moves.empty()) {
 			BuilderMove m = moves.pop();
-			m.doUndo();
+			m.undo();
 		}
 	}
 	

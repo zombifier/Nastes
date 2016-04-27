@@ -25,7 +25,7 @@ public class ChangeTypeMove extends BuilderMove {
 		ba.initialize(level);
 	}
 	
-	public void doUndo() {
+	public void undo() {
 		level = oldLevel;
 		ba.initialize(level);
 	}
