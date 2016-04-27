@@ -44,10 +44,10 @@ public class PlayerGame extends JPanel {
 		JButton btnHint = new JButton("Hint");
 		
 		JLabel txtpnType = new JLabel();
-		txtpnType.setText("Type");
+		txtpnType.setText(level.name());
 		
 		JLabel txtpnLevelNumber = new JLabel();
-		txtpnLevelNumber.setText("Level Number");
+		txtpnLevelNumber.setText(level.getLevelNum());
 		
 		JLabel txtpnLimit = new JLabel();
 		txtpnLimit.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
