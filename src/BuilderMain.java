@@ -6,6 +6,10 @@ import java.io.*;
 import model.*;
 import view.*;
 
+/**
+ * BuilderMain class. The main class for the Kabasuji game builder.
+ * @author Team Nastes
+ */
 public class BuilderMain {
 
 	final static String location = "Game.storage";
@@ -13,6 +17,11 @@ public class BuilderMain {
 	static Game game;
 	BuilderApplication app;
 
+	/**
+	 * loadGame()
+	 * Loads the game, conditional on being able to find one to load.
+	 * @return game
+	 */
 	private static Game loadGame() {
 		// Inspired by Professor Heineman WordMap loadMap
 		
@@ -36,6 +45,10 @@ public class BuilderMain {
 		 return game;
 	}
 	
+	/**
+	 * saveGame()
+	 * Saves the game.
+	 */
 	static void saveGame(){
 		ObjectOutputStream oos = null;
 		try {
@@ -48,10 +61,16 @@ public class BuilderMain {
 		if (oos != null) {
 			try { oos.close(); } catch (IOException ioe) { } 
 		}
-		
-		
 	}
 	
+	/**
+	 * Main function.
+	 * Calls loadGame to get the game.
+	 * If one does not yet exist, creates a new one.
+	 * Instantiates the Application, makes it visible to a player and watches for a windowClose event.
+	 * On close, automatically save the state of the game.
+	 * @param args
+	 */
 	public static void main(String[] args){
 		game = loadGame();
 		
