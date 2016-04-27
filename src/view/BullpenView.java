@@ -10,6 +10,7 @@ import java.util.Random;
 import javax.swing.LayoutStyle.ComponentPlacement;
 
 import controller.builder.PieceController;
+import controller.builder.PiecePlayerController;
 import model.*;
 
 import javax.swing.JLabel;
@@ -69,6 +70,9 @@ public class BullpenView extends JPanel {
 		Dimension d = pieceView.getPreferredSize();
 		pieceView.setBounds(rand.nextInt(this.getPreferredSize().width/2), rand.nextInt(this.getPreferredSize().height/3), d.width, d.height);
 		add(pieceView);
+		PiecePlayerController m = new PiecePlayerController(this.app,pieceView);
+		pieceView.addMouseListener(m);
+		pieceView.addMouseMotionListener(m);
 		this.repaint();
 	}
 	

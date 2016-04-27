@@ -2,6 +2,8 @@ package view;
 
 import java.awt.Color;
 import java.awt.ComponentOrientation;
+import java.awt.Dimension;
+import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -35,10 +37,10 @@ public class BuilderApplication extends JFrame {
 	Level level;
 	BullpenView bullpenView;
 	ModelPieceView modelPieceView;
+	PieceView pieceBeingDragged;
 	
 	public BuilderApplication(Game game){
 		this.game = game;
-		
 		setTitle("Kabasuji Editor");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 1280, 840);
@@ -63,13 +65,17 @@ public class BuilderApplication extends JFrame {
 	}
 	
 	public void initialize(Level lv){
-		getContentPane().removeAll();;
+		getContentPane().removeAll();
+		this.pieceBeingDragged = new PieceView(null);
+		Dimension d = this.pieceBeingDragged.getPreferredSize();
+		this.pieceBeingDragged.setBounds(1280, 840, d.width, d.height);
+		add(this.pieceBeingDragged);
+		
 		
 		this.level = lv; // instantiate level
 		
 		if(this.level == null)
 			this.level = new Puzzle(10);
-		
 		JButton btnHintaddremove = new JButton("Hint (add/remove)");
 		
 		JComboBox<String> comboBox = new JComboBox<String>();
@@ -257,5 +263,18 @@ public class BuilderApplication extends JFrame {
 	
 	public Level getLevel() {
 		return level;
+	}
+	
+	public void updateMovePiece(int x,int y){
+		Dimension d = this.pieceBeingDragged.getPreferredSize();
+		this.pieceBeingDragged.setLocation(x, y);
+		this.repaint();
+	}
+	
+	public void setMovingPiece(PieceView pw, int x, int y){
+		this.pieceBeingDragged = pw;
+		this.pieceBeingDragged.setLocation(x, y);
+		this.pieceBeingDragged.setVisible(true);
+		this.repaint();
 	}
 }
