@@ -14,7 +14,7 @@ public class Lightning extends Level{
 	
 	public Lightning() {
 		super();
-		this.timeLimit = timeLimit;
+		this.timeLimit = 60;
 		this.timeElapsed = 0;
 		this.tilesUncolored = board.validTiles();
 	}
@@ -31,8 +31,12 @@ public class Lightning extends Level{
 	}
 	
 	public String name() { return "Lightning"; }
+
+	public void setLimit(int limit) { timeLimit = limit; }
 	
 	public String getLimit() { return Integer.toString(timeLimit - timeElapsed); }
+
+	public String getUnit() { return "Seconds"; }
 
 	public Level copy(){
 		return new Lightning(board.copy(), bullpen.copy(), this.timeLimit);

@@ -30,8 +30,12 @@ public class Puzzle extends Level{
 	}
 	
 	public String name() { return "Puzzle"; }
+
+	public void setLimit(int limit) { moveLimit = limit; }
 	
 	public String getLimit() { return Integer.toString(moveLimit - moveElapsed); }
+
+	public String getUnit() { return "Moves"; }
 	
 	public Level copy(){
 		return new Puzzle(board.copy(), bullpen.copy(), moveLimit);

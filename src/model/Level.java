@@ -60,10 +60,22 @@ public abstract class Level implements java.io.Serializable{
 	abstract public String name();
 	
 	/**
+	 * Set limit for different type of level
+	 * @param limit Number indicating limit for level
+	 */
+	abstract public void setLimit(int limit);
+	
+	/**
 	 * Get string which contains the limit used for the view.
 	 * @return String of limit
 	 */
 	abstract public String getLimit();
+	
+	/**
+	 * Get string which contains the unit of limit for the view
+	 * @return String of unit of limit
+	 */
+	abstract public String getUnit();
 	
 	/**
 	 * Get string which contains the level number used for the view.

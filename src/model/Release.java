@@ -30,8 +30,12 @@ public class Release extends Level{
 	}
 	
 	public String name() { return "Release"; }
+
+	public void setLimit(int limit) { /* cannot change by setting */ }
 	
-	public String getLimit() { return ""; }
+	public String getLimit() { return "0"; }
+
+	public String getUnit() { return "Sets"; }
 	
 	public Level copy(){
 		return new Release(board.copy(), bullpen.copy());

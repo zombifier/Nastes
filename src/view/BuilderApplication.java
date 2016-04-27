@@ -1,6 +1,7 @@
 package view;
 
 import java.awt.Color;
+import java.awt.ComponentOrientation;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -58,10 +59,10 @@ public class BuilderApplication extends JFrame {
 		
 	}
 	
-	public void initialize(Level level){
+	public void initialize(Level lv){
 		getContentPane().removeAll();;
 		
-		this.level = level; // instantiate level
+		this.level = lv; // instantiate level
 		
 		if(this.level == null)
 			this.level = new Puzzle(10);
@@ -74,8 +75,25 @@ public class BuilderApplication extends JFrame {
 		comboBox.addItem("Release");
 		
 		txtSetLimit = new JTextField();
-		txtSetLimit.setText("Set Limit");
+		txtSetLimit.setText(this.level.getLimit());
+		txtSetLimit.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
 		txtSetLimit.setColumns(10);
+		txtSetLimit.addActionListener(new ActionListener(){
+			@Override
+			public void actionPerformed(ActionEvent ae) {
+				try{
+					int limit = Integer.parseInt(txtSetLimit.getText());
+					level.setLimit(limit);
+				}catch(Exception e){
+					System.out.println("Failed");
+				}
+				txtSetLimit.setText(level.getLimit());
+			}
+			
+		});
+		
+		JLabel txtLimitUnit = new JLabel();
+		txtLimitUnit.setText(this.level.getUnit());
 		
 		JButton btnSave = new JButton("Save");
 		btnSave.addActionListener(new ActionListener(){
@@ -121,6 +139,8 @@ public class BuilderApplication extends JFrame {
 							.addComponent(comboBox, GroupLayout.PREFERRED_SIZE, 101, GroupLayout.PREFERRED_SIZE)
 							.addGap(51)
 							.addComponent(txtSetLimit, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+							.addGap(10)
+							.addComponent(txtLimitUnit, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 							.addGap(179)
 							.addComponent(btnSave)
 							.addGap(33)
@@ -147,6 +167,7 @@ public class BuilderApplication extends JFrame {
 								.addComponent(btnHintaddremove)
 								.addComponent(comboBox, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 								.addComponent(txtSetLimit, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(txtLimitUnit, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 								.addComponent(btnSave)
 								.addComponent(btnLoad))
 							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
