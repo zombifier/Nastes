@@ -17,6 +17,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.Timer;
 
 import controller.*;
+import controller.builder.LevelTypeController;
 import controller.builder.LoadController;
 import controller.builder.SaveController;
 import model.*;
