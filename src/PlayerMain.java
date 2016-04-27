@@ -9,10 +9,19 @@ import javax.swing.JFrame;
 import model.*;
 import view.*;
 
+/**
+ * PlayerMain class. The main class for the Kabasuji game player.
+ * @author Team Nastes
+ */
 public class PlayerMain {
 
 	final static String location = "Game.storage";
 	
+	/**
+	 * loadGame()
+	 * Loads the game, conditional on being able to find one to load.
+	 * @return game
+	 */
 	private static Game loadGame() {
 		// Inspired by Professor Heineman WordMap loadMap
 		
@@ -36,6 +45,13 @@ public class PlayerMain {
 		 return game;
 	}
 	
+	/**
+	 * Main function.
+	 * Calls loadGame to get the game.
+	 * If one does not yet exist, creates a new one.
+	 * Instantiates the Application, makes it visible to a player and watches for a windowClose event.
+	 * @param args
+	 */
 	public static void main(String[] args){
 		
 		Game game = loadGame();

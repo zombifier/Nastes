@@ -26,7 +26,7 @@ public class Puzzle extends Level{
 	}
 	
 	public boolean hasWon() {
-		return (tilesUncovered == 0);
+		return (tilesUncovered == 0) ;
 	}
 	
 	public String name() { return "Puzzle"; }
