@@ -68,4 +68,9 @@ public class Bullpen implements java.io.Serializable {
 		this.pieces.remove(pieceChosen);
 		
 	}
+
+	public int numRemainPiece() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }
