@@ -23,7 +23,7 @@ public class LoadController {
 
 		final JFrame selectNumLevel= new JFrame();
 
-		selectNumLevel.setTitle("Save");
+		selectNumLevel.setTitle("Load");
 		selectNumLevel.setLayout(null);
 		selectNumLevel.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		selectNumLevel.setPreferredSize(new Dimension(2 + 52 * 5 + 50, 2 + 52 * 3 + 50));
