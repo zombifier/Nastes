@@ -5,17 +5,20 @@ import java.awt.Dimension;
 
 import javax.swing.JPanel;
 
+import controller.builder.PieceController;
 import model.Piece;
 
 public class ModelPieceView extends JPanel {
-	
-	public ModelPieceView(){
+	BuilderApplication app;
+	public ModelPieceView(BuilderApplication app){
+		this.app = app;
 		setBackground(Color.pink);
 		for(int i=0;i<35;i++){
 			PieceView pieceView = new PieceView(new Piece(0,i));
 			Dimension d = pieceView.getPreferredSize();
 			pieceView.setBounds((d.width+2)*i,2,d.width,d.height);
 			this.add(pieceView);
+			pieceView.addMouseListener(new PieceController(this.app,pieceView));
 		}
 	}
 

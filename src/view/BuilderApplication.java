@@ -32,6 +32,8 @@ public class BuilderApplication extends JFrame {
 	JPanel frame;
 	Game game;
 	Level level;
+	BullpenView bullpenView;
+	ModelPieceView modelPieceView;
 	
 	public BuilderApplication(Game game){
 		this.game = game;
@@ -194,16 +196,17 @@ public class BuilderApplication extends JFrame {
 		panel_2.add(lblBoard);
 		
 		//JLabel lblBullpen = new JLabel("BullPen");
-		BullpenView lblBullpen = new BullpenView(level.getBullpen());
+		BullpenView lblBullpen = new BullpenView(level.getBullpen(),this);
 		panel_3.add(lblBullpen);
+		this.bullpenView = lblBullpen;
 		
 		JPanel panel = new JPanel();
 		scrollPane.setViewportView(panel);
 		panel.setBackground(Color.PINK);
 
-		ModelPieceView modelPieceView = new ModelPieceView();
+		ModelPieceView modelPieceView = new ModelPieceView(this);
 		modelPieceView.setBounds(0, 0, modelPieceView.getPreferredSize().width, modelPieceView.getPreferredSize().height);
-		
+		this.modelPieceView = modelPieceView;
 		//JPanel panel_1 = new JPanel();
 		//panel_1.setBackground(Color.GREEN);
 		GroupLayout gl_panel = new GroupLayout(panel);
@@ -241,5 +244,10 @@ public class BuilderApplication extends JFrame {
 					.addContainerGap())
 		);
 		getContentPane().setLayout(groupLayout);
+	}
+
+	public BullpenView getPullpenView() {
+		// TODO Auto-generated method stub
+		return this.bullpenView;
 	}
 }

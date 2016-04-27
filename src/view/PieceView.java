@@ -36,4 +36,11 @@ public class PieceView extends JPanel{
 	public Dimension getPreferredSize(){
 		return new Dimension(45*6,45*6); // The smallest size that can keep long hexomino
 	}
+	/**
+	 * getter method for get piece for controller
+	 * @return object piece
+	 */
+	public Piece getPiece(){
+		return this.piece;
+	}
 }
