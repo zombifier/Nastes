@@ -16,6 +16,8 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.Timer;
 
 import controller.*;
+import controller.builder.LoadController;
+import controller.builder.SaveController;
 import model.*;
 
 import javax.swing.JComboBox;
@@ -60,8 +62,6 @@ public class BuilderApplication extends JFrame {
 		getContentPane().removeAll();;
 		
 		this.level = level; // instantiate level
-
-		System.out.println(this.level);
 		
 		if(this.level == null)
 			this.level = new Puzzle(10);

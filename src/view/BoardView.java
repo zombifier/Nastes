@@ -22,7 +22,6 @@ public class BoardView extends JPanel {
 	public BoardView(Board board) {
 		this.board = board;
 		
-		System.out.println(this.board);
 		if(this.board == null) // sanity check
 			board = new Board(0);
 			
