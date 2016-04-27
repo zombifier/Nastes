@@ -12,7 +12,7 @@ public class Release extends Level{
 	int greenNumbersUncovered;
 	
 	public Release() {
-		super();
+		super(2);
 		this.redNumbersUncovered = 6;
 		this.yellowNumbersUncovered = 6;
 		this.greenNumbersUncovered = 6;
