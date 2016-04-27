@@ -22,7 +22,7 @@ import javax.swing.JTextPane;
 import javax.swing.JLabel;
 import javax.swing.JTabbedPane;
 
-public class PlayerGame extends JPanel {
+public class PlayerGame extends JPanel{
 	PlayerApplication app;
 	Level level;
 	Level original;
@@ -58,7 +58,7 @@ public class PlayerGame extends JPanel {
 		
 		BoardView boardView_1 = new BoardView(this.level.getBoard());
 		
-		BullpenView bullpenView = new BullpenView(this.level.getBullpen());
+		BullpenView bullpenView = new BullpenView(this.level.getBullpen(),null);
 		
 		JLabel txtpnUnit = new JLabel();
 		txtpnUnit.setText(this.level.getUnit());
@@ -114,5 +114,12 @@ public class PlayerGame extends JPanel {
 		
 		setLayout(groupLayout);
 		
+	}
+	/**
+	 * getter method for level
+	 * @return level
+	 */
+	public Level getLevel(){
+		return this.level;
 	}
 }

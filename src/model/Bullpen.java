@@ -51,8 +51,29 @@ public class Bullpen implements java.io.Serializable {
 		
 	}
 
+	/**
+	 * add a piece into bullpen, use in builder
+	 * @param piece
+	 * @return void
+	 */
+	public void addPiece(Piece piece){
+		this.pieces.add(piece);
+	}
+
+	/**
+	 * remove a piece from the bullpen, use in builder
+	 * @param pieceChosen
+	 * @return void
+	 */
+	public void removePiece(Piece pieceChosen) {
+		this.pieces.remove(this.pieces.size()-1);
+		
+	}
+	/**
+	 * Return number of pieces on the bullpen
+	 * @return Number of pieces on the bullpen
+	 */
 	public int numRemainPiece() {
 		return pieces.size();
 	}
-
 }

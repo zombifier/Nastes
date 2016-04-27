@@ -9,6 +9,7 @@ import java.util.Random;
 
 import javax.swing.LayoutStyle.ComponentPlacement;
 
+import controller.builder.PieceController;
 import model.*;
 
 import javax.swing.JLabel;
@@ -16,11 +17,12 @@ import javax.swing.JLabel;
 public class BullpenView extends JPanel {
 
 	Bullpen bullpen;
-	
+	BuilderApplication app;
 	/**
 	 * Create the panel.
 	 */
-	public BullpenView(Bullpen bullpen) {
+	public BullpenView(Bullpen bullpen,BuilderApplication app) {
+		this.app = app;
 		this.bullpen = bullpen;
 		
 		if(this.bullpen == null)
@@ -37,6 +39,7 @@ public class BullpenView extends JPanel {
 			Dimension d = pieceView.getPreferredSize();
 			pieceView.setBounds(rand.nextInt(this.getPreferredSize().width), rand.nextInt(this.getPreferredSize().height), d.width, d.height);
 			add(pieceView);
+			//pieceView.addMouseListener(new PieceController(this.app,pieceView));
 		}
 		
 		/*
@@ -53,4 +56,20 @@ public class BullpenView extends JPanel {
 //		add()
 
 	}
+	/**
+	 * getter method for bullpen
+	 * @return bullpen
+	 */
+	public Bullpen getBullpen(){
+		return this.bullpen;
+	}
+	
+	public void drawPieceView(PieceView pieceView){
+		Random rand = new Random();
+		Dimension d = pieceView.getPreferredSize();
+		pieceView.setBounds(rand.nextInt(this.getPreferredSize().width/2), rand.nextInt(this.getPreferredSize().height/3), d.width, d.height);
+		add(pieceView);
+		this.repaint();
+	}
+	
 }
