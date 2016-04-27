@@ -44,4 +44,9 @@ public class Release extends Level{
 	public int levelType(){
 		return 2;
 	}
+	
+	public int resultStar(){
+		// subject to be changed
+		return 0;
+	}
 }

@@ -65,7 +65,7 @@ public class Bullpen implements java.io.Serializable {
 	 * @return void
 	 */
 	public void removePiece(Piece pieceChosen) {
-		this.pieces.remove(this.pieces.indexOf(pieceChosen));
+		this.pieces.remove(pieceChosen);
 		
 	}
 }

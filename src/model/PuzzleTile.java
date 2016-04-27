@@ -29,8 +29,13 @@ public class PuzzleTile extends Tile {
 	public Tile copy(){
 		return new PuzzleTile(this.isValid);
 	}
+	
 	public int levelType(){
 		return 0;
+	}
+	
+	public boolean isFilled(){
+		return isValid && isCovered;
 	}
 	
 }
