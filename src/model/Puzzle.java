@@ -12,7 +12,7 @@ public class Puzzle extends Level{
 	int tilesUncovered;
 	
 	public Puzzle (int moveLimit) {
-		super();
+		super(0);
 		this.moveLimit = moveLimit;
 		this.moveElapsed = 0;
 		this.tilesUncovered = board.validTiles();

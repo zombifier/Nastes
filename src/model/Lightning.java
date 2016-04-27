@@ -13,7 +13,7 @@ public class Lightning extends Level{
 	int tilesUncolored;
 	
 	public Lightning() {
-		super();
+		super(1);
 		this.timeLimit = 60;
 		this.timeElapsed = 0;
 		this.tilesUncolored = board.validTiles();

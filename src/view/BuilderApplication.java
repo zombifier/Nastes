@@ -17,6 +17,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.Timer;
 
 import controller.*;
+import controller.builder.LevelTypeController;
 import controller.builder.LoadController;
 import controller.builder.SaveController;
 import model.*;
@@ -73,6 +74,8 @@ public class BuilderApplication extends JFrame {
 		comboBox.addItem("Puzzle");
 		comboBox.addItem("Lightning");
 		comboBox.addItem("Release");
+		comboBox.addActionListener(new LevelTypeController(level, this));
+		comboBox.setSelectedIndex(level.levelType());
 		
 		txtSetLimit = new JTextField();
 		txtSetLimit.setText(this.level.getLimit());
@@ -121,6 +124,13 @@ public class BuilderApplication extends JFrame {
 		JButton btnReset = new JButton("Reset");
 		
 		JButton btnUndo = new JButton("Undo");
+		btnUndo.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent ae){
+				level.undoMove();
+				initialize(level);
+			}
+		});
 		
 		JPanel panel_2 = new JPanel();
 		panel_2.setBackground(Color.PINK);
@@ -241,5 +251,9 @@ public class BuilderApplication extends JFrame {
 					.addContainerGap())
 		);
 		getContentPane().setLayout(groupLayout);
+	}
+	
+	public Level getLevel() {
+		return level;
 	}
 }
