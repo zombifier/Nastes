@@ -8,16 +8,32 @@ import javax.swing.*;
 import model.*;
 import view.*;
 
+/**
+ * SaveController class.
+ * 
+ * @author Team Nastes
+ */
 public class SaveController {
 	Game game;
 	Level level;
 	BuilderApplication builderApplication;
 	
+	/**
+	 * SaveController constructor. Initializes the values of game, level and builderApp
+	 * @param game
+	 * @param level
+	 * @param builderApplication
+	 */
 	public SaveController(Game game, Level level, BuilderApplication builderApplication){
 		this.game = game;
 		this.level = level;
 		this.builderApplication = builderApplication;
 	}
+	
+	/**
+	 * process()
+	 * Actually saves the level in question.
+	 */
 	public void process(){
 		final JFrame selectNumLevel= new JFrame();
 
@@ -29,6 +45,7 @@ public class SaveController {
 		selectNumLevel.setBounds(300, 300, d.width, d.height);
 		selectNumLevel.setVisible(true);
 		
+		//Find out which button was selected for saving.
 		for(int i = 0; i < 3; i++)
 			for(int j = 0; j < 5; j++){
 				JButton button = new JButton();

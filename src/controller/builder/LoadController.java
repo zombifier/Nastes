@@ -10,20 +10,34 @@ import javax.swing.JFrame;
 import model.*;
 import view.*;
 
+/**
+ * LoadController class.
+ * Handles loading the selected level.
+ * @author Team Nastes
+ */
 public class LoadController {
 	Game game;
 	BuilderApplication builderApplication;
 	
+	/**
+	 * LoadController constructor. Initializes the values of game and builderApp.
+	 * @param game
+	 * @param builderApplication
+	 */
 	public LoadController(Game game, BuilderApplication builderApplication){
 		this.game = game;
 		this.builderApplication = builderApplication;
 	}
 	
+	/**
+	 * process()
+	 * Actually handles the loading of the level.
+	 */
 	public void process(){
 
 		final JFrame selectNumLevel= new JFrame();
 
-		selectNumLevel.setTitle("Save");
+		selectNumLevel.setTitle("Load");
 		selectNumLevel.setLayout(null);
 		selectNumLevel.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		selectNumLevel.setPreferredSize(new Dimension(2 + 52 * 5 + 50, 2 + 52 * 3 + 50));
@@ -31,6 +45,7 @@ public class LoadController {
 		selectNumLevel.setBounds(300, 300, d.width, d.height);
 		selectNumLevel.setVisible(true);
 		
+		//Find out which button was selected for loading.
 		for(int i = 0; i < 3; i++)
 			for(int j = 0; j < 5; j++){
 				JButton button = new JButton();
