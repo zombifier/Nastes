@@ -25,7 +25,7 @@ public class Piece implements java.io.Serializable {
 	int type;
 	int orientation;
 	Square[] squares = new Square[6];
-	final static PiecePosition[][] multi = new PiecePosition[][]{
+	public final static PiecePosition[][] multi = new PiecePosition[][]{
 		//PIECES 1-5
 		{new PiecePosition(0,0),new PiecePosition(0,1),new PiecePosition(0,2),new PiecePosition(0,3),new PiecePosition(0,4),new PiecePosition(0,5)},
 		{new PiecePosition(0,0),new PiecePosition(0,1),new PiecePosition(0,2),new PiecePosition(0,3),new PiecePosition(0,4),new PiecePosition(1,0)},

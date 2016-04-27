@@ -113,8 +113,10 @@ public class BuilderApplication extends JFrame {
 			}
 		});
 		
+		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
+		
 		
 		JButton btnReset = new JButton("Reset");
 		
@@ -198,20 +200,23 @@ public class BuilderApplication extends JFrame {
 		JPanel panel = new JPanel();
 		scrollPane.setViewportView(panel);
 		panel.setBackground(Color.PINK);
+
+		ModelPieceView modelPieceView = new ModelPieceView();
+		modelPieceView.setBounds(0, 0, modelPieceView.getPreferredSize().width, modelPieceView.getPreferredSize().height);
 		
-		JPanel panel_1 = new JPanel();
-		panel_1.setBackground(Color.GREEN);
+		//JPanel panel_1 = new JPanel();
+		//panel_1.setBackground(Color.GREEN);
 		GroupLayout gl_panel = new GroupLayout(panel);
 		gl_panel.setHorizontalGroup(
 			gl_panel.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel.createSequentialGroup()
-					.addComponent(panel_1, GroupLayout.PREFERRED_SIZE, 1440, GroupLayout.PREFERRED_SIZE)
+					.addComponent(modelPieceView, modelPieceView.getPreferredSize().width, modelPieceView.getPreferredSize().width, modelPieceView.getPreferredSize().width)
 					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
 		);
 		gl_panel.setVerticalGroup(
 			gl_panel.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel.createSequentialGroup()
-					.addComponent(panel_1, GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
+					.addComponent(modelPieceView, GroupLayout.DEFAULT_SIZE, modelPieceView.getPreferredSize().height, modelPieceView.getPreferredSize().height)
 					.addContainerGap())
 		);
 		panel.setLayout(gl_panel);
