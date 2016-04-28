@@ -15,18 +15,20 @@ public class ChangeTypeMove extends BuilderMove {
 		this.type = type;
 	}
 	
-	public void doMove() {
-		if (level.levelType() == type) return;
+	public boolean doMove() {
+		if (level.levelType() == type) return false;
 		else {
 			if (type == 0) level = new Puzzle(10);
 			else if (type == 1) level = new Lightning();
 			else if (type == 2) level = new Release();
 		}
 		ba.initialize(level);
+		return true;
 	}
 	
-	public void undo() {
+	public boolean undo() {
 		level = oldLevel;
 		ba.initialize(level);
+		return true;
 	}
 }

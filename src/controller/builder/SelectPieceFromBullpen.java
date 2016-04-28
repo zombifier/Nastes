@@ -5,7 +5,7 @@ import model.Level;
 import model.Piece;
 import view.BuilderApplication;
 
-public class SelectPieceFromBullpen {
+public class SelectPieceFromBullpen extends BuilderMove {
 	Level level;
 	Bullpen bullpen;
 	Piece pieceChosen;

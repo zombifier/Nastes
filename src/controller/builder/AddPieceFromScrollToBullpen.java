@@ -7,7 +7,7 @@ import model.Bullpen;
 import model.Piece;
 import view.PieceView;
 
-public class AddPieceFromScrollToBullpen {
+public class AddPieceFromScrollToBullpen extends BuilderMove {
 	Piece pieceChosen;
 	Bullpen bullpen;
 	
