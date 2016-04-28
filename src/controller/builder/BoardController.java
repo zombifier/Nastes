@@ -26,7 +26,13 @@ public class BoardController extends MouseAdapter {
 	
 	@Override
 	public void mousePressed(MouseEvent ae){
-		TileView t = (TileView) boardView.findComponentAt(ae.getPoint());
+		TileView t;
+		try{
+			t = (TileView) boardView.findComponentAt(ae.getPoint());
+		}catch(Exception e){
+			System.out.println("Does not click on the screen");
+			t = null;
+		}
 		if(t != null){
 			// If the user left clicked, toggle the state of the tile
 			if (ae.getModifiers()==InputEvent.BUTTON1_MASK){
@@ -42,7 +48,7 @@ public class BoardController extends MouseAdapter {
 			}
 		}
 	}
-	
+	/*
 	@Override
 	public void mouseReleased(MouseEvent ae){
 		TileView t = (TileView) boardView.findComponentAt(ae.getPoint());
@@ -53,4 +59,5 @@ public class BoardController extends MouseAdapter {
 			System.out.println("Whoops");
 		}
 	}
+	*/
 }
