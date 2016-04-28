@@ -27,8 +27,7 @@ public class ChangeTypeMove extends BuilderMove {
 	}
 	
 	public boolean undo() {
-		level = oldLevel;
-		ba.initialize(level);
+		ba.initialize(oldLevel);
 		return true;
 	}
 }

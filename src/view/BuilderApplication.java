@@ -130,6 +130,12 @@ public class BuilderApplication extends JFrame {
 		JButton btnReset = new JButton("Reset");
 		
 		JButton btnUndo = new JButton("Undo");
+		btnUndo.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent ae) {
+				level.undoMove();
+			}
+		});
 		
 		JPanel panel_2 = new JPanel();
 		panel_2.setBackground(Color.PINK);
@@ -199,7 +205,7 @@ public class BuilderApplication extends JFrame {
 		);
 		
 		//JLabel lblBoard = new JLabel("Board");
-		BoardView lblBoard = new BoardView(level.getBoard());
+		BoardView lblBoard = new BoardView(level.getBoard(), this);
 		panel_2.add(lblBoard);
 		
 		//JLabel lblBullpen = new JLabel("BullPen");

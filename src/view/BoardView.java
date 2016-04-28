@@ -17,15 +17,17 @@ public class BoardView extends JPanel {
 	
 	Board board;
 	
+	BuilderApplication app;
+	
 	TileView tileView[][] = new TileView[12][12];
 	
 	PieceView pieceView[] = new PieceView[24];
 	/**
 	 * Create the panel.
 	 */
-	public BoardView(Board board) {
+	public BoardView(Board board, BuilderApplication app) {
 		this.board = board;
-		
+		this.app = app;
 		if(this.board == null) // sanity check
 			board = new Board(0);
 			
@@ -54,7 +56,7 @@ public class BoardView extends JPanel {
 		} catch (Exception e){
 			System.out.println("...");
 		}
-		BoardController tl = new BoardController(this.board, this);
+		BoardController tl = new BoardController(app, this.board, this);
 		this.addMouseListener(tl);
 		
 		
