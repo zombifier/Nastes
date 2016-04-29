@@ -64,4 +64,46 @@ public class TestPiece extends TestCase {
 		for(int i = 0; i < 6; i++)
 			assertTrue(squares[i].piecePosition.equals(resultSquares[i].piecePosition));
 	}
+	
+	public void testFlipHorizontal(){
+		piece = new Piece(1, 11);
+		Piece resultPiece = new Piece(0, 11);
+		Square[] resultSquares = resultPiece.getSquares();
+		resultSquares[0].piecePosition = new PiecePosition(0, 0);
+		resultSquares[1].piecePosition = new PiecePosition(0, 1);
+		resultSquares[2].piecePosition = new PiecePosition(0, 2);
+		resultSquares[3].piecePosition = new PiecePosition(-1, 0);
+		resultSquares[4].piecePosition = new PiecePosition(-1, 1);
+		resultSquares[5].piecePosition = new PiecePosition(-1, 2);
+
+
+		
+		piece.flip(true);
+		Square[] squares = piece.getSquares();
+
+
+		for(int i = 0; i < 6; i++)
+			assertTrue(squares[i].piecePosition.equals(resultSquares[i].piecePosition));
+	}
+	
+	public void testFlipVertical(){
+		piece = new Piece(1, 11);
+		Piece resultPiece = new Piece(0, 11);
+		Square[] resultSquares = resultPiece.getSquares();
+		resultSquares[0].piecePosition = new PiecePosition(0, 0);
+		resultSquares[1].piecePosition = new PiecePosition(0, -1);
+		resultSquares[2].piecePosition = new PiecePosition(0, -2);
+		resultSquares[3].piecePosition = new PiecePosition(1, 0);
+		resultSquares[4].piecePosition = new PiecePosition(1, -1);
+		resultSquares[5].piecePosition = new PiecePosition(1, -2);
+
+
+		
+		piece.flip(false);
+		Square[] squares = piece.getSquares();
+
+
+		for(int i = 0; i < 6; i++)
+			assertTrue(squares[i].piecePosition.equals(resultSquares[i].piecePosition));
+	}
 }
