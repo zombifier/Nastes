@@ -38,8 +38,6 @@ public class TestPiece extends TestCase {
 		piece.rotate(false);
 		Square[] squares = piece.getSquares();
 		
-		for(int i = 0; i < 6; i++)
-			System.out.println(squares[i].piecePosition+" vs "+resultSquares[i].piecePosition);
 		
 		for(int i = 0; i < 6; i++)
 			assertTrue(squares[i].piecePosition.equals(resultSquares[i].piecePosition));
@@ -63,8 +61,6 @@ public class TestPiece extends TestCase {
 		Square[] squares = piece.getSquares();
 
 
-		for(int i = 0; i < 6; i++)
-			System.out.println(squares[i].piecePosition+" vs "+resultSquares[i].piecePosition);
 		for(int i = 0; i < 6; i++)
 			assertTrue(squares[i].piecePosition.equals(resultSquares[i].piecePosition));
 	}
