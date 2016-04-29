@@ -1,6 +1,6 @@
 package controller.builder;
 
 public abstract class BuilderMove {
-	abstract public void doMove();
-	abstract public void undo();
+	abstract public boolean doMove();
+	abstract public boolean undo();
 }

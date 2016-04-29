@@ -28,10 +28,10 @@ public class LevelTypeController implements ActionListener {
 		else {
 			m = new ChangeTypeMove(level, ba, 2);
 		}
-		m.doMove();
+		if (m.doMove())
 		// because of the fundamental nature of this move
 		// (not just modifying parts level, but actually changing into a new
 		// level altogether, we can't do level.addMove(m) here
-		ba.getLevel().addMove(m);
+			ba.getLevel().addMove(m);
 	}
 }

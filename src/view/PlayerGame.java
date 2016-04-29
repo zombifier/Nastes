@@ -56,7 +56,7 @@ public class PlayerGame extends JPanel{
 		txtpnLimit.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
 		txtpnLimit.setText(this.level.getLimit());
 		
-		BoardView boardView_1 = new BoardView(this.level.getBoard());
+		BoardView boardView_1 = new BoardView(this.level.getBoard(),null);
 		
 		BullpenView bullpenView = new BullpenView(this.level.getBullpen(),null);
 		

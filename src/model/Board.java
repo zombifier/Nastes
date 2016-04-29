@@ -23,6 +23,7 @@ public class Board implements java.io.Serializable{
 	HashMap<Piece,BoardPosition> pieces;
 	
 	public Board(int levelType){
+		pieces = new HashMap<Piece, BoardPosition>();
 		tiles = new Tile[12][12];
 		for (int i=0;i<=11;i++){
 			for (int j=0;j<=11;j++){
@@ -40,6 +41,7 @@ public class Board implements java.io.Serializable{
 	}
 	
 	public Board(Tile[][] tiles){
+		pieces = new HashMap<Piece, BoardPosition>();
 		this.tiles=tiles;
 	}
 	
@@ -50,7 +52,7 @@ public class Board implements java.io.Serializable{
 	public int validTiles() {
 		int count = 0;
 		for (int i = 0; i < 12; i++)
-			for (int j = 0; i < 12; i++) {
+			for (int j = 0; j < 12; j++) {
 				if (tiles[i][j] != null && tiles[i][j].isValid()) count++;
 			}
 		return count;
