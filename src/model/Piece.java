@@ -75,7 +75,7 @@ public class Piece implements java.io.Serializable {
 		this.pieceID = pieceID;
 		this.type = type;
 		for (int i=0;i<=5;i++){
-			this.squares[i] = new Square(multi[type][i]);
+			this.squares[i] = new Square(multi[type][i].copy());
 		}
 	}
 	
