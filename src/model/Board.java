@@ -40,6 +40,10 @@ public class Board implements java.io.Serializable{
 		
 	}
 	
+	public Board(Tile[][] tiles){
+		pieces = new HashMap<Piece, BoardPosition>();
+		this.tiles=tiles;
+	}
 	
 	/**
 	 * Count the valid tiles on the board.

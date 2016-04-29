@@ -72,12 +72,23 @@ public class TestBoard extends TestCase {
 		assertEquals(board.getLevelType(), 0) ;
 	}
 	
-//	public void testCopyBoard() {
-//		assertSame(board.copy(),false) ;
-//	}
+	public void testCopyBoard() {
+		board.copy() ;
+		for(int i=0;i<12;i++) {
+			for (int j=0;j<12;j++) {
+				board.tiles[i][j].convertValid();
+			}
+		}
+		assertEquals(144, board.validTiles()) ;
+		
+	}
 	
 	public void testGetArrayTile() {
 		assertSame(board.getArrayTile(),board.tiles) ;
+	}
+	
+	public void testGetTile() {
+		assertFalse(board.getTile(0,0).isValid()) ;
 	}
 	
 }
