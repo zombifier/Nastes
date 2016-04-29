@@ -71,6 +71,6 @@ public class Bullpen implements java.io.Serializable {
 
 	public int numRemainPiece() {
 		// TODO Auto-generated method stub
-		return 0;
+		return pieces.size();
 	}
 }
