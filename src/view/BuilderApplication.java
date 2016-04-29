@@ -264,17 +264,24 @@ public class BuilderApplication extends JFrame {
 	}
 	
 	public void updateMovePiece(int x,int y){
-		Dimension d = this.pieceBeingDragged.getPreferredSize();
 		this.pieceBeingDragged.setLocation(x, y);
 		this.repaint();
 	}
 	
 	public void setMovingPiece(PieceView pw, int x, int y){
+		this.pieceBeingDragged = null;
 		this.pieceBeingDragged = pw;
 		Dimension d = this.pieceBeingDragged.getPreferredSize();
+
 		this.pieceBeingDragged.setBounds(x, y, d.width, d.height);
 		this.add(this.pieceBeingDragged);
+
 		this.pieceBeingDragged.setVisible(true);
-		this.repaint();
+//		this.add(this.pieceBeingDragged);
+
+//		this.pieceBeingDragged.setLocation(x, y);
+//		this.pieceBeingDragged.setOpaque(false);
+//		this.setComponentZOrder(this.pieceBeingDragged, 0);
+		//this.repaint();
 	}
 }

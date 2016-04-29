@@ -31,9 +31,10 @@ public class PiecePlayerController extends MouseAdapter{
 		//this.app.repaint();
 		//PieceView copyPieceView = new PieceView(this.pieceView.getPiece());
 		this.bullpenView.remove(this.pieceView);
-		this.bullpenView.repaint();
-		this.app.setMovingPiece(this.pieceView,ae.getX(),ae.getY());
 		
+//		ae.translatePoint(ae.getComponent().getLocation().x, ae.getComponent().getLocation().y);
+		this.app.setMovingPiece(this.pieceView,ae.getComponent().getLocation().x,ae.getComponent().getLocation().y);
+//		this.bullpenView.repaint();
 		//copyPieceView.setBounds(ae.getX(),ae.getY(),270,270);
 		//this.playerGame.add(pieceView);
 		//bullpenView.remove(pieceView);
@@ -44,10 +45,13 @@ public class PiecePlayerController extends MouseAdapter{
 	
 	@Override
 	public void mouseDragged(MouseEvent ae){
+		this.bullpenView.repaint();
 		System.out.println("being Move");
-		ae.translatePoint(ae.getComponent().getLocation().x-pieceView.getX(), ae.getComponent().getLocation().y-pieceView.getY());
-		this.app.setMovingPiece(this.pieceView, ae.getX(), ae.getY());
+		ae.translatePoint(ae.getComponent().getLocation().x, ae.getComponent().getLocation().y);
+		this.app.updateMovePiece(ae.getX(),ae.getY());
 		//this.pieceView.setLocation(ae.getX(),ae.getY());
+
+		System.out.println("" + (ae.getX())+" "+(ae.getY()));
 		//pieceView.setLocation(ae.getX(),ae.getY());
 	}
 }
