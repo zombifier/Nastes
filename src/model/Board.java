@@ -40,10 +40,10 @@ public class Board implements java.io.Serializable{
 		
 	}
 	
-//	public Board(Tile[][] tiles){
-//		pieces = new HashMap<Piece, BoardPosition>();
-//		this.tiles=tiles;
-//	}
+	public Board(Tile[][] tiles){
+		pieces = new HashMap<Piece, BoardPosition>();
+		this.tiles=tiles;
+	}
 	
 	/**
 	 * Count the valid tiles on the board.
@@ -110,7 +110,7 @@ public class Board implements java.io.Serializable{
 		int xPos, yPos;
 
 		BoardPosition position = pieces.remove(piece);
-		if (position!=null) { 
+		if (position!=null) {
 			for (Square s:piece.getSquares()) {
 				xPos = position.getX() + s.getX();
 				yPos = position.getY() + s.getY();
@@ -173,6 +173,6 @@ public class Board implements java.io.Serializable{
 //				if(tiles[i][j] != null && tiles[i][j].playable())
 //					number++;
 //		return number;
+	
 }
-
 
