@@ -1,6 +1,7 @@
 package view;
 
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.ComponentOrientation;
 import java.awt.Dimension;
 import java.awt.Point;
@@ -37,8 +38,8 @@ public class BuilderApplication extends JFrame {
 	Level level;
 	BullpenView bullpenView;
 	ModelPieceView modelPieceView;
-	PieceView pieceBeingDragged;
-	
+	PieceView pieceBeingDragged = new PieceView(null);
+	JPanel container;
 	public BuilderApplication(Game game){
 		this.game = game;
 		setTitle("Kabasuji Editor");
@@ -47,6 +48,7 @@ public class BuilderApplication extends JFrame {
 		frame = new SplashScreen();
 		redraw();
 		repaint();
+		
 		Timer timer = new Timer(2000,new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e){
@@ -74,7 +76,18 @@ public class BuilderApplication extends JFrame {
 		
 		if(this.level == null)
 			this.level = new Puzzle(10);
+		
+		this.container = new JPanel();
+		this.container.setPreferredSize(new Dimension(1280,840));
+		this.container.setBounds(0, 0, 1280, 840);
+		this.container.setLayout(null);
+		this.container.setOpaque(false);
+		this.container.add(pieceBeingDragged);
+		this.add(container);
+		
 		JButton btnHintaddremove = new JButton("Hint (add/remove)");
+		
+		
 		
 		JComboBox<String> comboBox = new JComboBox<String>();
 		comboBox.addItem("Puzzle");
@@ -231,6 +244,8 @@ public class BuilderApplication extends JFrame {
 		);
 		panel.setLayout(gl_panel);
 		getContentPane().setLayout(groupLayout);
+
+//		this.setComponentZOrder(this.pieceBeingDragged, 0);
 	}
 	
 	public void redraw(){
@@ -264,6 +279,7 @@ public class BuilderApplication extends JFrame {
 	}
 	
 	public void updateMovePiece(int x,int y){
+//		this.setComponentZOrder(this.pieceBeingDragged, 0);
 		this.pieceBeingDragged.setLocation(x, y);
 		this.repaint();
 	}
@@ -273,15 +289,23 @@ public class BuilderApplication extends JFrame {
 		this.pieceBeingDragged = pw;
 		Dimension d = this.pieceBeingDragged.getPreferredSize();
 
-		this.pieceBeingDragged.setBounds(x, y, d.width, d.height);
-		this.add(this.pieceBeingDragged);
+		this.container.removeAll();
+		this.container.add(this.pieceBeingDragged);
+		this.container.setOpaque(false);
 
-		this.pieceBeingDragged.setVisible(true);
+//		this.setComponentZOrder(this.pieceBeingDragged, 0);
+		
+//		this.pieceBeingDragged.setVisible(true);
 //		this.add(this.pieceBeingDragged);
 
 //		this.pieceBeingDragged.setLocation(x, y);
 //		this.pieceBeingDragged.setOpaque(false);
 //		this.setComponentZOrder(this.pieceBeingDragged, 0);
 		//this.repaint();
+	}
+
+	public PieceView getPieceBeingDrag() {
+		// TODO Auto-generated method stub
+		return this.pieceBeingDragged;
 	}
 }
