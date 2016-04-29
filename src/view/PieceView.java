@@ -43,4 +43,8 @@ public class PieceView extends JPanel{
 	public Piece getPiece(){
 		return this.piece;
 	}
+	
+	public SquareView[] getSquare(){
+		return squareView;
+	}
 }
