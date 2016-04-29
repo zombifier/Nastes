@@ -7,6 +7,8 @@ import java.awt.Dimension;
 import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 import javax.swing.GroupLayout;
 import javax.swing.JButton;
@@ -20,6 +22,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.Timer;
 
 import controller.*;
+import controller.builder.ContainerController;
 import controller.builder.LevelTypeController;
 import controller.builder.LoadController;
 import controller.builder.SaveController;
@@ -84,6 +87,7 @@ public class BuilderApplication extends JFrame {
 		this.container.setOpaque(false);
 		this.container.add(pieceBeingDragged);
 		this.add(container);
+//		this.container.addMouseListener(new ContainerController(this, container));
 		
 		JButton btnHintaddremove = new JButton("Hint (add/remove)");
 		
