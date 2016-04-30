@@ -47,9 +47,10 @@ public class Lightning extends Level{
 	}
 	
 	public int resultStar(){
-		if(board.numRemainTile() <= 0) return 3;
+		/*if(board.numRemainTile() <= 0) return 3;
 		else if(board.numRemainTile() <= 6) return 2;
 		else if(board.numRemainTile() <= 12) return 1;
+		return 0;*/
 		return 0;
 	}
 	
