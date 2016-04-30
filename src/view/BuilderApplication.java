@@ -34,6 +34,15 @@ import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
 import javax.swing.Timer;
 
+/**
+ * 
+ * Builder Application. 
+ * Contains:
+ * Frame, Game, Level, BllpenView, ModelPieceView, PieceView, container
+ * @author Team Nastes
+ *
+ */
+
 public class BuilderApplication extends JFrame {
 	private JTextField txtSetLimit;
 	JPanel frame;

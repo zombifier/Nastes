@@ -2,6 +2,12 @@ package controller;
 
 import model.Tile;
 
+/**
+ * 
+ * @author Team Nastes 
+ *
+ */
+
 public class ChangeTileValid {
 	Tile tile;
 	
