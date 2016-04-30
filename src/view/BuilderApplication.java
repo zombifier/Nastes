@@ -8,6 +8,8 @@ import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Stack;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 import javax.swing.GroupLayout;
 import javax.swing.JButton;
@@ -22,6 +24,7 @@ import javax.swing.Timer;
 
 import controller.*;
 import controller.builder.BuilderMove;
+import controller.builder.ContainerController;
 import controller.builder.LevelTypeController;
 import controller.builder.LoadController;
 import controller.builder.SaveController;
@@ -40,7 +43,7 @@ public class BuilderApplication extends JFrame {
 	Level level;
 	BullpenView bullpenView;
 	ModelPieceView modelPieceView;
-	PieceView pieceBeingDragged = new PieceView(null);
+	PieceView pieceBeingDragged = new PieceView(new Piece(0,15));
 	JPanel container;
 
 	Stack<BuilderMove> moves=new Stack<BuilderMove>();
@@ -89,7 +92,9 @@ public class BuilderApplication extends JFrame {
 		this.container.setOpaque(false);
 		this.container.add(pieceBeingDragged);
 		this.add(container);
-		
+//		this.container.addMouseListener(new ContainerController(this, container));
+//		this.pieceBeingDragged.setLocation(100,100);
+//		this.add(this.pieceBeingDragged);
 		JButton btnHintaddremove = new JButton("Hint (add/remove)");
 		
 		
@@ -289,9 +294,9 @@ public class BuilderApplication extends JFrame {
 		return level;
 	}
 	
-	public void updateMovePiece(int x,int y){
+	public void updateMovePiece(PieceView pw,int x,int y){
 //		this.setComponentZOrder(this.pieceBeingDragged, 0);
-		this.pieceBeingDragged.setLocation(x, y);
+		pw.setLocation(x, y);
 		this.repaint();
 	}
 	
@@ -300,8 +305,7 @@ public class BuilderApplication extends JFrame {
 		this.pieceBeingDragged = pw;
 		Dimension d = this.pieceBeingDragged.getPreferredSize();
 
-		this.container.removeAll();
-		this.container.add(this.pieceBeingDragged);
+		this.container.add(pw);
 		this.container.setOpaque(false);
 
 //		this.setComponentZOrder(this.pieceBeingDragged, 0);

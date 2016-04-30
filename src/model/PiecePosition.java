@@ -39,8 +39,10 @@ public class PiecePosition implements java.io.Serializable {
 		int temp = x;
 		x = y;
 		y = temp;
-		if (direction) x *= -1;
-		else y *= -1;
+		if (!direction) 
+			x *= -1;
+		else 
+			y *= -1;
 	}
 
 	/**
@@ -50,5 +52,22 @@ public class PiecePosition implements java.io.Serializable {
 	public void flip(boolean direction) { // true for horizontal, false for vertical
 		if (direction) x *= -1;
 		else y *= -1;
+	}
+	
+	@Override
+	public boolean equals(Object obj){
+		if(obj instanceof PiecePosition){
+			return x == ((PiecePosition)obj).x && y == ((PiecePosition)obj).y;
+		}
+		return false;
+	}
+	
+	@Override
+	public String toString(){
+		return "( "+x+" , "+y+" )";
+	}
+
+	public PiecePosition copy() {
+		return new PiecePosition(this.x, this.y);
 	}
 }

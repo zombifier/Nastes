@@ -52,7 +52,7 @@ public class BoardController extends MouseAdapter {
 			}
 		}
 	}
-	/*
+	
 	@Override
 	public void mouseReleased(MouseEvent ae){
 		System.out.println("Hahaha");
@@ -65,5 +65,5 @@ public class BoardController extends MouseAdapter {
 			System.out.println("Whoops");
 		}
 	}
-	*/
+	
 }

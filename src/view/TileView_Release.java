@@ -1,6 +1,6 @@
 package view;
 
-import javax.swing.JPanel;
+import javax.swing.*;
 
 import model.*;
 
@@ -13,7 +13,18 @@ public class TileView_Release extends TileView {
 	 */
 	public TileView_Release(Tile tile) {
 		super(tile);
-
+		
+		ReleaseTile t = (ReleaseTile)tile;
+		if(t.getNumber()>0){
+			JLabel numberPanel = new JLabel();
+			numberPanel.setLayout(null);
+			numberPanel.setOpaque(false);
+			numberPanel.setBounds(0,0,45,45);
+			numberPanel.setText(""+t.getNumber());
+			numberPanel.setHorizontalAlignment(JLabel.CENTER);
+			numberPanel.setVerticalAlignment(JLabel.CENTER);
+			this.add(numberPanel);
+		}
 	}
 
 }
