@@ -39,10 +39,13 @@ public class PiecePosition implements java.io.Serializable {
 		int temp = x;
 		x = y;
 		y = temp;
-		if (!direction) 
+		if (!direction) {
 			x *= -1;
-		else 
+			x = x + 5;
+		}else{ 
 			y *= -1;
+			y = y + 5;
+		}
 	}
 
 	/**
@@ -50,8 +53,14 @@ public class PiecePosition implements java.io.Serializable {
 	 * @param direction true for horizontal; otherwise, vertical
 	 */
 	public void flip(boolean direction) { // true for horizontal, false for vertical
-		if (direction) x *= -1;
-		else y *= -1;
+		if (direction) {
+			x *= -1;
+			x = x + 5;
+		}
+		else {
+			y *= -1;
+			y = y + 5;
+		}
 	}
 	
 	@Override

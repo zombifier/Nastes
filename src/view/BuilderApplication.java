@@ -10,6 +10,8 @@ import java.awt.event.ActionListener;
 import java.util.Stack;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 import javax.swing.GroupLayout;
 import javax.swing.JButton;
@@ -27,6 +29,7 @@ import controller.builder.BuilderMove;
 import controller.builder.ContainerController;
 import controller.builder.LevelTypeController;
 import controller.builder.LoadController;
+import controller.builder.RotatingController;
 import controller.builder.SaveController;
 import model.*;
 
@@ -282,6 +285,7 @@ public class BuilderApplication extends JFrame {
 					.addContainerGap())
 		);
 		getContentPane().setLayout(groupLayout);
+		
 	}
 
 
@@ -300,14 +304,21 @@ public class BuilderApplication extends JFrame {
 		this.repaint();
 	}
 	
-	public void setMovingPiece(PieceView pw, int x, int y){
+	public void setMovingPiece(int countPress, PieceView pw, int x, int y){
+		for (KeyListener k:this.getKeyListeners()){
+			this.removeKeyListener(k);
+		}
 		this.pieceBeingDragged = null;
 		this.pieceBeingDragged = pw;
 		Dimension d = this.pieceBeingDragged.getPreferredSize();
+		if (countPress == 0){
+			this.pieceBeingDragged.setLocation(750+x,150+y);
+		}
 
 		this.container.add(pw);
 		this.container.setOpaque(false);
 
+		this.addKeyListener(new RotatingController(this.pieceBeingDragged, this));
 //		this.setComponentZOrder(this.pieceBeingDragged, 0);
 		
 //		this.pieceBeingDragged.setVisible(true);
