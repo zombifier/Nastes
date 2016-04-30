@@ -27,7 +27,23 @@ public class TileView extends JPanel {
 			this.setBackground(new Color(255, 0, 255));
 	}
 	
+	public void drawHint() {
+		if (tile.isHint()) {
+			this.setBackground(new Color(0, 255, 255)); // subject to change
+		}
+		else redraw();
+	}
+	
 	public void convertValid(){
 		this.tile.convertValid();
 	}
+	
+	public void convertHint(){
+		this.tile.convertHint();
+	}
+	
+	public boolean isInGame() {
+		return this.tile.isValid();
+	}
+	
 }

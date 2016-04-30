@@ -15,7 +15,7 @@ public class ChangeTypeMove extends BuilderMove {
 	}
 	
 	public boolean doMove() {
-		if (level.levelType() == type) return false;
+		if (!valid()) return false;
 		else {
 			if (type == 0) ba.initialize(new Puzzle(10));
 			else if (type == 1) ba.initialize(new Lightning());
@@ -27,5 +27,10 @@ public class ChangeTypeMove extends BuilderMove {
 	public boolean undo() {
 		ba.initialize(level);
 		return true;
+	}
+	
+	public boolean valid() {
+		if (level.levelType() == type) return false;
+		else return true;
 	}
 }
