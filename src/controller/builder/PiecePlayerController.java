@@ -1,6 +1,8 @@
 package controller.builder;
 
+import java.awt.event.ActionEvent;
 import java.awt.event.InputEvent;
+import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -76,6 +78,12 @@ public class PiecePlayerController extends MouseAdapter{
 			System.out.println("" + (ae.getX())+" "+(ae.getY()));
 			//pieceView.setLocation(ae.getX(),ae.getY());
 		}
+		
+		if ((ae.getModifiers() & ActionEvent.CTRL_MASK)==ActionEvent.CTRL_MASK){
+
+			System.out.println("CTRL was pressed");
+		}
+		
 	}
 	@Override
 	public void mouseReleased(MouseEvent ae){
