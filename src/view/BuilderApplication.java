@@ -41,7 +41,7 @@ public class BuilderApplication extends JFrame {
 	Level level;
 	BullpenView bullpenView;
 	ModelPieceView modelPieceView;
-	PieceView pieceBeingDragged = new PieceView(null);
+	PieceView pieceBeingDragged = new PieceView(new Piece(0,15));
 	JPanel container;
 	public BuilderApplication(Game game){
 		this.game = game;
@@ -88,7 +88,8 @@ public class BuilderApplication extends JFrame {
 		this.container.add(pieceBeingDragged);
 		this.add(container);
 //		this.container.addMouseListener(new ContainerController(this, container));
-		
+//		this.pieceBeingDragged.setLocation(100,100);
+//		this.add(this.pieceBeingDragged);
 		JButton btnHintaddremove = new JButton("Hint (add/remove)");
 		
 		
@@ -288,9 +289,9 @@ public class BuilderApplication extends JFrame {
 		return level;
 	}
 	
-	public void updateMovePiece(int x,int y){
+	public void updateMovePiece(PieceView pw,int x,int y){
 //		this.setComponentZOrder(this.pieceBeingDragged, 0);
-		this.pieceBeingDragged.setLocation(x, y);
+		pw.setLocation(x, y);
 		this.repaint();
 	}
 	
@@ -299,8 +300,7 @@ public class BuilderApplication extends JFrame {
 		this.pieceBeingDragged = pw;
 		Dimension d = this.pieceBeingDragged.getPreferredSize();
 
-		this.container.removeAll();
-		this.container.add(this.pieceBeingDragged);
+		this.container.add(pw);
 		this.container.setOpaque(false);
 
 //		this.setComponentZOrder(this.pieceBeingDragged, 0);

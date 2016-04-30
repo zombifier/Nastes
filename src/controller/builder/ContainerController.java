@@ -26,41 +26,24 @@ public class ContainerController extends MouseAdapter{
 	@Override
 	public void mouseReleased(MouseEvent ae){
 		System.out.println("Release");
-		Component source = (Component) ae.getSource();
-		MouseEvent parentEvent = SwingUtilities.convertMouseEvent(source, ae, source.getParent());
-		source.getParent().dispatchEvent(parentEvent);
+//		MouseEvent parentEvent = SwingUtilities.convertMouseEvent(this.container, ae, this.app);
+		this.app.dispatchEvent(ae);
 	}
 	@Override
     public void mouseClicked(MouseEvent ae) {
 
 		System.out.println("Click");
-		Component source = (Component) ae.getSource();
-		MouseEvent parentEvent = SwingUtilities.convertMouseEvent(source, ae, source.getParent());
-		source.getParent().dispatchEvent(parentEvent);
+//		MouseEvent parentEvent = SwingUtilities.convertMouseEvent(this.container, ae, this.app);
+		this.app.dispatchEvent(ae);
     }
-    @Override
-    public void mouseEntered(MouseEvent ae) {
 
-		System.out.println("Enter");
-		Component source = (Component) ae.getSource();
-		MouseEvent parentEvent = SwingUtilities.convertMouseEvent(source, ae, source.getParent());
-		source.getParent().dispatchEvent(parentEvent);
-    }
-    @Override
-    public void mouseExited(MouseEvent ae) {
-
-		System.out.println("Exit");
-		Component source = (Component) ae.getSource();
-		MouseEvent parentEvent = SwingUtilities.convertMouseEvent(source, ae, source.getParent());
-		source.getParent().dispatchEvent(parentEvent);
-    }
+ 
     @Override
     public void mousePressed(MouseEvent ae) {
 
 		System.out.println("Press");
-		Component source = (Component) ae.getSource();
-		MouseEvent parentEvent = SwingUtilities.convertMouseEvent(source, ae, source.getParent());
-		source.getParent().dispatchEvent(parentEvent);
+//		MouseEvent parentEvent = SwingUtilities.convertMouseEvent(this.container, ae, this.app);
+		this.app.dispatchEvent(ae);
     }
 	
 }

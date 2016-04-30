@@ -38,7 +38,7 @@ public class BullpenView extends JPanel {
 		for(Piece piece: bullpen.getPieces()){
 			PieceView pieceView = new PieceView(piece);
 			Dimension d = pieceView.getPreferredSize();
-			pieceView.setBounds(rand.nextInt(this.getPreferredSize().width), rand.nextInt(this.getPreferredSize().height), d.width, d.height);
+			pieceView.setBounds(rand.nextInt(this.getPreferredSize().width/2), rand.nextInt(this.getPreferredSize().height/2), d.width, d.height);
 			add(pieceView);
 			//pieceView.addMouseListener(new PieceController(this.app,pieceView));
 		}
