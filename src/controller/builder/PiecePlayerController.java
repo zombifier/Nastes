@@ -81,15 +81,6 @@ public class PiecePlayerController extends MouseAdapter{
 			//pieceView.setLocation(ae.getX(),ae.getY());
 		}
 		
-		if ((ae.getModifiers() & ActionEvent.CTRL_MASK)==ActionEvent.CTRL_MASK){
-
-			System.out.println("CTRL was pressed");
-			RotatingPieceInBuilder rp = new RotatingPieceInBuilder(this.pieceView.getPiece(),false);
-			if (!rp.valid()){return;}
-			rp.doMove();
-			this.pieceView.redraw();
-			this.app.repaint();
-		}
 		
 	}
 	@Override
