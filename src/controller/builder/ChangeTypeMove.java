@@ -5,12 +5,11 @@ import model.*;
 import view.BuilderApplication;
 
 public class ChangeTypeMove extends BuilderMove {
-	Level level, oldLevel;
+	Level level;
 	BuilderApplication ba;
 	int type;
 	public ChangeTypeMove (Level level, BuilderApplication ba, int type) {
 		this.level = level;
-		this.oldLevel = level.copy();
 		this.ba = ba;
 		this.type = type;
 	}
@@ -18,16 +17,15 @@ public class ChangeTypeMove extends BuilderMove {
 	public boolean doMove() {
 		if (level.levelType() == type) return false;
 		else {
-			if (type == 0) level = new Puzzle(10);
-			else if (type == 1) level = new Lightning();
-			else if (type == 2) level = new Release();
+			if (type == 0) ba.initialize(new Puzzle(10));
+			else if (type == 1) ba.initialize(new Lightning());
+			else if (type == 2) ba.initialize(new Release());
 		}
-		ba.initialize(level);
 		return true;
 	}
 	
 	public boolean undo() {
-		ba.initialize(oldLevel);
+		ba.initialize(level);
 		return true;
 	}
 }

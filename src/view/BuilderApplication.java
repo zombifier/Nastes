@@ -7,6 +7,7 @@ import java.awt.Dimension;
 import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Stack;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
@@ -22,6 +23,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.Timer;
 
 import controller.*;
+import controller.builder.BuilderMove;
 import controller.builder.ContainerController;
 import controller.builder.LevelTypeController;
 import controller.builder.LoadController;
@@ -43,6 +45,9 @@ public class BuilderApplication extends JFrame {
 	ModelPieceView modelPieceView;
 	PieceView pieceBeingDragged = new PieceView(new Piece(0,15));
 	JPanel container;
+
+	Stack<BuilderMove> moves=new Stack<BuilderMove>();
+	
 	public BuilderApplication(Game game){
 		this.game = game;
 		setTitle("Kabasuji Editor");
@@ -98,7 +103,7 @@ public class BuilderApplication extends JFrame {
 		comboBox.addItem("Puzzle");
 		comboBox.addItem("Lightning");
 		comboBox.addItem("Release");
-		comboBox.addActionListener(new LevelTypeController(level, this));
+		comboBox.addActionListener(new LevelTypeController(lv, this));
 		comboBox.setSelectedIndex(level.levelType());
 		
 		txtSetLimit = new JTextField();
@@ -151,7 +156,7 @@ public class BuilderApplication extends JFrame {
 		btnUndo.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent ae) {
-				level.undoMove();
+				undoMove();
 			}
 		});
 		
@@ -318,4 +323,22 @@ public class BuilderApplication extends JFrame {
 		// TODO Auto-generated method stub
 		return this.pieceBeingDragged;
 	}
+	
+	/**
+	 * add new move
+	 */
+	public void addMove(BuilderMove m) {
+		moves.push(m);
+	}
+	
+	/**
+	 * undo a move
+	 */
+	public void undoMove() {
+		if (!moves.empty()) {
+			BuilderMove m = moves.pop();
+			m.undo();
+		}
+	}
+	
 }

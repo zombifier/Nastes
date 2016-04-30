@@ -41,8 +41,9 @@ public class BoardController extends MouseAdapter {
 				//System.out.println("Tile state toggle initiated.");
 				BuilderMove m = new TileValidMove (t);
 				if (m.doMove()) {
-					ba.getLevel().addMove(m);
-				}			}
+					ba.addMove(m);
+				}			
+			}
 			if (ae.getModifiers()==InputEvent.BUTTON3_MASK){
 				//Check to see if the level is a release level.
 				//If it is, run the below.
