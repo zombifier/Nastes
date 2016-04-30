@@ -18,21 +18,18 @@ public abstract class Level implements java.io.Serializable{
 	boolean isUnlocked;
 	int levelNum;
 	Hint hint;
-	Stack<BuilderMove> moves;
 	abstract public int levelType();
 	
 	public Level(int type){
 		board=new Board(type);
 		bullpen=new Bullpen();
 		pieceBeingDragged=null;
-		this.moves=new Stack<BuilderMove>();
 	}
 
 	public Level(Board b,Bullpen p){
 		board=b;
 		bullpen=p;
 		pieceBeingDragged=null;
-		this.moves=new Stack<BuilderMove>();
 	}
 	
 	/**
@@ -113,22 +110,5 @@ public abstract class Level implements java.io.Serializable{
 	 * @return Copied level
 	 */
 	abstract public Level copy();
-	
-	/**
-	 * add new move
-	 */
-	public void addMove(BuilderMove m) {
-		moves.push(m);
-	}
-	
-	/**
-	 * undo a move
-	 */
-	public void undoMove() {
-		if (!moves.empty()) {
-			BuilderMove m = moves.pop();
-			m.undo();
-		}
-	}
 	
 }

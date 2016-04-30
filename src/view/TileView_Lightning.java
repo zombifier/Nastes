@@ -13,7 +13,6 @@ public class TileView_Lightning extends TileView {
 	 */
 	public TileView_Lightning(Tile tile) {
 		super(tile);
-		setBackground(Color.MAGENTA);
 
 	}
 
