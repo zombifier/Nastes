@@ -37,4 +37,8 @@ public class ReleaseTile extends Tile {
 	public boolean isFilled(){
 		return isValid && isCovered;
 	}
+	
+	public int getNumber(){
+		return releaseNumber;
+	}
 }
