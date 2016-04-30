@@ -7,6 +7,8 @@ import java.awt.Dimension;
 import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 import java.util.Stack;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -15,6 +17,7 @@ import java.awt.event.KeyListener;
 
 import javax.swing.GroupLayout;
 import javax.swing.JButton;
+import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -50,6 +53,7 @@ public class BuilderApplication extends JFrame {
 	JPanel container;
 
 	Stack<BuilderMove> moves=new Stack<BuilderMove>();
+	boolean hintMode;
 	
 	public BuilderApplication(Game game){
 		this.game = game;
@@ -98,8 +102,17 @@ public class BuilderApplication extends JFrame {
 //		this.container.addMouseListener(new ContainerController(this, container));
 //		this.pieceBeingDragged.setLocation(100,100);
 //		this.add(this.pieceBeingDragged);
-		JButton btnHintaddremove = new JButton("Hint (add/remove)");
-		
+		JCheckBox btnHintaddremove = new JCheckBox("Hint (add/remove)");
+		btnHintaddremove.addItemListener(new ItemListener() {
+		    @Override
+		    public void itemStateChanged(ItemEvent e) {
+		        if(e.getStateChange() == ItemEvent.SELECTED) {//checkbox has been selected
+		            hintMode = true;
+		        } else {//checkbox has been deselected
+		            hintMode = false;
+		        };
+		    }
+		});
 		
 		
 		JComboBox<String> comboBox = new JComboBox<String>();
@@ -350,6 +363,14 @@ public class BuilderApplication extends JFrame {
 			BuilderMove m = moves.pop();
 			m.undo();
 		}
+	}
+	
+	/**
+	 * returns whether builder is in "add hint mode"
+	 * @return true is builder is in hint mode, false if not
+	 */
+	public boolean hintMode() {
+		return hintMode;
 	}
 	
 }

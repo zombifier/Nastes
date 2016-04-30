@@ -4,18 +4,37 @@ import view.TileView;
 
 public class TileValidMove extends BuilderMove {
 	TileView tileView;
-	public TileValidMove (TileView tileView) {
+	boolean isHint;
+	public TileValidMove (TileView tileView, boolean isHint) {
 		this.tileView = tileView;
+		this.isHint = isHint;
 	}
 	public boolean doMove() {
-		tileView.convertValid();
-		tileView.redraw();
-
+		if (!valid()) return false;
+		if (isHint) {
+			tileView.convertHint();
+			tileView.drawHint();
+		}
+		else {
+			tileView.convertValid();
+			tileView.redraw();
+		}
 		return true;
 	}
 	public boolean undo() {
-		tileView.convertValid();
-		tileView.redraw();
+		if (isHint) {
+			tileView.convertHint();
+			tileView.drawHint();
+		}
+		else {
+			tileView.convertValid();
+			tileView.redraw();
+		}
 		return true;
+	}
+	
+	public boolean valid() {
+		if ((!tileView.isInGame()) && isHint) return false;
+		else return true;
 	}
 }

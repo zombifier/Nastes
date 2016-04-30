@@ -39,7 +39,7 @@ public class BoardController extends MouseAdapter {
 			// If the user left clicked, toggle the state of the tile
 			if (ae.getModifiers()==InputEvent.BUTTON1_MASK){
 				//System.out.println("Tile state toggle initiated.");
-				BuilderMove m = new TileValidMove (t);
+				BuilderMove m = new TileValidMove (t,ba.hintMode());
 				if (m.doMove()) {
 					ba.addMove(m);
 				}			
