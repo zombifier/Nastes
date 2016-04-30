@@ -13,8 +13,6 @@ public class TileView_Release extends TileView {
 	 */
 	public TileView_Release(Tile tile) {
 		super(tile);
-		setBackground(Color.MAGENTA);
-		
 		
 		ReleaseTile t = (ReleaseTile)tile;
 		if(t.getNumber()>0){

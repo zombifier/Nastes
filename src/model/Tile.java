@@ -10,11 +10,13 @@ abstract public class Tile implements java.io.Serializable {
 	
 	
 	boolean isValid;
+	boolean isHint;
 	boolean hasSquare;
 	abstract int levelType();
 	
 	public Tile(boolean isValid) {
 		this.isValid = isValid;
+		this.isHint = false;
 	}
 	
 	/** 
@@ -60,5 +62,20 @@ abstract public class Tile implements java.io.Serializable {
 	 */
 	public void convertValid(){
 		isValid = !isValid;
+	}
+	
+	/**
+	 * return whether a hint is on this tile
+	 * @return true if the tile has a hint
+	 */
+	public boolean isHint() {
+		return isHint;
+	}
+	
+	/**
+	 * Convert the hint status of the tile
+	 */
+	public void convertHint(){
+		isHint = !isHint;
 	}
 }

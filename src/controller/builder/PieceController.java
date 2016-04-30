@@ -31,11 +31,13 @@ public class PieceController extends MouseAdapter{
 		}
 		
 		System.out.println("success test");
-		AddPieceFromScrollToBullpen newAdd = new AddPieceFromScrollToBullpen(this.pieceView.getPiece(), this.bullpenView.getBullpen());
-		newAdd.doMove();
+		AddPieceFromScrollToBullpen newAdd = new AddPieceFromScrollToBullpen(this.pieceView.getPiece(), this.pieceView, this.bullpenView.getBullpen(), this.bullpenView);
+		if (newAdd.doMove()) {
+			app.addMove(newAdd);
+		}
 		//this.app.repaint();
-		PieceView copyPieceView = new PieceView(this.pieceView.getPiece());
-		this.bullpenView.drawPieceView(copyPieceView);
+		//PieceView copyPieceView = new PieceView(this.pieceView.getPiece());
+		//this.bullpenView.drawPieceView(copyPieceView);
 		//this.app.player.setPieceBeingDrag(pieceView.getPiece());
 		//copyPieceView.setBounds(ae.getX(),ae.getY(),270,270);
 		//this.playerGame.add(pieceView);
