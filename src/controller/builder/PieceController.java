@@ -35,6 +35,7 @@ public class PieceController extends MouseAdapter{
 		if (newAdd.doMove()) {
 			app.addMove(newAdd);
 		}
+		
 		//this.app.repaint();
 		//PieceView copyPieceView = new PieceView(this.pieceView.getPiece());
 		//this.bullpenView.drawPieceView(copyPieceView);

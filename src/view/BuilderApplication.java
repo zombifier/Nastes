@@ -321,6 +321,9 @@ public class BuilderApplication extends JFrame {
 		for (KeyListener k:this.getKeyListeners()){
 			this.removeKeyListener(k);
 		}
+		for (int i=0;i<6;i++){
+			this.pieceBeingDragged.getSquare()[i].setBackground(Color.YELLOW);
+		}
 		this.pieceBeingDragged = null;
 		this.pieceBeingDragged = pw;
 		Dimension d = this.pieceBeingDragged.getPreferredSize();
@@ -328,7 +331,10 @@ public class BuilderApplication extends JFrame {
 			this.pieceBeingDragged.setLocation(750+x,150+y);
 		}
 
-		this.container.add(pw);
+		this.container.add(this.pieceBeingDragged);
+		for (int i=0;i<6;i++){
+			this.pieceBeingDragged.getSquare()[i].setBackground(Color.RED);
+		}
 		this.container.setOpaque(false);
 
 		this.addKeyListener(new RotatingController(this.pieceBeingDragged, this));
@@ -340,7 +346,7 @@ public class BuilderApplication extends JFrame {
 //		this.pieceBeingDragged.setLocation(x, y);
 //		this.pieceBeingDragged.setOpaque(false);
 //		this.setComponentZOrder(this.pieceBeingDragged, 0);
-		//this.repaint();
+		this.repaint();
 	}
 
 	public PieceView getPieceBeingDrag() {
