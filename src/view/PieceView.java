@@ -49,10 +49,32 @@ public class PieceView extends JPanel{
 	}
 	
 	public void redraw(){
+		int minX = 0;
+		int minY = 0;
+		for (int i=0;i<=5;i++){
+			if (minX>this.piece.getSquares()[i].getX()){
+				minX = this.piece.getSquares()[i].getX();
+			}
+			if (minY>this.piece.getSquares()[i].getY()){
+				minY = this.piece.getSquares()[i].getY();
+				
+			}
+			
+		}
+		int maxPrefferX = 0;
+		int maxPrefferY = 0;
 		for(int i=0;i<=5;i++){
-			squareView[i].setLocation(45*piece.getSquares()[i].getX(),45*piece.getSquares()[i].getY());
+			squareView[i].setLocation(45*piece.getSquares()[i].getX()-minX*45,45*piece.getSquares()[i].getY()-minY*45);
+			if (maxPrefferX < 45*piece.getSquares()[i].getX()-minX*45 ){
+				maxPrefferX = 45*piece.getSquares()[i].getX()-minX*45;
+			}
+			if (maxPrefferY < 45*piece.getSquares()[i].getY()-minY*45 ){
+				maxPrefferY = 45*piece.getSquares()[i].getY()-minY*45;
+			}
+			
 			this.repaint();
 		}
+		this.setPreferredSize(new Dimension(maxPrefferX, maxPrefferY));
 		
 	}
 }

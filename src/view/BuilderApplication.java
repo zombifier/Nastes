@@ -357,10 +357,17 @@ public class BuilderApplication extends JFrame {
 //		this.setComponentZOrder(this.pieceBeingDragged, 0);
 		this.repaint();
 	}
-
+	/**
+	 * get the pieceView of piece being drag
+	 * @return
+	 */
 	public PieceView getPieceBeingDrag() {
 		// TODO Auto-generated method stub
 		return this.pieceBeingDragged;
+	}
+	
+	public JPanel getPieceContainer(){
+		return this.container;
 	}
 	
 	/**
