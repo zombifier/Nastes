@@ -9,8 +9,8 @@ public class PuzzleTile extends Tile {
 	
 	boolean isCovered;
 	
-	public PuzzleTile(boolean isValid) {
-		super(isValid);
+	public PuzzleTile(boolean isValid, boolean isHint) {
+		super(isValid, isHint);
 		isCovered = false;
 	}
 	
@@ -27,7 +27,7 @@ public class PuzzleTile extends Tile {
 	}
 	
 	public Tile copy(){
-		return new PuzzleTile(this.isValid);
+		return new PuzzleTile(this.isValid, this.isHint);
 	}
 	
 	public int levelType(){

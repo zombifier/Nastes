@@ -112,6 +112,7 @@ public class BuilderApplication extends JFrame {
 //		this.pieceBeingDragged.setLocation(100,100);
 //		this.add(this.pieceBeingDragged);
 		JCheckBox btnHintaddremove = new JCheckBox("Hint (add/remove)");
+		btnHintaddremove.setSelected(hintMode);
 		btnHintaddremove.addItemListener(new ItemListener() {
 		    @Override
 		    public void itemStateChanged(ItemEvent e) {
