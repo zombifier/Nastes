@@ -91,4 +91,29 @@ public class TestBoard extends TestCase {
 		assertFalse(board.getTile(0,0).isValid()) ;
 	}
 	
+	public void testGetPieceAt () {
+		for(int i=0;i<6;i++)
+			board.tiles[0][i].convertValid();
+		Piece piece = new Piece(0, 0);
+		
+		assertSame(board.getPieceAt(new BoardPosition(0,0)), null) ;
+		
+		board.addPiece(piece, new BoardPosition(0, 0));
+		assertSame(board.getPieceAt(new BoardPosition(0,0)), piece);
+		
+	}
+	
+	public void testGetBoardPosition () {
+		
+		assertSame(board.getBoardPosition(null), null);
+		
+		for(int i=0;i<6;i++)
+			board.tiles[0][i].convertValid();
+		Piece piece = new Piece(0, 0);
+		board.addPiece(piece, new BoardPosition(0, 0));
+		
+		assertNotSame(board.getBoardPosition(piece), new BoardPosition(0,0)) ;
+		
+	}
+	
 }
