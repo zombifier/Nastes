@@ -35,7 +35,7 @@ public class Bullpen implements java.io.Serializable {
 		
 	}
 	
-	public Iterable<Piece> getPieces(){
+	public ArrayList<Piece> getPieces(){
 		return pieces;
 	}
 

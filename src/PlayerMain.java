@@ -7,7 +7,7 @@ import java.io.ObjectInputStream;
 import javax.swing.JFrame;
 
 import model.*;
-import view.*;
+import view.player.*;
 
 /**
  * PlayerMain class. The main class for the Kabasuji game player.

@@ -51,6 +51,14 @@ public abstract class Level implements java.io.Serializable{
 	}
 	
 	/**
+	 * Return piece being dragged.
+	 * @return Piece if there is a piece being dragged; otherwise, null
+	 */
+	public Piece getPiece(){
+		return pieceBeingDragged;
+	}
+	
+	/**
 	 * Decide whether the current state of level is finished or not.
 	 * @return true if the level has finished; otherwise false.
 	 */
@@ -81,6 +89,7 @@ public abstract class Level implements java.io.Serializable{
 	abstract public String getUnit();
 	
 	abstract public int resultStar();
+	
 	/**
 	 * Get string which contains the level number used for the view.
 	 * @return String of stage number
@@ -111,4 +120,19 @@ public abstract class Level implements java.io.Serializable{
 	 */
 	abstract public Level copy();
 	
+	/**
+	 * Return the state of level
+	 * @return true if it is unlocked; otherwise, false
+	 */
+	public boolean isPlayable(){
+		return isUnlocked;
+	}
+	
+	/**
+	 * Return star having been earned before
+	 * @return Number of star earned before
+	 */
+	public int getStar(){
+		return starEarned;
+	}
 }

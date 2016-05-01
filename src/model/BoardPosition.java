@@ -40,4 +40,14 @@ public class BoardPosition implements java.io.Serializable {
 		return y;
 	}
 	
+	@Override
+	public boolean equals(Object obj){
+		if(obj instanceof BoardPosition){
+			BoardPosition another = (BoardPosition)obj;
+			if(another.x == this.x && another.y == this.y)
+				return true;
+		}
+		return false;
+	}
+	
 }

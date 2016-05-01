@@ -63,6 +63,16 @@ public class PiecePosition implements java.io.Serializable {
 		}
 	}
 	
+	/**
+	 * Translate the PiecePosition to the specific location.
+	 * @param x X-coordination
+	 * @param y Y-coordination
+	 */
+	public void translate(int x, int y){
+		this.x -= x;
+		this.y -= y;
+	}
+	
 	@Override
 	public boolean equals(Object obj){
 		if(obj instanceof PiecePosition){
