@@ -46,4 +46,8 @@ public class TileView extends JPanel {
 		return this.tile.isValid();
 	}
 	
+	public Tile getTile(){
+		return this.tile;
+	}
+	
 }
