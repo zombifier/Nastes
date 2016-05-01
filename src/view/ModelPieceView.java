@@ -8,6 +8,13 @@ import javax.swing.JPanel;
 import controller.builder.PieceController;
 import model.Piece;
 
+/**
+ * ModelPieceView
+ * Contains: 
+ * BuilderApplication 
+ * @author Team Nastes 
+ *
+ */
 public class ModelPieceView extends JPanel {
 	BuilderApplication app;
 	public ModelPieceView(BuilderApplication app){

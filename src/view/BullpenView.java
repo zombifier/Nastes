@@ -18,6 +18,14 @@ import model.*;
 
 import javax.swing.JLabel;
 
+/**
+ * Bullpen View 
+ * contains: 
+ * Bullpen, BuilderApplication 
+ * @author Team Nastes
+ *
+ */
+
 public class BullpenView extends JPanel {
 
 	Bullpen bullpen;

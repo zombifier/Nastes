@@ -1,10 +1,13 @@
 package controller.builder;
 
+import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+
+import javax.swing.SwingUtilities;
 
 import view.BuilderApplication;
 import view.BullpenView;
@@ -33,9 +36,20 @@ public class PiecePlayerController extends MouseAdapter{
 		if (this.pieceView == null){
 			return;
 		}
-		System.out.println("Hahaha");
-		SquareView s = (SquareView) this.pieceView.findComponentAt(ae.getPoint());
-		if (s == null){return;}
+		SquareView s;
+		try{
+		s = (SquareView) this.pieceView.findComponentAt(ae.getPoint());
+		} catch (Exception e){
+			System.out.println("Hahaha");
+			s = null;
+		}
+		if (s == null){
+			Component source = (Component) ae.getSource();
+	        MouseEvent parentEvent = SwingUtilities.convertMouseEvent(source, ae, source.getParent());
+	        source.getParent().dispatchEvent(parentEvent);
+//	        System.out.println("Hahaha2");
+			
+		}
 		if(s != null){
 			if (ae.getModifiers()==InputEvent.BUTTON1_MASK){
 				this.beingMoved = true;

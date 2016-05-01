@@ -29,22 +29,22 @@ public class LevelKeyController extends KeyAdapter {
 		
 		if(level.getPiece()==null) return;
 		
-		if(ke.getKeyCode()==KeyEvent.VK_Z){
+		if(ke.getKeyCode()==KeyEvent.VK_R){
 			level.getPiece().rotate(false);
 			p=new Point(p.y, eachSize - p.x);
 			//level.update(0); for update; need attention
 		}
-		if(ke.getKeyCode()==KeyEvent.VK_X){
+		if(ke.getKeyCode()==KeyEvent.VK_E){
 			level.getPiece().rotate(true);
 			p=new Point(eachSize - p.y, p.x);
 			//level.update(0); for update; need attention
 		}
-		if(ke.getKeyCode()==KeyEvent.VK_A){
+		if(ke.getKeyCode()==KeyEvent.VK_W){
 			level.getPiece().flip(true);
 			p=new Point(p.x, eachSize - p.y);
 			//level.update(0); for update; need attention
 		}
-		if(ke.getKeyCode()==KeyEvent.VK_S){
+		if(ke.getKeyCode()==KeyEvent.VK_Q){
 			level.getPiece().flip(false);
 			p=new Point(eachSize - p.x, p.y);
 			//level.update(0); for update; need attention

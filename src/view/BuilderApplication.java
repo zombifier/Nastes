@@ -42,6 +42,15 @@ import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
 import javax.swing.Timer;
 
+/**
+ * 
+ * Builder Application. 
+ * Contains:
+ * Frame, Game, Level, BllpenView, ModelPieceView, PieceView, container
+ * @author Team Nastes
+ *
+ */
+
 public class BuilderApplication extends JFrame {
 	private JTextField txtSetLimit;
 	JPanel frame;
@@ -349,10 +358,17 @@ public class BuilderApplication extends JFrame {
 //		this.setComponentZOrder(this.pieceBeingDragged, 0);
 		this.repaint();
 	}
-
+	/**
+	 * get the pieceView of piece being drag
+	 * @return
+	 */
 	public PieceView getPieceBeingDrag() {
 		// TODO Auto-generated method stub
 		return this.pieceBeingDragged;
+	}
+	
+	public JPanel getPieceContainer(){
+		return this.container;
 	}
 	
 	/**

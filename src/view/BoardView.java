@@ -10,6 +10,14 @@ import controller.builder.BoardController;
 import controller.builder.PiecePlayerController;
 import model.*;
 
+/**
+ * 
+ * BoardView. 
+ * Contains Board, BuilderApplication, TileViews, and PieceViews in the board. 
+ * @author Team Nastes
+ *
+ */
+
 public class BoardView extends JPanel {
 	// Should not be here because it is a model
 	// Also, should not be too specific to only one type

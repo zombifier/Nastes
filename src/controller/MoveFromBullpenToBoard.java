@@ -4,6 +4,13 @@ import model.Board;
 import model.Bullpen;
 import model.Piece;
 
+/**
+ * Move Class for Bullpen to Board
+ * Handles moving from bullpen to board. 
+ * @author TeamNasts
+ *
+ */
+
 public class MoveFromBullpenToBoard {
 	
 	Bullpen bullpen;

@@ -24,8 +24,7 @@ public class RotatingController implements KeyListener{
 				RotatingPieceInBuilder rp = new RotatingPieceInBuilder(this.pieceView.getPiece(),false);
 //				if (!rp.valid()){return;}
 				rp.doMove();
-				this.pieceView.redraw();
-				this.app.repaint();	
+			
 			}
 			if (e.getKeyChar()=='r'){
 			
@@ -33,8 +32,7 @@ public class RotatingController implements KeyListener{
 				RotatingPieceInBuilder rp = new RotatingPieceInBuilder(this.pieceView.getPiece(),true);
 	//			if (!rp.valid()){return;}
 				rp.doMove();
-				this.pieceView.redraw();
-				this.app.repaint();	
+			
 			}
 			if (e.getKeyChar()=='q'){
 				
@@ -42,8 +40,7 @@ public class RotatingController implements KeyListener{
 				FlipPieceInBuilder fp = new FlipPieceInBuilder(this.pieceView.getPiece(),true);
 	//			if (!rp.valid()){return;}
 				fp.doMove();
-				this.pieceView.redraw();
-				this.app.repaint();	
+			
 			}
 			
 			if (e.getKeyChar()=='w'){
@@ -52,11 +49,11 @@ public class RotatingController implements KeyListener{
 				FlipPieceInBuilder fp = new FlipPieceInBuilder(this.pieceView.getPiece(),false);
 	//			if (!rp.valid()){return;}
 				fp.doMove();
-				this.pieceView.redraw();
-				this.app.repaint();	
+				
 			}
 			this.isRelease +=1;
-			
+			this.pieceView.redraw();
+			this.app.repaint();	
 		}
 		
 	}
