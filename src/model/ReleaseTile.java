@@ -11,8 +11,8 @@ public class ReleaseTile extends Tile {
 	int color; // Valid range: 0-3
 	boolean isCovered;
 	
-	public ReleaseTile(boolean isValid, int releaseNumber, int color) {
-		super(isValid);
+	public ReleaseTile(boolean isValid, boolean isHint, int releaseNumber, int color) {
+		super(isValid, isHint);
 		this.releaseNumber = releaseNumber;
 		this.color = color; 
 		this.isCovered = false;
@@ -27,7 +27,7 @@ public class ReleaseTile extends Tile {
 	}
 	
 	public Tile copy(){
-		return new ReleaseTile(this.isValid, this.releaseNumber, this.color);
+		return new ReleaseTile(this.isValid, this.isHint, this.releaseNumber, this.color);
 	}
 	
 	public int levelType(){

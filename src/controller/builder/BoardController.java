@@ -53,7 +53,7 @@ public class BoardController extends MouseAdapter {
 		}
 	}
 	
-	@Override
+	/*@Override
 	public void mouseReleased(MouseEvent ae){
 		System.out.println("Hahaha");
 		TileView t = (TileView) boardView.findComponentAt(ae.getPoint());
@@ -64,6 +64,6 @@ public class BoardController extends MouseAdapter {
 		} else {
 			System.out.println("Whoops");
 		}
-	}
+	}*/
 	
 }

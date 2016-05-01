@@ -9,8 +9,8 @@ public class LightningTile extends Tile {
 	
 	boolean isColored;
 	
-	public LightningTile(boolean isValid) {
-		super(isValid);
+	public LightningTile(boolean isValid, boolean isHint) {
+		super(isValid, isHint);
 		isColored = false;
 	}
 	
@@ -23,7 +23,7 @@ public class LightningTile extends Tile {
 	}
 	
 	public Tile copy(){
-		return new LightningTile(this.isValid);
+		return new LightningTile(this.isValid, this.isHint);
 	}
 	
 	public int levelType(){
