@@ -47,4 +47,12 @@ public class PieceView extends JPanel{
 	public SquareView[] getSquare(){
 		return squareView;
 	}
+	
+	public void redraw(){
+		for(int i=0;i<=5;i++){
+			squareView[i].setLocation(45*piece.getSquares()[i].getX(),45*piece.getSquares()[i].getY());
+			this.repaint();
+		}
+		
+	}
 }

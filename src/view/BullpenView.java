@@ -6,11 +6,14 @@ import javax.swing.GroupLayout.Alignment;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.util.Random;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 import javax.swing.LayoutStyle.ComponentPlacement;
 
 import controller.builder.PieceController;
 import controller.builder.PiecePlayerController;
+import controller.builder.RotatingController;
 import model.*;
 
 import javax.swing.JLabel;
@@ -81,7 +84,7 @@ public class BullpenView extends JPanel {
 		PiecePlayerController m = new PiecePlayerController(this.app,pieceView);
 		pieceView.addMouseListener(m);
 		pieceView.addMouseMotionListener(m);
-		this.repaint();
+		this.app.repaint();
 	}
 	
 }

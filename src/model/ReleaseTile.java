@@ -38,7 +38,19 @@ public class ReleaseTile extends Tile {
 		return isValid && isCovered;
 	}
 	
+	/**
+	 * Return number on tile.
+	 * @return one of number in range 1 to 6 if there is a number; otherwise, zero
+	 */
 	public int getNumber(){
 		return releaseNumber;
+	}
+	
+	/**
+	 * Return kind of color.
+	 * @return one of number in range 1 to 3 if there is a number; otherwise, zero
+	 */
+	public int getColor(){
+		return color;
 	}
 }

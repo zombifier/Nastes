@@ -46,4 +46,13 @@ public class Square implements java.io.Serializable {
 	public void flip(boolean direction) { // true for horizontal, false for vertical
 		piecePosition.flip(direction);
 	}
+	
+	/**
+	 * Translate the PiecePosition to the specific location.
+	 * @param x X-coordination
+	 * @param y Y-coordination
+	 */
+	public void translate(int x, int y){
+		piecePosition.translate(x, y);
+	}
 }

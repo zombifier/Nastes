@@ -108,11 +108,23 @@ public class Piece implements java.io.Serializable {
 	}
 	
 	/**
+	 * Translate the PiecePosition to the specific location.
+	 * @param x X-coordination
+	 * @param y Y-coordination
+	 */
+	public void translate(int x, int y){
+		for(Square sq:squares){
+			sq.translate(x, y);
+		}
+	}
+	
+	/**
 	 * return the copy of the piece
 	 * @return Copied piece
 	 */
 	public Piece copy(){
 		return new Piece(this.pieceID, this.type);
 	}
+	
 	
 }

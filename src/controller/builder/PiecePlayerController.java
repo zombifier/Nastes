@@ -18,12 +18,14 @@ public class PiecePlayerController extends MouseAdapter{
 	PieceView pieceView;
 	int diffX;
 	int diffY;
+	int countPress;
 	boolean beingMoved = false;
 	public PiecePlayerController(BuilderApplication app, PieceView pieceView){
 		super();
 		this.app = app;
 		this.bullpenView = this.app.getPullpenView();
 		this.pieceView = pieceView;
+		this.countPress = 0;
 	}
 	
 	@Override
@@ -47,8 +49,9 @@ public class PiecePlayerController extends MouseAdapter{
 				this.bullpenView.remove(this.pieceView);
 				
 		//		ae.translatePoint(ae.getComponent().getLocation().x, ae.getComponent().getLocation().y);
-				this.app.setMovingPiece(this.pieceView,ae.getComponent().getLocation().x,ae.getComponent().getLocation().y);
-		//		this.bullpenView.repaint();
+				this.app.setMovingPiece(this.countPress,this.pieceView,ae.getComponent().getLocation().x,ae.getComponent().getLocation().y);
+				this.countPress = 1;
+				//		this.bullpenView.repaint();
 				//copyPieceView.setBounds(ae.getX(),ae.getY(),270,270);
 				//this.playerGame.add(pieceView);
 				//bullpenView.remove(pieceView);
@@ -62,7 +65,6 @@ public class PiecePlayerController extends MouseAdapter{
 				this.app.repaint();
 			}
 			
-		
 		} 
 	}
 	
@@ -70,23 +72,20 @@ public class PiecePlayerController extends MouseAdapter{
 	public void mouseDragged(MouseEvent ae){
 		if (this.beingMoved){
 			this.bullpenView.repaint();
-			System.out.println("being Move");
+//			System.out.println("being Move");
 			ae.translatePoint(ae.getComponent().getLocation().x-diffX, ae.getComponent().getLocation().y-diffY);
 			this.app.updateMovePiece(this.pieceView, ae.getX(),ae.getY());
 			//this.pieceView.setLocation(ae.getX(),ae.getY());
-	
-			System.out.println("" + (ae.getX())+" "+(ae.getY()));
+//	
+//			System.out.println("" + (ae.getX())+" "+(ae.getY()));
 			//pieceView.setLocation(ae.getX(),ae.getY());
 		}
 		
-		if ((ae.getModifiers() & ActionEvent.CTRL_MASK)==ActionEvent.CTRL_MASK){
-
-			System.out.println("CTRL was pressed");
-		}
 		
 	}
 	@Override
 	public void mouseReleased(MouseEvent ae){
 		this.beingMoved=false;
 	}
+	
 }

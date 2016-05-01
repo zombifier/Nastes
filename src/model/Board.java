@@ -1,6 +1,5 @@
 package model;
 
-import java.awt.Point;
 import java.util.*;
 
 /**
@@ -21,9 +20,11 @@ public class Board implements java.io.Serializable{
 	
 	Tile tiles[][] = new Tile[12][12];
 	HashMap<Piece,BoardPosition> pieces;
+	ArrayList<Piece> allPieces;
 	
 	public Board(int levelType){
 		pieces = new HashMap<Piece, BoardPosition>();
+		allPieces = new ArrayList<Piece>();
 		tiles = new Tile[12][12];
 		for (int i=0;i<=11;i++){
 			for (int j=0;j<=11;j++){
@@ -42,6 +43,7 @@ public class Board implements java.io.Serializable{
 	
 	public Board(Tile[][] tiles){
 		pieces = new HashMap<Piece, BoardPosition>();
+		allPieces = new ArrayList<Piece>();
 		this.tiles=tiles;
 	}
 	
@@ -90,6 +92,7 @@ public class Board implements java.io.Serializable{
 		int xPos;
 		int yPos;
 		if (isLegal(piece, position)) { // add the piece and notify the tiles that a square is added on top
+			allPieces.add(piece);
 			pieces.put(piece, position);
 			for (Square s:piece.getSquares()) {
 				xPos = position.getX() + s.getX();
@@ -110,7 +113,12 @@ public class Board implements java.io.Serializable{
 		int xPos, yPos;
 
 		BoardPosition position = pieces.remove(piece);
-		if (position!=null) {
+
+		System.out.println(pieces.containsKey(piece));
+		
+		if (position != null) {
+			pieces.remove(piece, position);
+			allPieces.remove(piece);
 			for (Square s:piece.getSquares()) {
 				xPos = position.getX() + s.getX();
 				yPos = position.getY() + s.getY();
@@ -123,10 +131,13 @@ public class Board implements java.io.Serializable{
 	
 
 	/**
-	 * return the copy of the board
+	 * return the copy of the board.
 	 * @return Copied board
 	 */
 	public Board copy(){
+		// assume that the board being copied does not have any piece
+		// because 1) in Builder, piece cannot be placed on the board
+		//		   2) in Player, copy is invoked for initialization of the level
 		Tile[][] tiles;
 		tiles = new Tile[12][12];
 		for(int i = 0; i < 12; i++)
@@ -152,7 +163,6 @@ public class Board implements java.io.Serializable{
 	 * @return an integer that represent the level type
 	 */
 	public int getLevelType(){
-		
 		return this.tiles[0][0].levelType();
 	}
 	/**
@@ -174,5 +184,46 @@ public class Board implements java.io.Serializable{
 //					number++;
 //		return number;
 	
+	/**
+	 * Get piece at the specific BoardPosition
+	 * @param position BoardPosition for retrieving piece
+	 * @return Piece if there is; otherwise, null
+	 */
+	public Piece getPieceAt(BoardPosition position){
+		int c=0;
+		for(Piece piece: allPieces){
+			if(isAt(piece, position))
+				return piece;
+		}
+		return null;
+	}
+	
+	/**
+	 * Return boardposition for given piece
+	 * @param piece Piece being considered
+	 * @return BoardPosition for the piece if there is piece; otherwise, null
+	 */
+	public BoardPosition getBoardPosition(Piece piece){
+		if(piece != null)
+			return pieces.get(piece);
+		return null;
+	}
+	
+	/**
+	 * Decide if the piece is at the boardposition
+	 * @param piece Piece being considered
+	 * @param position BoardPosition being considered
+	 * @return true if piece is on the position; otherwise, false;
+	 */
+	boolean isAt(Piece piece, BoardPosition position){
+		BoardPosition piecePosition = pieces.get(piece);
+		if(piecePosition != null)
+			for(Square square: piece.getSquares()){
+				if(position.equals(new BoardPosition(piecePosition.getX() + square.getX(), piecePosition.getY() + square.getY()))){
+					return true;
+				}
+			}
+		return false;
+	}
 }
 
