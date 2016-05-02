@@ -17,7 +17,6 @@ public abstract class Level implements java.io.Serializable{
 	int starEarned;
 	boolean isUnlocked;
 	int levelNum;
-	Hint hint;
 	abstract public int levelType();
 	
 	public Level(int type){
