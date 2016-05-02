@@ -80,7 +80,7 @@ public class BoardController extends MouseAdapter {
 									button.setBackground(Color.RED);
 								} else if (color ==2){
 									button.setText(""+Integer.toString(num));
-									button.setBackground(Color.BLUE);
+									button.setBackground(Color.YELLOW);
 								} else if (color == 3){
 									button.setText(""+Integer.toString(num));
 									button.setBackground(Color.GREEN);

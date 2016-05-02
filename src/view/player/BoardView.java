@@ -111,31 +111,31 @@ public class BoardView extends JPanel {
 					else
 						colorTile = Color.green;
 				}
-				
-				// Print the number if there is
-				if(level.levelType() == 2){ // Check if level is Release
-					int type = ((ReleaseTile)tile).getColor(); // Confident because having check
-					if(type > 0){
-						Color colorNumber;
-						if(i==0)
-							colorNumber=Color.red;
-						else if(i==1)
-							colorNumber=Color.yellow;
-						else 
-							colorNumber=Color.blue;
-						type = ((ReleaseTile)tile).getNumber(); // Confident because having check
-						offScreenGraphics.setFont(new Font("Consolas",Font.BOLD,16));
-						offScreenGraphics.setColor(colorNumber);
-						offScreenGraphics.drawString("" + (type + 1), 
-													(j + 1) * offset + j * tileSize + tileSize / 2,
-													(i + 1) * offset + i * tileSize + tileSize / 3 * 2);
-					}
-				}
 				offScreenGraphics.setColor(colorTile);
 				offScreenGraphics.fillRect((j + 1) * offset + j * tileSize,
 											(i + 1) * offset + i * tileSize,
 											tileSize,
 											tileSize);
+				// Print the number if there is
+				if(level.levelType() == 2){ // Check if level is Release
+					int color = ((ReleaseTile)tile).getColor(); // Confident because having check
+					if(color > 0){
+						Color colorNumber;
+						if(color==1)
+							colorNumber=Color.red;
+						else if(color==2)
+							colorNumber=Color.yellow;
+						else 
+							colorNumber=Color.green;
+						int num = ((ReleaseTile)tile).getNumber(); // Confident because having check
+						offScreenGraphics.setFont(new Font("Consolas",Font.BOLD,16));
+						offScreenGraphics.setColor(colorNumber);
+						offScreenGraphics.drawString("" + (num + 1), 
+													(j + 1) * offset + j * tileSize + tileSize / 2,
+													(i + 1) * offset + i * tileSize + tileSize / 3 * 2);
+					}
+				}
+				
 				}
 		
 	}
