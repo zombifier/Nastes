@@ -26,7 +26,11 @@ public class Release extends Level{
 	}
 	
 	public boolean hasWon() {
+		if ((this.redNumbersUncovered==0)&&(this.yellowNumbersUncovered==0)&&(this.greenNumbersUncovered==0)){
+			return true;
+		}else{
 		return false;
+		}
 	}
 	
 	public String name() { return "Release"; }
@@ -47,7 +51,17 @@ public class Release extends Level{
 	
 	public int resultStar(){
 		// subject to be changed
-		return 0;
+		int numStar = 0;
+		if (this.redNumbersUncovered == 0){
+			numStar = numStar + 1;
+		}
+		if (this.yellowNumbersUncovered == 0){
+			numStar = numStar + 1;
+		}
+		if (this.greenNumbersUncovered == 0){
+			numStar = numStar + 1;
+		}
+		return numStar;
 	}
 	
 	public void limitDecrease(){}
