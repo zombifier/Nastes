@@ -51,7 +51,7 @@ public class TileView_Release extends TileView {
 			if (t.getColor() == 1){
 				numberPanel.setForeground(Color.RED);
 			}else if (t.getColor() == 2){
-				numberPanel.setForeground(Color.BLUE);
+				numberPanel.setForeground(Color.YELLOW);
 			} else if (t.getColor() == 3){
 
 				numberPanel.setForeground(Color.GREEN);
