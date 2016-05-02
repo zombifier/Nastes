@@ -25,10 +25,6 @@ public class Game implements java.io.Serializable {
 			levels[i] = new Puzzle(8); // The number needs to be changed
 	}
 	
-	public Game(Level[] levels){
-		this.levels=levels;
-	}
-	
 	/**
 	 * return the level corresponding to the number.
 	 * @param stage Number of level in the game
