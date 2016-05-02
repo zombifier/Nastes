@@ -48,9 +48,9 @@ public class Puzzle extends Level{
 	}
 	
 	public int resultStar(){
-		if(bullpen.numRemainPiece() <= 0) return 3;
-		else if(bullpen.numRemainPiece() <= 1) return 2;
-		else if(bullpen.numRemainPiece() <= 2) return 1;
+		if(this.tilesUncovered <= 0) return 3;
+		else if(this.tilesUncovered <= 6) return 2;
+		else if(this.tilesUncovered <= 12) return 1;
 		return 0;
 	}
 	
