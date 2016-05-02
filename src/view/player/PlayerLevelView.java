@@ -356,7 +356,16 @@ public class PlayerLevelView extends JPanel {
 	}
 
 	public void showHint() {
-		boardView.drawHint();
+		Timer timer = new Timer();
+		boardView.setHint();
+		boardView.redraw();
+		timer.schedule(new TimerTask() {
+			  @Override
+			  public void run() {
+				  boardView.setHint();
+				  boardView.redraw();
+			  }
+			}, 5000);
 	}
 
 }

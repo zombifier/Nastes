@@ -32,7 +32,10 @@ public class BoardView extends JPanel {
 	Image offScreenImage;
 	Graphics offScreenGraphics;
 
+	boolean hintMode;
+	
 	public BoardView(Level level,HashMap<Piece,Color> data){
+		this.hintMode = false;
 		this.level = level;
 		board = level.getBoard();
 		
@@ -75,71 +78,7 @@ public class BoardView extends JPanel {
 		g.drawImage(offScreenImage, 0, 0, this);
 	}
 
-	public void drawHint(){
-		if (offScreenImage == null) {
-			// create on demand
-			Dimension s = getPreferredSize();
-			offScreenImage = this.createImage(s.width, s.height);
-			offScreenGraphics = offScreenImage.getGraphics();
-
-		}
-
-		Dimension dim = getPreferredSize();
-		offScreenGraphics.clearRect(0,0,dim.width,dim.height);
-		offScreenGraphics.setColor(Color.black);
-		offScreenGraphics.fillRect(0,0,dim.width,dim.height);
-
-		Color colorTile;
-		for(int i = 0; i < 12; i++)
-			for(int j = 0; j < 12; j++) {
-				Tile tile = board.getTile(i, j);
-				if(tile == null || !tile.isValid())
-					colorTile = Color.black;
-				else if(tile.isHint())
-					colorTile = Color.cyan;
-				else if(tile.isValid() && !tile.isFilled())
-					colorTile = Color.white;
-				else {
-					if(level.levelType() == 0){ // Check if level is Puzzle
-						// if so, print the color of the piece instead of one of tile
-						Piece piece = board.getPieceAt(new BoardPosition(i, j));
-						colorTile = data.get(piece);
-						if(colorTile == null){
-							colorTile=new Color(random.nextInt(256),random.nextInt(256),random.nextInt(256));
-							data.put(piece, colorTile);
-						}
-					}
-					else
-						colorTile = Color.green;
-				}
-				
-				// Print the number if there is
-				if(level.levelType() == 2){ // Check if level is Release
-					int type = ((ReleaseTile)tile).getColor(); // Confident because having check
-					if(type > 0){
-						Color colorNumber;
-						if(i == 1)
-							colorNumber=Color.red;
-						else if(i == 2)
-							colorNumber=Color.yellow;
-						else 
-							colorNumber=Color.blue;
-						type = ((ReleaseTile)tile).getNumber(); // Confident because having check
-						offScreenGraphics.setFont(new Font("Consolas",Font.BOLD,16));
-						offScreenGraphics.setColor(colorNumber);
-						offScreenGraphics.drawString("" + type, 
-													(j + 1) * offset + j * tileSize + tileSize / 2,
-													(i + 1) * offset + i * tileSize + tileSize / 3 * 2);
-					}
-				}
-				offScreenGraphics.setColor(colorTile);
-				offScreenGraphics.fillRect((j + 1) * offset + j * tileSize,
-											(i + 1) * offset + i * tileSize,
-											tileSize,
-											tileSize);
-				}
-		
-	}
+	
 	public void redraw(){
 
 		if (offScreenImage == null) {
@@ -161,6 +100,8 @@ public class BoardView extends JPanel {
 				Tile tile = board.getTile(i, j);
 				if(tile == null || !tile.isValid())
 					colorTile = Color.black;
+				else if ((hintMode) && (tile.isHint()))
+					colorTile = Color.cyan;
 				else if(tile.isValid() && !tile.isFilled())
 					colorTile = Color.white;
 				else {
@@ -207,6 +148,10 @@ public class BoardView extends JPanel {
 	
 	public Image getImage(){
 		return offScreenImage;
+	}
+	
+	public void setHint() {
+		hintMode = !hintMode;
 	}
 	
 	public void setBoard(Board b){
