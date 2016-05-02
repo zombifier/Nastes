@@ -26,7 +26,9 @@ public class Puzzle extends Level{
 	}
 	
 	public boolean hasWon() {
-		return (tilesUncovered == 0) ;
+		if ((tilesUncovered == 0)||(moveElapsed == moveLimit)){
+			return true;
+		} else {return false;}
 	}
 	
 	public String name() { return "Puzzle"; }

@@ -27,7 +27,11 @@ public class Lightning extends Level{
 	}
 	
 	public boolean hasWon() {
-		return tilesUncolored == 0;
+		if ((tilesUncolored == 0)||(timeElapsed == timeLimit)){
+			return true;
+		} else {
+			return false;
+		}
 	}
 	
 	public String name() { return "Lightning"; }
