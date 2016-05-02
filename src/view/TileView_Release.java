@@ -19,12 +19,47 @@ public class TileView_Release extends TileView {
 			JLabel numberPanel = new JLabel();
 			numberPanel.setLayout(null);
 			numberPanel.setOpaque(false);
-			numberPanel.setBounds(0,0,45,45);
+			numberPanel.setBounds(15,15,15,15);
+			numberPanel.setText(""+t.getNumber());
+			numberPanel.setHorizontalAlignment(JLabel.CENTER);
+			numberPanel.setVerticalAlignment(JLabel.CENTER);
+			if (t.getColor() == 1){
+				numberPanel.setForeground(Color.RED);
+			}else if (t.getColor() == 2){
+				numberPanel.setForeground(Color.BLUE);
+			} else if (t.getColor() == 3){
+
+				numberPanel.setForeground(Color.GREEN);
+			}
+			this.add(numberPanel);
+		}
+	}
+	
+	public void setNumAndColor(int num, int color){
+		this.removeAll();
+
+		ReleaseTile t = (ReleaseTile)tile;
+		if(t.getNumber()>0){
+			JLabel numberPanel = new JLabel();
+			numberPanel.setLayout(null);
+			numberPanel.setOpaque(false);
+			numberPanel.setBounds(15,15,15,15);
 			numberPanel.setText(""+t.getNumber());
 			numberPanel.setHorizontalAlignment(JLabel.CENTER);
 			numberPanel.setVerticalAlignment(JLabel.CENTER);
 			this.add(numberPanel);
+			if (t.getColor() == 1){
+				numberPanel.setForeground(Color.RED);
+			}else if (t.getColor() == 2){
+				numberPanel.setForeground(Color.BLUE);
+			} else if (t.getColor() == 3){
+
+				numberPanel.setForeground(Color.GREEN);
+			}
 		}
+		this.repaint();
+		
 	}
+	
 
 }
