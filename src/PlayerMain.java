@@ -1,8 +1,10 @@
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 
 import javax.swing.JFrame;
 
@@ -17,6 +19,7 @@ public class PlayerMain {
 
 	final static String location = "Game.storage";
 	
+	static Game game;
 	/**
 	 * loadGame()
 	 * Loads the game, conditional on being able to find one to load.
@@ -46,6 +49,24 @@ public class PlayerMain {
 	}
 	
 	/**
+	 * saveGame()
+	 * Saves the game.
+	 */
+	static void saveGame(){
+		ObjectOutputStream oos = null;
+		try {
+			oos = new ObjectOutputStream(new FileOutputStream(location));
+			oos.writeObject(game);
+		} catch (Exception e) {
+			System.err.println("Unable to save game: " + e.getMessage());
+		}
+		
+		if (oos != null) {
+			try { oos.close(); } catch (IOException ioe) { } 
+		}
+	}
+	
+	/**
 	 * Main function.
 	 * Calls loadGame to get the game.
 	 * If one does not yet exist, creates a new one.
@@ -54,7 +75,7 @@ public class PlayerMain {
 	 */
 	public static void main(String[] args){
 		
-		Game game = loadGame();
+		game = loadGame();
 		
 		if(game == null)
 			game = new Game();
@@ -62,6 +83,7 @@ public class PlayerMain {
 		PlayerApplication app=new PlayerApplication(game);
 		app.addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent e) {
+				saveGame();
 				app.dispose();
 			}      
 		});
