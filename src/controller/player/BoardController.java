@@ -51,12 +51,14 @@ public class BoardController extends LevelController {
 				x -= xBoard * eachSize;
 				y -= yBoard * eachSize;
 				levelView.setAnchor(new Point(x, y));
+				if (level.levelType()==0) level.limitDecrease();
 			}
 		}
 		else {
 			if(board.addPiece(level.getPiece(), new BoardPosition(yBoard, xBoard))){
 				level.holdPiece(null);
 				levelView.setMovePieceView(null);
+				if (level.levelType()==0) level.limitDecrease();
 			}
 		}
 		
