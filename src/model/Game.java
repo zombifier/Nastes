@@ -55,6 +55,7 @@ public class Game implements java.io.Serializable {
 		for(int i = 0; i < 15; i++) {
 			levels[i].lock();
 			levels[i].levelNum = i;
+			levels[i].starEarned = 0;
 		}
 		levels[0].unlock();
 	}
