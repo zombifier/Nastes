@@ -165,6 +165,7 @@ public class PlayerLevelView extends JPanel {
 		hintButton.setFont(font);
 		hintButton.setText("Hint");
 		hintButton.setBounds(900, 10, 120, 60);
+		hintButton.setFocusable(false);
 		hintButton.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
