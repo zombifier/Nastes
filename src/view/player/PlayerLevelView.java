@@ -30,11 +30,11 @@ public class PlayerLevelView extends JPanel {
 	final public static int tileSize = 40;
 	final public static int eachSize = offset + tileSize;
 	final public static Font font = new Font("Consolas", Font.BOLD, 28);
-	
+
 	HashMap<Piece,Color> data;
 
 	Level level;
-	
+
 	Game game;
 
 	BoardView boardView;
@@ -55,6 +55,8 @@ public class PlayerLevelView extends JPanel {
 
 	Timer timer;
 	TimerTask timerTask;
+	
+	boolean done = false;
 
 	public PlayerLevelView(Game game, Level level, PlayerApplication app){
 		this.game = game;
@@ -73,7 +75,7 @@ public class PlayerLevelView extends JPanel {
 		addKeyListener(lkc);
 		setFocusable(true);
 		requestFocusInWindow();
-		
+
 
 		data = new HashMap<Piece,Color>();
 
@@ -90,7 +92,7 @@ public class PlayerLevelView extends JPanel {
 		boardView.addMouseListener(bc);
 		boardView.addMouseMotionListener(bc);
 
-		
+
 		// BullpenView
 		bullpenView = new BullpenView(level, data);
 		Dimension d1 = bullpenView.getPreferredSize();
@@ -101,11 +103,11 @@ public class PlayerLevelView extends JPanel {
 		bullpenView.addMouseListener(bpc);
 		bullpenView.addMouseMotionListener(bpc);
 
-		
+
 		// Timer for Lightning Level
 		timer = new Timer();
 		timerTask = new TimerTask(){
-			
+
 			@Override
 			public void run() {
 				//level.update(1);
@@ -113,20 +115,20 @@ public class PlayerLevelView extends JPanel {
 				//PlayerLevelView.this.getLimitView().repaint();
 				if (level.levelType()==1) {
 					level.limitDecrease();
-					txtLimit.setText(level.getLimit());
+					txtLimit.setText(level.getLimit() + " " + level.getUnit());
 				}
-				
+
 				if(level.hasWon()){
 					PlayerLevelView.this.redraw();
 					PlayerLevelView.this.repaint();
 					finishLevel();
 				}
 			}
-			
+
 		};
 		timer.schedule(timerTask, 1000, 1000);
 
-		
+
 		// Back Button
 		JButton backButton=new JButton();
 		backButton.setFont(font);
@@ -140,7 +142,7 @@ public class PlayerLevelView extends JPanel {
 		});
 		add(backButton);
 
-		
+
 		// Reset Button
 		JButton resetButton=new JButton();
 		resetButton.setFont(font);
@@ -156,22 +158,22 @@ public class PlayerLevelView extends JPanel {
 			}
 		});
 		add(resetButton);
-		
-		
+
+
 		// Hint Button
-				JButton hintButton=new JButton();
-				hintButton.setFont(font);
-				hintButton.setText("Hint");
-				hintButton.setBounds(900, 10, 120, 60);
-				hintButton.addActionListener(new ActionListener(){
-					@Override
-					public void actionPerformed(ActionEvent arg0) {
-						showHint();
-					}
-				});
-				add(hintButton);
-				
-		
+		JButton hintButton=new JButton();
+		hintButton.setFont(font);
+		hintButton.setText("Hint");
+		hintButton.setBounds(900, 10, 120, 60);
+		hintButton.addActionListener(new ActionListener(){
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				showHint();
+			}
+		});
+		add(hintButton);
+
+
 		// Background 
 		JPanel bg = new JPanel();
 		bg.setBackground(Color.black);
@@ -189,7 +191,7 @@ public class PlayerLevelView extends JPanel {
 		nameLabel.setVerticalAlignment(JLabel.CENTER);
 		bg.add(nameLabel);
 
-		
+
 		// Background
 		bg=new JPanel();
 		bg.setBackground(Color.black);
@@ -207,7 +209,7 @@ public class PlayerLevelView extends JPanel {
 		numLabel.setBounds(2, 2, 56, 56);
 		bg.add(numLabel);
 
-		
+
 		// Background
 		bg=new JPanel();
 		bg.setBackground(Color.black);
@@ -218,7 +220,7 @@ public class PlayerLevelView extends JPanel {
 		txtLimit = new JLabel();
 		txtLimit.setBackground(Color.white);
 		txtLimit.setFont(font);
-		txtLimit.setText(level.getLimit());
+		txtLimit.setText(level.getLimit() + " " + level.getUnit());
 		txtLimit.setOpaque(true);
 		txtLimit.setHorizontalAlignment(JLabel.CENTER);
 		txtLimit.setVerticalAlignment(JLabel.CENTER);
@@ -285,9 +287,10 @@ public class PlayerLevelView extends JPanel {
 		bullpenView.redraw();
 		bullpenView.repaint();
 
-		txtLimit.setText(level.getLimit());
+		txtLimit.setText(level.getLimit() + " " + level.getUnit());
 
-		if(level.hasWon()){
+		if(level.hasWon() && !done){
+			done = true;
 			finishLevel();
 		}
 
@@ -351,7 +354,7 @@ public class PlayerLevelView extends JPanel {
 		StarView starView = new StarView(level, game, app);
 		starView.setVisible(true);
 	}
-	
+
 	public void showHint() {
 		boardView.drawHint();
 	}

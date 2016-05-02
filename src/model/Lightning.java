@@ -27,7 +27,7 @@ public class Lightning extends Level{
 	}
 	
 	public boolean hasWon() {
-		if ((tilesUncolored == 0)||(timeElapsed == timeLimit)){
+		if ((board.numRemainTile() <= 0) || (timeElapsed == timeLimit)){
 			return true;
 		} else {
 			return false;
@@ -43,7 +43,9 @@ public class Lightning extends Level{
 	public String getUnit() { return "Seconds"; }
 
 	public Level copy(){
-		return new Lightning(board.copy(), bullpen.copy(), this.timeLimit);
+		Level level = new Lightning(board.copy(), bullpen.copy(), this.timeLimit);
+		level.copyCondition((Level)this);
+		return level;
 	}
 	
 	public int levelType(){
@@ -51,14 +53,14 @@ public class Lightning extends Level{
 	}
 	
 	public int resultStar(){
-		if(this.tilesUncolored <= 0) return 3;
-		else if(this.tilesUncolored <= 6) return 2;
-		else if(this.tilesUncolored <= 12) return 1;
+		if(board.numRemainTile() <= 0) return 3;
+		else if(board.numRemainTile() <= 6) return 2;
+		else if(board.numRemainTile() <= 12) return 1;
 		return 0;
-//		return 0;
 	}
 	
 	public void limitDecrease() {
+		System.out.println(board.numRemainTile());
 		timeElapsed = timeElapsed+1;
 	}
 	

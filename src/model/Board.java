@@ -174,15 +174,21 @@ public class Board implements java.io.Serializable{
 	}
 	
 	
-	// Commented out for now. Was used to determine it tiles were valid for the lightning levels
 	
-//	public int numRemainTile() {
-//		int number = 0;
-//		for(int i = 0; i < 12; i++)
-//			for(int j = 0; j < 12; j++)
-//				if(tiles[i][j] != null && tiles[i][j].playable())
-//					number++;
-//		return number;
+	/**
+	 * Retunr the number of tile left unplayed
+	 * @return Number of unplayed tiles
+	 */
+	// Commented out for now. Was used to determine it tiles were valid for the lightning levels
+	// update need for resultStar() in Lightning
+	public int numRemainTile() {
+		int number = 0;
+		for(int i = 0; i < 12; i++)
+			for(int j = 0; j < 12; j++)
+				if(tiles[i][j] != null && tiles[i][j].isValid() && !tiles[i][j].isFilled())
+					number++;
+		return number;
+	}
 	
 	/**
 	 * Get piece at the specific BoardPosition
@@ -190,7 +196,6 @@ public class Board implements java.io.Serializable{
 	 * @return Piece if there is; otherwise, null
 	 */
 	public Piece getPieceAt(BoardPosition position){
-		int c=0;
 		for(Piece piece: allPieces){
 			if(isAt(piece, position))
 				return piece;

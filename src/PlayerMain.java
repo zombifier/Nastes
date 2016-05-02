@@ -58,7 +58,7 @@ public class PlayerMain {
 		
 		if(game == null)
 			game = new Game();
-		
+
 		PlayerApplication app=new PlayerApplication(game);
 		app.addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent e) {

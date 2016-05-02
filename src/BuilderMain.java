@@ -81,6 +81,7 @@ public class BuilderMain {
 		BuilderApplication app=new BuilderApplication(game);
 		app.addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent e) {
+				game.reset();
 				saveGame();
 				app.dispose();
 			}      

@@ -40,8 +40,7 @@ public class StarView extends JFrame {
 		ImageIcon result;
 		
 		
-		int numStar = level.resultStar();
-		numStar = 2;
+		final int numStar = level.resultStar();
 		for(int i = 0; i < 3; i++){
 			if(numStar > i)
 				result = filledStar;
@@ -55,7 +54,7 @@ public class StarView extends JFrame {
 		
 		addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent e) {
-				//StarView.this.game.setStar(StarView.this.level.getNumLevel(),numStar);
+				StarView.this.game.setStar(Integer.parseInt(StarView.this.level.getLevelNum().substring(1)), numStar);
 				StarView.this.app.setPanel(new PlayerSelectView(StarView.this.game, StarView.this.app));
 				StarView.this.app.setEnabled(true);
 				dispose();

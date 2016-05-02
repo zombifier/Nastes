@@ -2,6 +2,7 @@ package controller.player;
 
 import java.awt.Point;
 import java.awt.event.MouseEvent;
+import java.util.Random;
 
 import model.*;
 import view.player.*;
@@ -58,7 +59,14 @@ public class BoardController extends LevelController {
 			if(board.addPiece(level.getPiece(), new BoardPosition(yBoard, xBoard))){
 				level.holdPiece(null);
 				levelView.setMovePieceView(null);
-				if (level.levelType()!=1) level.limitDecrease();
+				if (level.levelType() != 1) { // Hack!!
+					level.limitDecrease();
+				}
+				else {
+					// add new piece to bullpen
+					Random rand = new Random();
+					level.getBullpen().addPiece(new Piece(rand.nextInt(), rand.nextInt(35)));
+				}
 			}
 		}
 		

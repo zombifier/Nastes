@@ -25,32 +25,44 @@ public class LevelKeyController extends KeyAdapter {
 	
 	@Override
 	public void keyPressed(KeyEvent ke){
-		Point p=levelView.getAnchor();
+		Point anchor = levelView.getAnchor();
 		
-		if(level.getPiece()==null) return;
+		if(level.getPiece() == null) return;
 		
-		if(ke.getKeyCode()==KeyEvent.VK_R){
+		if(ke.getKeyCode() == KeyEvent.VK_R){
 			level.getPiece().rotate(false);
-			p=new Point(p.y, eachSize - p.x);
-			//level.update(0); for update; need attention
+			anchor=new Point(anchor.y, eachSize - anchor.x);
+			/*
+			if (level.levelType() == 0)
+				level.limitDecrease();
+				*/
 		}
-		if(ke.getKeyCode()==KeyEvent.VK_E){
+		if(ke.getKeyCode() == KeyEvent.VK_E){
 			level.getPiece().rotate(true);
-			p=new Point(eachSize - p.y, p.x);
-			//level.update(0); for update; need attention
+			anchor=new Point(eachSize - anchor.y, anchor.x);
+			/*
+			if (level.levelType() == 0)
+				level.limitDecrease();
+			*/
 		}
-		if(ke.getKeyCode()==KeyEvent.VK_W){
+		if(ke.getKeyCode() == KeyEvent.VK_W){
 			level.getPiece().flip(true);
-			p=new Point(p.x, eachSize - p.y);
-			//level.update(0); for update; need attention
+			anchor=new Point(anchor.x, eachSize - anchor.y);
+			/*
+			if (level.levelType() == 0)
+				level.limitDecrease();
+				*/
 		}
-		if(ke.getKeyCode()==KeyEvent.VK_Q){
+		if(ke.getKeyCode() == KeyEvent.VK_Q){
 			level.getPiece().flip(false);
-			p=new Point(eachSize - p.x, p.y);
-			//level.update(0); for update; need attention
+			anchor=new Point(eachSize - anchor.x, anchor.y);
+			/*
+			if (level.levelType() == 0)
+				level.limitDecrease();
+			*/
 		}
 		
-		levelView.setAnchor(p);
+		levelView.setAnchor(anchor);
 		levelView.setMovePieceView(level.getPiece());
 		
 		levelView.redraw();

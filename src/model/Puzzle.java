@@ -26,7 +26,7 @@ public class Puzzle extends Level{
 	}
 	
 	public boolean hasWon() {
-		if ((tilesUncovered == 0)||(moveElapsed == moveLimit)){
+		if ((pieceBeingDragged == null && bullpen.numRemainPiece() <= 0) || (moveElapsed == moveLimit)){
 			return true;
 		} else {return false;}
 	}
@@ -40,7 +40,9 @@ public class Puzzle extends Level{
 	public String getUnit() { return "Moves"; }
 	
 	public Level copy(){
-		return new Puzzle(board.copy(), bullpen.copy(), moveLimit);
+		Level level = new Puzzle(board.copy(), bullpen.copy(), moveLimit);
+		level.copyCondition((Level)this);
+		return level;
 	}
 	
 	public int levelType(){
@@ -48,14 +50,19 @@ public class Puzzle extends Level{
 	}
 	
 	public int resultStar(){
-		if(this.tilesUncovered <= 0) return 3;
+		/*if(this.tilesUncovered <= 0) return 3;
 		else if(this.tilesUncovered <= 6) return 2;
 		else if(this.tilesUncovered <= 12) return 1;
+		return 0;*/
+		// Should rely on pieces left in bullpen (having sent the current held piece to bullpen)
+		if(bullpen.numRemainPiece() <= 0) return 3;
+		else if(bullpen.numRemainPiece() <= 1) return 2;
+		else if(bullpen.numRemainPiece() <= 2) return 1;
 		return 0;
 	}
 	
 	public void limitDecrease() {
-		moveElapsed = moveElapsed+1;
+		moveElapsed = moveElapsed + 1;
 	}
 	
 }

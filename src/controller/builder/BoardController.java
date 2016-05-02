@@ -72,9 +72,8 @@ public class BoardController extends MouseAdapter {
 							for(int j = 0; j < 7; j++){
 								JButton button = new JButton();
 								button.setBounds(2 + j * 52, 2 + i * 52, 50, 50);
-								final int value = 7 * i + j;
-								int num = (value+1)%7;
-								int color = (value)/7+1;
+								int num = j;
+								int color = i + 1;
 								if (color == 1){
 									button.setText(""+Integer.toString(num));
 									button.setBackground(Color.RED);

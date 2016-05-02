@@ -46,4 +46,30 @@ public class Game implements java.io.Serializable {
 	public void setLevel(int stage, Level level){
 		levels[stage] = level;
 	}
+	
+	/**
+	 * Set the first level to be playable and lock others
+	 * Similar to reset the game
+	 */
+	public void reset(){
+		for(int i = 0; i < 15; i++) {
+			levels[i].lock();
+			levels[i].levelNum = i;
+		}
+		levels[0].unlock();
+	}
+	
+
+	/**
+	 * Set the number of star for the level
+	 * @param level Number of level
+	 * @param numberStar number of Star; from 0 to 3
+	 */
+	public void setStar(int level,int numberStar){
+		levels[level].setMaxStar(numberStar);
+		if(numberStar > 0 && level < 14){
+			levels[level+1].unlock();
+		}
+			
+	}
 }

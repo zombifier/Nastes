@@ -83,11 +83,15 @@ public abstract class Level implements java.io.Serializable{
 	abstract public String getLimit();
 	
 	/**
-	 * Get string which contains the unit of limit for the view
+	 * Get string which contains the unit of limit for the view.
 	 * @return String of unit of limit
 	 */
 	abstract public String getUnit();
 	
+	/**
+	 * Return the number of star player gets from the current level state.
+	 * @return Number of star earned
+	 */
 	abstract public int resultStar();
 	
 	/**
@@ -121,6 +125,15 @@ public abstract class Level implements java.io.Serializable{
 	abstract public Level copy();
 	
 	/**
+	 * Copy shared data which are in superclass (Level)
+	 */
+	public void copyCondition(Level another){
+		this.starEarned = another.starEarned;
+		this.isUnlocked = another.isUnlocked;
+		this.levelNum = another.levelNum;
+	}
+	
+	/**
 	 * Return the state of level
 	 * @return true if it is unlocked; otherwise, false
 	 */
@@ -135,10 +148,32 @@ public abstract class Level implements java.io.Serializable{
 	public int getStar(){
 		return starEarned;
 	}
-	
+
+	/*
+	 * Unlock the state so that player is not able to play
+	 */
+	public void lock(){
+		isUnlocked = false;
+	}
+
+	/*
+	 * Unlock the state so that player is able to play
+	 */
+	public void unlock(){
+		isUnlocked = true;
+	}
 	/**
 	 * Update the limit (or in the case of Release, the number sets filled)
 	 */
 	public abstract void limitDecrease();
+
+	
+	/**
+	 * Set the number of star to the maximum number between the current and the new.
+	 * @param starGot Number of star
+	 */
+	public void setMaxStar(int starGot) {
+		starEarned = Math.max(starEarned, starGot);
+	}
 	
 }

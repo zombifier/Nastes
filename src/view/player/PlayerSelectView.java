@@ -28,6 +28,9 @@ public class PlayerSelectView extends JPanel {
 	ImageIcon filledStar;
 	
 	public PlayerSelectView(Game game, PlayerApplication app){
+		emptyStar = new ImageIcon(this.getClass().getResource(emptyStarDir));
+		filledStar = new ImageIcon(this.getClass().getResource(filledStarDir));
+		
 		this.game = game;
 		this.app = app;
 		
@@ -73,7 +76,7 @@ public class PlayerSelectView extends JPanel {
 				levelButton.addActionListener(new ActionListener(){
 					public void actionPerformed(ActionEvent ae){
 						Level level = game.getLevel(k);
-						//if(level != null && level.isPlayable())
+						if(level != null && level.isPlayable())
 							PlayerSelectView.this.app.setPanel(new PlayerLevelView(game, level, app));
 					}
 				});

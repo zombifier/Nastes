@@ -45,7 +45,7 @@ abstract public class Tile implements java.io.Serializable {
 	 * Remove the square to the tile, changing the state of the tile.
 	 */
 	public void removeSquare(){
-		
+		// Do nothing
 	}
 
 	/**

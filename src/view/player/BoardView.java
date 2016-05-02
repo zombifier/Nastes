@@ -118,16 +118,16 @@ public class BoardView extends JPanel {
 					int type = ((ReleaseTile)tile).getColor(); // Confident because having check
 					if(type > 0){
 						Color colorNumber;
-						if(i==0)
+						if(i == 1)
 							colorNumber=Color.red;
-						else if(i==1)
+						else if(i == 2)
 							colorNumber=Color.yellow;
 						else 
 							colorNumber=Color.blue;
 						type = ((ReleaseTile)tile).getNumber(); // Confident because having check
 						offScreenGraphics.setFont(new Font("Consolas",Font.BOLD,16));
 						offScreenGraphics.setColor(colorNumber);
-						offScreenGraphics.drawString("" + (type + 1), 
+						offScreenGraphics.drawString("" + type, 
 													(j + 1) * offset + j * tileSize + tileSize / 2,
 													(i + 1) * offset + i * tileSize + tileSize / 3 * 2);
 					}
@@ -195,7 +195,7 @@ public class BoardView extends JPanel {
 						int num = ((ReleaseTile)tile).getNumber(); // Confident because having check
 						offScreenGraphics.setFont(new Font("Consolas",Font.BOLD,16));
 						offScreenGraphics.setColor(colorNumber);
-						offScreenGraphics.drawString("" + (num + 1), 
+						offScreenGraphics.drawString("" + num, 
 													(j + 1) * offset + j * tileSize + tileSize / 2,
 													(i + 1) * offset + i * tileSize + tileSize / 3 * 2);
 					}
