@@ -111,11 +111,15 @@ public class PlayerLevelView extends JPanel {
 				//level.update(1);
 				//PlayerLevelView.this.getLimitView().redraw();
 				//PlayerLevelView.this.getLimitView().repaint();
-				txtLimit.setText(level.getLimit());
-
+				if (level.levelType()==1) {
+					level.limitDecrease();
+					txtLimit.setText(level.getLimit());
+				}
+				
 				if(level.hasWon()){
 					PlayerLevelView.this.redraw();
 					PlayerLevelView.this.repaint();
+					finishLevel();
 				}
 			}
 			
@@ -153,6 +157,20 @@ public class PlayerLevelView extends JPanel {
 		});
 		add(resetButton);
 		
+		
+		// Hint Button
+				JButton hintButton=new JButton();
+				hintButton.setFont(font);
+				hintButton.setText("Hint");
+				hintButton.setBounds(900, 10, 120, 60);
+				hintButton.addActionListener(new ActionListener(){
+					@Override
+					public void actionPerformed(ActionEvent arg0) {
+						showHint();
+					}
+				});
+				add(hintButton);
+				
 		
 		// Background 
 		JPanel bg = new JPanel();
@@ -332,6 +350,10 @@ public class PlayerLevelView extends JPanel {
 		}
 		StarView starView = new StarView(level, game, app);
 		starView.setVisible(true);
+	}
+	
+	public void showHint() {
+		boardView.drawHint();
 	}
 
 }

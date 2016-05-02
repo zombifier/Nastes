@@ -135,4 +135,10 @@ public abstract class Level implements java.io.Serializable{
 	public int getStar(){
 		return starEarned;
 	}
+	
+	/**
+	 * Decrease the limit
+	 */
+	public abstract void limitDecrease();
+	
 }

@@ -51,4 +51,9 @@ public class Puzzle extends Level{
 		else if(bullpen.numRemainPiece() <= 2) return 1;
 		return 0;
 	}
+	
+	public void limitDecrease() {
+		moveElapsed = moveElapsed+1;
+	}
+	
 }

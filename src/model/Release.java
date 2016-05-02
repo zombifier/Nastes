@@ -49,4 +49,6 @@ public class Release extends Level{
 		// subject to be changed
 		return 0;
 	}
+	
+	public void limitDecrease(){}
 }

@@ -54,4 +54,8 @@ public class Lightning extends Level{
 		return 0;
 	}
 	
+	public void limitDecrease() {
+		timeLimit = timeLimit-1;
+	}
+	
 }
