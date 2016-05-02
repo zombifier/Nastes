@@ -33,7 +33,13 @@ public class Release extends Level{
 
 	public void setLimit(int limit) { /* cannot change by setting */ }
 	
-	public String getLimit() { return "0"; }
+	public String getLimit() {
+		int i = 0;
+		if (redNumbersUncovered == 0) i++;
+		if (yellowNumbersUncovered == 0) i++;
+		if (greenNumbersUncovered == 0) i++;
+		return Integer.toString(i);
+	}
 
 	public String getUnit() { return "Sets"; }
 	
@@ -50,5 +56,18 @@ public class Release extends Level{
 		return 0;
 	}
 	
-	public void limitDecrease(){}
+	public void limitDecrease(){
+		ReleaseTile t;
+		for (int i=0;i <12;i++)
+			for (int j=0;i <12;i++) {
+				t = (ReleaseTile) board.getTile(i, j);
+				if (t.isFilled()) {
+					switch (t.getColor()) {
+					case (1): redNumbersUncovered--; break;
+					case (2): yellowNumbersUncovered--; break;
+					case (3): greenNumbersUncovered--; break;
+					}
+				}
+			}
+	}
 }

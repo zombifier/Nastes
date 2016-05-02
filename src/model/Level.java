@@ -137,7 +137,7 @@ public abstract class Level implements java.io.Serializable{
 	}
 	
 	/**
-	 * Decrease the limit
+	 * Update the limit (or in the case of Release, the number sets filled)
 	 */
 	public abstract void limitDecrease();
 	
