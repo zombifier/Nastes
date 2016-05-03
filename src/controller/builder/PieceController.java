@@ -10,7 +10,6 @@ import model.Piece;
 import view.BuilderApplication;
 import view.BullpenView;
 import view.PieceView;
-import view.PlayerGame;
 
 public class PieceController extends MouseAdapter{
 	BuilderApplication app;
