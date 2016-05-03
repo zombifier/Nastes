@@ -97,17 +97,5 @@ public class BoardController extends MouseAdapter {
 		}
 	}
 	
-	/*@Override
-	public void mouseReleased(MouseEvent ae){
-		System.out.println("Hahaha");
-		TileView t = (TileView) boardView.findComponentAt(ae.getPoint());
-		
-		if(t != null){
-			PieceView pw = (PieceView)ae.getComponent();
-			this.boardView.drawPieceView(pw,t.getMousePosition());
-		} else {
-			System.out.println("Whoops");
-		}
-	}*/
 	
 }
