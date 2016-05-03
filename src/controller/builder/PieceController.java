@@ -47,10 +47,6 @@ public class PieceController extends MouseAdapter{
 		
 	}
 	
-	@Override
-	public void mouseDragged(MouseEvent ae){
-		ae.translatePoint(ae.getComponent().getLocation().x-pieceView.getX(), ae.getComponent().getLocation().y-pieceView.getY());
-		pieceView.setLocation(ae.getX(),ae.getY());
-	}
+
 	
 }

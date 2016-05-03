@@ -79,6 +79,9 @@ public class BoardView extends JPanel {
 		//pw.addMouseMotionListener(m);
 		this.repaint();
 	}
+	public Board getBoard(){
+		return this.board;
+	}
 	
 	
 }
