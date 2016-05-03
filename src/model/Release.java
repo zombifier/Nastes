@@ -99,7 +99,7 @@ public class Release extends Level{
 	/**
 	 * Update number of red, yellow, and green number uncovered correctly
 	 */
-	private void updateNumberUncovered(){
+	void updateNumberUncovered(){
 		ReleaseTile t;
 		redNumbersUncovered = 6;
 		yellowNumbersUncovered = 6;
