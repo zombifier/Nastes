@@ -295,6 +295,7 @@ public class PlayerLevelView extends JPanel {
 			finishLevel();
 		}
 
+		
 		if(level.getPiece()!=null){ // Check if there is piece being held
 			// if so, set an appropriate position
 			int x = mouse.x - anchor.x - 5 * eachSize;

@@ -1,5 +1,7 @@
 package view.player;
 
+import javax.swing.JFrame;
+
 import junit.framework.TestCase;
 import model.Game;
 import model.Level;
@@ -11,6 +13,7 @@ public class TestPlayerLevelView extends TestCase {
 	Level level1;
 	PlayerApplication app;
 	PlayerLevelView panel;
+	JFrame hold;
 	
 	@Override
 	public void setUp(){
@@ -32,17 +35,24 @@ public class TestPlayerLevelView extends TestCase {
 		app = new PlayerApplication(game);
 		
 		panel = new PlayerLevelView(game, level1, app);
+		
+		app.setVisible(true);
+		app.setPanel(panel);
+
 	}
 	
 	@Override
 	public void tearDown(){
 		game = null;
 		level1 = null;
-		app = null;
 		panel = null;
+		if(app != null)
+			app.dispose();
 	}
 	
 	public void testLevel(){
+		panel.redraw();
+		panel.repaint();
 		System.out.println("Run!!");
 	}
 }

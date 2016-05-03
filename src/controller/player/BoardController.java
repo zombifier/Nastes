@@ -44,7 +44,7 @@ public class BoardController extends LevelController {
 
 			BoardPosition boPos = board.getBoardPosition(board.getPieceAt(new BoardPosition(yBoard, xBoard)));
 			pieceBeingDragged = board.removePiece(board.getPieceAt(new BoardPosition(yBoard, xBoard)));
-			
+
 			if(pieceBeingDragged != null){
 				pieceBeingDragged.translate(yBoard - boPos.getX(), xBoard - boPos.getY());
 				level.holdPiece(pieceBeingDragged);
@@ -52,6 +52,7 @@ public class BoardController extends LevelController {
 				x -= xBoard * eachSize;
 				y -= yBoard * eachSize;
 				levelView.setAnchor(new Point(x, y));
+				super.mouseMoved(me);
 				if (level.levelType()==0) level.limitDecrease();
 			}
 		}
