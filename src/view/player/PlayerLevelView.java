@@ -346,6 +346,8 @@ public class PlayerLevelView extends JPanel {
 
 	void finishLevel(){
 		timer.cancel();
+		
+		
 		if(level.getPiece()!=null){
 			level.getBullpen().addPiece(level.getPiece());
 			bullpenView.redraw();

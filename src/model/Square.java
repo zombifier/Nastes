@@ -55,4 +55,17 @@ public class Square implements java.io.Serializable {
 	public void translate(int x, int y){
 		piecePosition.translate(x, y);
 	}
+	
+	/**
+	 * Check if the object has the same PiecePosition to this.
+	 * @param obj Object to be test
+	 * @return true if PiecePosition is the same point; otherwise, false
+	 */
+	public boolean equalPosition(Object obj){
+		if(obj instanceof Square){
+			Square another = (Square)obj;
+			return this.piecePosition.equals(another.piecePosition);
+		}
+		return false;
+	}
 }
