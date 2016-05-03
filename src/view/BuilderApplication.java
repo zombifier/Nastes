@@ -115,6 +115,7 @@ public class BuilderApplication extends JFrame {
 //		this.pieceBeingDragged.setLocation(100,100);
 //		this.add(this.pieceBeingDragged);
 		JCheckBox btnHintaddremove = new JCheckBox("Hint (add/remove)");
+		btnHintaddremove.setFocusable(false);
 		btnHintaddremove.setSelected(hintMode);
 		btnHintaddremove.addItemListener(new ItemListener() {
 		    @Override
@@ -182,6 +183,7 @@ public class BuilderApplication extends JFrame {
 		JButton btnReset = new JButton("Reset");
 		
 		JButton btnUndo = new JButton("Undo");
+		btnUndo.setFocusable(false);
 		btnUndo.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent ae) {
@@ -389,6 +391,7 @@ public class BuilderApplication extends JFrame {
 			BuilderMove m = moves.pop();
 			m.undo();
 		}
+		repaint();
 	}
 	
 	/**

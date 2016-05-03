@@ -15,7 +15,7 @@ public class BuilderMain {
 	final static String location = "Game.storage";
 	
 	static Game game;
-	BuilderApplication app;
+	static BuilderApplication app;
 
 	/**
 	 * loadGame()
@@ -78,7 +78,7 @@ public class BuilderMain {
 			game = new Game();
 		}
 		
-		BuilderApplication app=new BuilderApplication(game);
+		app=new BuilderApplication(game);
 		app.addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent e) {
 				game.reset();

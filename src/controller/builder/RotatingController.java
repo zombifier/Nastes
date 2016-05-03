@@ -21,34 +21,42 @@ public class RotatingController implements KeyListener{
 			if (e.getKeyChar()=='e'){
 				
 				System.out.println("clockwise");
-				RotatingPieceInBuilder rp = new RotatingPieceInBuilder(this.pieceView.getPiece(),false);
+				RotatingPieceInBuilder rp = new RotatingPieceInBuilder(this.pieceView.getPiece(),pieceView,false);
 //				if (!rp.valid()){return;}
-				rp.doMove();
+				if (rp.doMove()) {
+					app.addMove(rp);
+				}
 			
 			}
 			if (e.getKeyChar()=='r'){
 			
 				System.out.println("anti clockwise");
-				RotatingPieceInBuilder rp = new RotatingPieceInBuilder(this.pieceView.getPiece(),true);
+				RotatingPieceInBuilder rp = new RotatingPieceInBuilder(this.pieceView.getPiece(),pieceView,true);
 	//			if (!rp.valid()){return;}
-				rp.doMove();
+				if (rp.doMove()) {
+					app.addMove(rp);
+				}
 			
 			}
 			if (e.getKeyChar()=='q'){
 				
 				System.out.println("vertical");
-				FlipPieceInBuilder fp = new FlipPieceInBuilder(this.pieceView.getPiece(),true);
+				FlipPieceInBuilder fp = new FlipPieceInBuilder(this.pieceView.getPiece(),pieceView,true);
 	//			if (!rp.valid()){return;}
-				fp.doMove();
+				if (fp.doMove()) {
+					app.addMove(fp);
+				}
 			
 			}
 			
 			if (e.getKeyChar()=='w'){
 				
 				System.out.println("horizontal");
-				FlipPieceInBuilder fp = new FlipPieceInBuilder(this.pieceView.getPiece(),false);
+				FlipPieceInBuilder fp = new FlipPieceInBuilder(this.pieceView.getPiece(),pieceView,false);
 	//			if (!rp.valid()){return;}
-				fp.doMove();
+				if (fp.doMove()) {
+					app.addMove(fp);
+				}
 				
 			}
 			this.isRelease +=1;

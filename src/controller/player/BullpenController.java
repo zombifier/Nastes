@@ -43,7 +43,7 @@ public class BullpenController extends LevelController {
 						if(square.getX() == xBoard && square.getY() == yBoard){
 							found = true;
 							piece.translate(xBoard, yBoard);
-							point=new Point(point.x + yBoard * eachSize,
+							point = new Point(point.x + yBoard * eachSize,
 									point.y + xBoard * eachSize);
 							break;
 						}
@@ -54,6 +54,7 @@ public class BullpenController extends LevelController {
 					level.holdPiece(piece);
 					levelView.setMovePieceView(piece);
 					levelView.setAnchor(new Point(x-point.x,y-point.y));
+					super.mouseMoved(me);
 					break;
 				}
 			}

@@ -18,10 +18,6 @@ public class LevelController extends MouseAdapter {
 	
 	@Override
 	public void mouseMoved(MouseEvent me){
-		if(me==null) {
-			System.out.println(me);
-			return;
-		}
 		Point p=new Point(me.getX()+refX(),
 							me.getY()+refY());
 		levelView.setMouse(p);
