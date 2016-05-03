@@ -3,12 +3,15 @@ package controller.builder;
 import model.Bullpen;
 import model.Level;
 import model.Piece;
+import view.PieceView;
 
-public class RotatingPieceInBuilder {
+public class RotatingPieceInBuilder extends BuilderMove {
 	Piece pieceChosen;
+	PieceView pieceView;
 	boolean orientation = false;
-	public RotatingPieceInBuilder(Piece pieceChosen, boolean orientation){
+	public RotatingPieceInBuilder(Piece pieceChosen, PieceView pieceView, boolean orientation){
 		this.pieceChosen = pieceChosen;
+		this.pieceView = pieceView;
 		this.orientation = orientation;
 		
 	}
@@ -28,6 +31,7 @@ public class RotatingPieceInBuilder {
 	
 	public boolean undo() {
 		this.pieceChosen.rotate(!this.orientation);
+		this.pieceView.redraw();
 		return true;
 	}
 
