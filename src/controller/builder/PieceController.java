@@ -19,7 +19,7 @@ public class PieceController extends MouseAdapter{
 	public PieceController(BuilderApplication app, PieceView pieceView){
 		super();
 		this.app = app;
-		this.bullpenView = this.app.getPullpenView();
+		this.bullpenView = this.app.getBullpenView();
 		this.pieceView = pieceView;
 	}
 	
