@@ -5,6 +5,7 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.GroupLayout.Alignment;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -38,6 +39,15 @@ public class PlayerSelectView extends JPanel {
 		setBorder(new EmptyBorder(5, 5, 5, 5));
 		setLayout(null);
 		setBounds(0,0,817,593);
+		
+
+		JLabel lblKabasuji = new JLabel("Kabasuji");
+		lblKabasuji.setFont(new Font("Brush Script MT", Font.BOLD, 72));
+		lblKabasuji.setForeground(Color.black);
+		lblKabasuji.setVerticalAlignment(JLabel.CENTER);
+		lblKabasuji.setHorizontalAlignment(JLabel.CENTER);
+		lblKabasuji.setBounds(0, 20, 817, 80);
+		add(lblKabasuji);
 		
 		// Set levels to be selected
 		for(int i=0;i<3;i++)
