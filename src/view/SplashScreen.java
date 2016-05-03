@@ -17,61 +17,67 @@ public class SplashScreen extends JPanel {
 		setBackground(Color.PINK);
 		
 		JLabel lblKabasuji = new JLabel("Kabasuji");
-		lblKabasuji.setFont(new Font("Tahoma", Font.PLAIN, 40));
+		lblKabasuji.setFont(new Font("Brush Script MT", Font.BOLD, 200));
+		lblKabasuji.setForeground(Color.blue);
 		
 		JLabel lblTeamNastes = new JLabel("Team Nastes");
-		lblTeamNastes.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		lblTeamNastes.setFont(new Font("Tahoma", Font.PLAIN, 32));
 		
 		JLabel lblSamHuang = new JLabel("Sam Huang");
+		lblSamHuang.setFont(new Font("Tahoma", Font.PLAIN, 24));
 		
 		JLabel lblDuongNguyen = new JLabel("Duong Nguyen");
+		lblDuongNguyen.setFont(new Font("Tahoma", Font.PLAIN, 24));
 		
 		JLabel lblKhoiDoan = new JLabel("Khoi Doan");
+		lblKhoiDoan.setFont(new Font("Tahoma", Font.PLAIN, 24));
 		
 		JLabel lblNewLabel = new JLabel("Chaiwat Ekkaewnumchai");
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 24));
 		
 		JLabel lblJeffreyBardon = new JLabel("Jeffrey Bardon");
+		lblJeffreyBardon.setFont(new Font("Tahoma", Font.PLAIN, 24));
+		
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.TRAILING)
 				.addGroup(groupLayout.createSequentialGroup()
-					.addContainerGap(546, Short.MAX_VALUE)
-					.addComponent(lblKabasuji)
-					.addGap(506))
-				.addGroup(Alignment.LEADING, groupLayout.createSequentialGroup()
-					.addGap(263)
-					.addComponent(lblTeamNastes)
-					.addGap(342)
-					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addComponent(lblJeffreyBardon)
-						.addComponent(lblNewLabel)
-						.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING, false)
-							.addComponent(lblDuongNguyen)
-							.addGroup(groupLayout.createSequentialGroup()
+					.addGap(153)
+					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
+						.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
+							.addGap(11)
+							.addComponent(lblTeamNastes)
+							.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+								.addComponent(lblKhoiDoan)
+								.addComponent(lblNewLabel)
+								.addComponent(lblJeffreyBardon)
 								.addComponent(lblSamHuang)
-								.addGap(16)))
-						.addComponent(lblKhoiDoan))
-					.addContainerGap(352, Short.MAX_VALUE))
+								.addComponent(lblDuongNguyen)))
+						.addComponent(lblKabasuji))
+					.addContainerGap(113, Short.MAX_VALUE))
 		);
 		groupLayout.setVerticalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
-					.addGap(164)
+					.addGap(108)
 					.addComponent(lblKabasuji)
-					.addGap(105)
-					.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
-						.addComponent(lblTeamNastes)
+					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 						.addGroup(groupLayout.createSequentialGroup()
+							.addGap(79)
+							.addComponent(lblKhoiDoan)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(lblNewLabel)
+							.addGap(13)
+							.addComponent(lblJeffreyBardon)
+							.addPreferredGap(ComponentPlacement.RELATED)
 							.addComponent(lblSamHuang)
 							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(lblDuongNguyen)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(lblKhoiDoan)))
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(lblNewLabel)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(lblJeffreyBardon)
-					.addContainerGap(294, Short.MAX_VALUE))
+							.addComponent(lblDuongNguyen))
+						.addGroup(groupLayout.createSequentialGroup()
+							.addGap(138)
+							.addComponent(lblTeamNastes)))
+					.addContainerGap(140, Short.MAX_VALUE))
 		);
 		setLayout(groupLayout);
 
