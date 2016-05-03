@@ -35,6 +35,8 @@ import controller.builder.LoadController;
 import controller.builder.RotatingController;
 import controller.builder.SaveController;
 import model.*;
+import view.BoardView;
+import view.BullpenView;
 
 import javax.swing.JComboBox;
 import javax.swing.JTextField;
@@ -57,6 +59,7 @@ public class BuilderApplication extends JFrame {
 	Game game;
 	Level level;
 	BullpenView bullpenView;
+	BoardView boardView;
 	ModelPieceView modelPieceView;
 	PieceView pieceBeingDragged = new PieceView(new Piece(0,15));
 	JPanel container;
@@ -254,11 +257,11 @@ public class BuilderApplication extends JFrame {
 		);
 		
 		//JLabel lblBoard = new JLabel("Board");
-		BoardView lblBoard = new BoardView(level.getBoard(), this);
-		panel_2.add(lblBoard);
+		this.boardView = new BoardView(level.getBoard(), this);
+		panel_2.add(this.boardView);
 		
 		//JLabel lblBullpen = new JLabel("BullPen");
-		BullpenView lblBullpen = new BullpenView(level.getBullpen(),this);
+		BullpenView lblBullpen = new BullpenView(level.getBullpen(), this);
 		panel_3.add(lblBullpen);
 		this.bullpenView = lblBullpen;
 		
@@ -396,4 +399,10 @@ public class BuilderApplication extends JFrame {
 		return hintMode;
 	}
 	
+	public BoardView getBoardView(){
+		return this.boardView;
+	}
+	public BullpenView getBullpenView(){
+		return this.bullpenView;
+	}
 }
