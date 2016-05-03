@@ -59,6 +59,7 @@ public class TestPuzzle extends TestCase{
 		}
 		assertEquals(level.getLimit(), "7");
 		assertEquals(level.resultStar(), 3);
+		assertTrue(level.hasWon());
 	}
 	
 	public void testCopy() {
