@@ -1,7 +1,11 @@
 package controller.builder;
 
 import java.awt.Point;
+import java.awt.event.ActionEvent;
+import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
+
+import javax.swing.JFrame;
 
 import junit.framework.TestCase;
 import model.Board;
@@ -12,9 +16,11 @@ import model.Puzzle;
 import model.PuzzleTile;
 import model.Release;
 import model.ReleaseTile;
+import model.Tile;
 import view.BuilderApplication;
 import view.PieceView;
 import view.TileView_Puzzle;
+import view.TileView_Release;
 import controller.builder.*;
 
 public class TestBuilderMove extends TestCase {
@@ -90,6 +96,64 @@ public class TestBuilderMove extends TestCase {
 		assertEquals(false,ba.getBoardView().getBoard().getTile(0, 0).isValid());	
 	}
 	
-
+	public void testLoadAndSaveController(){
+		ba.initialize(game.getLevel(1));
+		PieceController pc = new PieceController(ba, new PieceView(new Piece(4,5)));
+		MouseEvent me = new MouseEvent(ba, 0, 2, 0, 0, 2, 1, false, MouseEvent.BUTTON1);
+		pc.mousePressed(me);
+		SaveController sc = new SaveController(game, ba.getLevel(), ba);
+		sc.process();
+		
+		LoadController lc = new LoadController(game, ba);
+		lc.process();
+		
+		assertEquals(1,ba.getBullpenView().getBullpen().numRemainPiece());
+		
+	}
 	
+	public void testRotateAndFlipController(){
+		ba.initialize(game.getLevel(1));
+		PieceView pw = new PieceView(new Piece(0,0));
+		PiecePlayerController ppc = new PiecePlayerController(ba, pw);
+		MouseEvent ae = new MouseEvent(pw, 0, 1, 0, 0, 0, 1, false,MouseEvent.BUTTON1);
+		ppc.mouseReleased(ae);
+		RotatingController rc = new RotatingController(pw, ba);
+		@SuppressWarnings("deprecation")
+		KeyEvent e = new KeyEvent(ba, 0, 0, 1, 'e');
+		rc.keyPressed(e);
+		rc.keyReleased(e);
+		@SuppressWarnings("deprecation")
+		KeyEvent r = new KeyEvent(ba, 1, 0, 1, 'r');
+		rc.keyPressed(r);
+		rc.keyReleased(r);
+		@SuppressWarnings("deprecation")
+		KeyEvent w = new KeyEvent(ba, 2, 0, 1, 'w');
+		rc.keyPressed(w);
+		rc.keyReleased(w);
+		@SuppressWarnings("deprecation")
+		KeyEvent q = new KeyEvent(ba, 3, 0, 1, 'q');
+		rc.keyPressed(q);
+		rc.keyReleased(q);
+	}
+	
+	public void testChangeTypeMove(){
+		Release el = new Release();
+		game.setLevel(1, el);
+		ba.initialize(game.getLevel(1));
+		
+		ChangeTypeMove ctm = new ChangeTypeMove(game.getLevel(1), ba, 0);
+		ctm.doMove();
+		assertEquals(0,ba.getLevel().levelType());
+		
+	}
+	
+	public void testChangeNumForReleaseLevel(){
+		Release el = new Release();
+		game.setLevel(1, el);
+		ba.initialize(game.getLevel(1));
+		
+		ChangeNumForReleaseLevel cm = new ChangeNumForReleaseLevel(ba,new JFrame(), new TileView_Release(new ReleaseTile(false, false, 4, 5)), 1, 2);
+		ActionEvent ae = new ActionEvent(ba, 0, getName());
+		cm.actionPerformed(ae);
+	}
 }

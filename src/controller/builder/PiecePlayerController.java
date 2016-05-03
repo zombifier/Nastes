@@ -47,7 +47,6 @@ public class PiecePlayerController extends MouseAdapter{
 			Component source = (Component) ae.getSource();
 	        MouseEvent parentEvent = SwingUtilities.convertMouseEvent(source, ae, source.getParent());
 	        source.getParent().dispatchEvent(parentEvent);
-//	        System.out.println("Hahaha2");
 			
 		}
 		if(s != null){
@@ -58,23 +57,14 @@ public class PiecePlayerController extends MouseAdapter{
 				if (newSelect.doMove()) {
 					app.addMove(newSelect);
 				}
-				//this.app.repaint();
-				//PieceView copyPieceView = new PieceView(this.pieceView.getPiece());
+				
 				this.diffX = ae.getX();
 				this.diffY = ae.getY();
 				this.bullpenView.remove(this.pieceView);
 				
-		//		ae.translatePoint(ae.getComponent().getLocation().x, ae.getComponent().getLocation().y);
 				this.app.setMovingPiece(this.countPress,this.pieceView,ae.getComponent().getLocation().x,ae.getComponent().getLocation().y);
 				this.countPress = 1;
-				//		this.bullpenView.repaint();
-				//copyPieceView.setBounds(ae.getX(),ae.getY(),270,270);
-				//this.playerGame.add(pieceView);
-				//bullpenView.remove(pieceView);
-		//		for (int i=0;i<=6;i++){
-		//		this.app.setComponentZOrder(ae.getComponent(), 0);
-		//		}
-				//Point p = new Point (ae.getX() - pieceView.getX(), ae.getY() - pieceView.getY());
+				
 			}
 			if (ae.getModifiers()==InputEvent.BUTTON3_MASK){
 				this.pieceView.getParent().remove(this.pieceView);
@@ -88,13 +78,9 @@ public class PiecePlayerController extends MouseAdapter{
 	public void mouseDragged(MouseEvent ae){
 		if (this.beingMoved){
 			this.bullpenView.repaint();
-//			System.out.println("being Move");
 			ae.translatePoint(ae.getComponent().getLocation().x-diffX, ae.getComponent().getLocation().y-diffY);
 			this.app.updateMovePiece(this.pieceView, ae.getX(),ae.getY());
-			//this.pieceView.setLocation(ae.getX(),ae.getY());
-//	
-//			System.out.println("" + (ae.getX())+" "+(ae.getY()));
-			//pieceView.setLocation(ae.getX(),ae.getY());
+
 		}
 		
 		
