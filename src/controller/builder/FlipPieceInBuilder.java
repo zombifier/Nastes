@@ -1,12 +1,15 @@
 package controller.builder;
 
 import model.Piece;
+import view.PieceView;
 
-public class FlipPieceInBuilder {
+public class FlipPieceInBuilder extends BuilderMove {
 	Piece pieceChosen;
+	PieceView pieceView;
 	boolean axis = false;
-	public FlipPieceInBuilder(Piece pieceChosen, boolean axis){
+	public FlipPieceInBuilder(Piece pieceChosen, PieceView pieceView, boolean axis){
 		this.pieceChosen = pieceChosen;
+		this.pieceView = pieceView;
 		this.axis = axis;
 		
 	}
@@ -14,8 +17,8 @@ public class FlipPieceInBuilder {
 	public boolean doMove() {
 		if (this.valid()){
 			this.pieceChosen.flip(this.axis);
-
 			return true;
+			
 		} else {
 			return false;
 		}
@@ -26,6 +29,7 @@ public class FlipPieceInBuilder {
 	
 	public boolean undo() {
 		this.pieceChosen.flip(!this.axis);
+		this.pieceView.redraw();
 		return true;
 	}
 

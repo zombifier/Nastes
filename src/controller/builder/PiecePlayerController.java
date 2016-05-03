@@ -55,7 +55,9 @@ public class PiecePlayerController extends MouseAdapter{
 				this.beingMoved = true;
 				System.out.println("success press, start to move");
 				SelectPieceFromBullpen newSelect = new SelectPieceFromBullpen(this.app.getLevel(), this.bullpenView.getBullpen(),this.pieceView.getPiece());
-				newSelect.doMove();
+				if (newSelect.doMove()) {
+					app.addMove(newSelect);
+				}
 				//this.app.repaint();
 				//PieceView copyPieceView = new PieceView(this.pieceView.getPiece());
 				this.diffX = ae.getX();
