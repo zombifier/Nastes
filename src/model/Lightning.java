@@ -60,7 +60,7 @@ public class Lightning extends Level{
 	}
 	
 	public void limitDecrease() {
-		System.out.println(board.numRemainTile());
+		//System.out.println(board.numRemainTile());
 		timeElapsed = timeElapsed+1;
 	}
 	
