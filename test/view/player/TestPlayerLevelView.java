@@ -3,10 +3,7 @@ package view.player;
 import javax.swing.JFrame;
 
 import junit.framework.TestCase;
-import model.Game;
-import model.Level;
-import model.Lightning;
-import model.Piece;
+import model.*;
 
 public class TestPlayerLevelView extends TestCase {
 	Game game;
@@ -19,12 +16,14 @@ public class TestPlayerLevelView extends TestCase {
 	public void setUp(){
 		game = new Game();
 		
-		level1 = new Lightning();
+		level1 = new Release();
 		level1.setLimit(10);
 		// make the board be able to be played
-		for(int i = 0; i < 3; i++)
+		for(int i = 0; i < 3; i++){
 			for(int j = 0; j < 6; j++)
 				level1.getBoard().getTile(i, j).convertValid();
+			((ReleaseTile)(level1.getBoard().getTile(i, 0))).setNumAndColor(1, i+1);
+		}
 		
 		// make the pieces for bullpen
 		for(int i = 0; i < 3; i++)
@@ -51,8 +50,8 @@ public class TestPlayerLevelView extends TestCase {
 	}
 	
 	public void testLevel(){
-		panel.redraw();
-		panel.repaint();
+		//panel.redraw();
+		//panel.repaint();
 		System.out.println("Run!!");
 	}
 }
