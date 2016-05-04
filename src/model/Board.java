@@ -6,7 +6,7 @@ import java.util.*;
  * The Board class. 
  * A board is made of a double array of tiles. 12 x 12. Even if a tile is not "active" or 
  * being used, it is still part of the board.
- * @param tiles
+ * 
  *  
  *
  */
@@ -24,7 +24,7 @@ public class Board implements java.io.Serializable{
 	
 	/**
 	 * Constructor for Board. Using leveltype to create board
-	 * @param levelType
+	 * @param levelType levelType 0 for puzzle, 1 for Lightning, 2 for Release
 	 */
 	public Board(int levelType){
 		pieces = new HashMap<Piece, BoardPosition>();
@@ -47,7 +47,7 @@ public class Board implements java.io.Serializable{
 	
 	/**
 	 * Second Constructor for the Board for loading the level
-	 * @param tiles
+	 * @param tiles tiles array when load from the game storage
 	 */
 	public Board(Tile[][] tiles){
 		pieces = new HashMap<Piece, BoardPosition>();

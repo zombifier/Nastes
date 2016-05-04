@@ -26,6 +26,7 @@ public class PlayerApplication extends JFrame {
 	
 	/**
 	 * Create the frame.
+	 * @param game Game
 	 */
 	public PlayerApplication(Game game) {
 		
@@ -51,7 +52,7 @@ public class PlayerApplication extends JFrame {
 	
 	/**
 	 * THis set's the Panel and makes it visible 
-	 * @param panel
+	 * @param panel JPanel
 	 */
 	public void setPanel(JPanel panel){
 		setContentPane(panel);

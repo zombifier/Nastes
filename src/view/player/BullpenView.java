@@ -48,8 +48,8 @@ public class BullpenView extends JPanel{
 	
 	/**
 	 * Constructor for Bull pen view
-	 * @param level
-	 * @param data
+	 * @param level Level
+	 * @param data HashMap of piece, Color
 	 */
 	public BullpenView(Level level, HashMap<Piece,Color> data){
 		bullpen = level.getBullpen();
@@ -200,8 +200,8 @@ public class BullpenView extends JPanel{
 	
 	/**
 	 * This get's the location of a piece
-	 * @param piece
-	 * @return position
+	 * @param piece	Piece
+	 * @return position Position
 	 */
 	public Point getPiecePoint(Piece piece){
 		return pieces.get(piece);
@@ -209,7 +209,7 @@ public class BullpenView extends JPanel{
 	
 	/**
 	 * This create's the bullpen
-	 * @param bullpen
+	 * @param bullpen Bullpen
 	 */
 	public void setBullpen(Bullpen bullpen){
 		this.bullpen = bullpen;

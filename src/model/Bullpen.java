@@ -6,7 +6,7 @@ import java.util.Iterator;
 /**
  * Bullpen is where the piece will start at the start of any given level. 
  * 
- * @param pieces 	The pieces that are in the bullpen 
+ * 	
  * 
  * 
  *
@@ -30,7 +30,7 @@ public class Bullpen implements java.io.Serializable {
 	
 	/**
 	 * Second Constructor for Bullpen if the bullpen got load from the game storage
-	 * @param pieces
+	 * @param pieces The pieces that are in the bullpen 
 	 */
 	public Bullpen(ArrayList<Piece> pieces){
 		this.pieces = pieces;
@@ -39,7 +39,7 @@ public class Bullpen implements java.io.Serializable {
 	
 	/**
 	 * getter method for pieces
-	 * @return ArrayList<piece>
+	 * @return pieces
 	 */
 	public ArrayList<Piece> getPieces(){
 		return pieces;
@@ -59,7 +59,6 @@ public class Bullpen implements java.io.Serializable {
 	/**
 	 * add a piece into bullpen, use in builder
 	 * @param piece
-	 * @return void
 	 */
 	public void addPiece(Piece piece){
 		this.pieces.add(piece);
@@ -68,7 +67,7 @@ public class Bullpen implements java.io.Serializable {
 	/**
 	 * remove a piece from the bullpen, use in builder
 	 * @param pieceChosen
-	 * @return void
+	 * 
 	 */
 	public void removePiece(Piece pieceChosen) {
 		this.pieces.remove(pieceChosen);

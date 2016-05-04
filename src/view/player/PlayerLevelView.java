@@ -79,9 +79,9 @@ public class PlayerLevelView extends JPanel {
 	 * Game game
 	 * Level level
 	 * Playerapplication app
-	 * @param game
-	 * @param level
-	 * @param app
+	 * @param game Game
+	 * @param level Level
+	 * @param app Player Application
 	 */
 	public PlayerLevelView(Game game, Level level, PlayerApplication app){
 		this.game = game;
@@ -340,14 +340,14 @@ public class PlayerLevelView extends JPanel {
 
 	/**
 	 * THis is for moving the mouse. 
-	 * @param point
+	 * @param point Point
 	 */
 	public void setMouse(Point point){
 		mouse = point;
 	}
 
 	/**
-	 * @param point
+	 * @param point Point
 	 */
 	public void setAnchor(Point point){
 		anchor = point;

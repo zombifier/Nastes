@@ -3,9 +3,7 @@ package model;
 /**
  * Class Piece
  * 
- * @param pieceID	The identifier for the piece within the level
- * @param type		THe type of the piece. Refering to the accual shape of this kind of piece.
- * 					there can be more than one piece in a level with the same type. 
+ * there can be more than one piece in a level with the same type. 
  *
  *		The creation of a piece uses the array below. There is a double array / multi array
  * with all the 36 different types of pieces. When someone wants to create a piece they only use
@@ -76,8 +74,9 @@ public class Piece implements java.io.Serializable {
 	
 	/**
 	 * Piece Constructor. Set pieceID and its type (its shape).
-	 * @param pieceID
-	 * @param type
+	 * 
+	 * @param pieceID	The identifier for the piece within the level
+	 * @param type		THe type of the piece. Refering to the accual shape of this kind of piece.
 	 */
 	public Piece(int pieceID, int type) {
 		this.pieceID = pieceID;

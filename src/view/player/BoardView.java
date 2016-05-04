@@ -48,8 +48,8 @@ public class BoardView extends JPanel {
 	
 	/**
 	 * BoardView constructor. level is a Level and data is a Hashmap
-	 * @param level
-	 * @param data
+	 * @param level Level
+	 * @param data HashMap ()
 	 */
 	public BoardView(Level level,HashMap<Piece,Color> data){
 		this.hintMode = false;

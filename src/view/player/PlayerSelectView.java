@@ -37,8 +37,8 @@ public class PlayerSelectView extends JPanel {
 	 * Constructor for PlayerSelectview
 	 * Game game
 	 * PlayerApplication app
-	 * @param game
-	 * @param app
+	 * @param game	Game
+	 * @param app Builder Application
 	 */
 	public PlayerSelectView(Game game, PlayerApplication app){
 		emptyStar = new ImageIcon(this.getClass().getResource(emptyStarDir));

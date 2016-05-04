@@ -37,9 +37,9 @@ public class MovePieceView extends JPanel {
 	/**
 	 * Constructor for MovePieceView. 
 	 * Piece piece
-	 * HashMap<Piece,Color> data
-	 * @param piece
-	 * @param data
+	 * HashMap of (Piece,Color) data
+	 * @param piece	Piece
+	 * @param data HaspMap of piece
 	 */
 	public MovePieceView(Piece piece,HashMap<Piece,Color> data){
 		

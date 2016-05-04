@@ -30,9 +30,9 @@ public class StarView extends JFrame {
 	 * Level level
 	 * Game game
 	 * PlayerApplication app
-	 * @param level
-	 * @param game
-	 * @param app
+	 * @param level	Level
+	 * @param game	Game
+	 * @param app builder Application
 	 */
 	public StarView(Level level, Game game, PlayerApplication app){
 		this.level = level;
