@@ -4,10 +4,21 @@ import model.*;
 
 import view.BuilderApplication;
 
+/**
+ * This class is move class for change type of level for builder application throught the combo box.
+ * @author Team Nastes
+ *
+ */
 public class ChangeTypeMove extends BuilderMove {
 	Level level;
 	BuilderApplication ba;
 	int type;
+	/**
+	 * Constructor for ChangeTypeMove. Sets level, builder application and type of the level
+	 * @param level
+	 * @param ba
+	 * @param type
+	 */
 	public ChangeTypeMove (Level level, BuilderApplication ba, int type) {
 		this.level = level;
 		this.ba = ba;

@@ -10,13 +10,25 @@ import view.BuilderApplication;
 import view.TileView;
 import view.TileView_Release;
 
+/**
+ * This class is move class for changing number in the release level.
+ * @author Team Nastes
+ *
+ */
 public class ChangeNumForReleaseLevel implements ActionListener{
 	BuilderApplication ba;
 	JFrame selectNumColor;
 	TileView tileView;
 	int num;
 	int color;
-	
+	/**
+	 * Constructor for ChangeNumForReleaseLevel. Sets builder application, JFrame of the button, TileView, number and color.
+	 * @param ba
+	 * @param selectNumColor
+	 * @param tileView
+	 * @param num
+	 * @param color
+	 */
 	public ChangeNumForReleaseLevel(BuilderApplication ba,JFrame selectNumColor,TileView tileView, int num, int color) {
 		// TODO Auto-generated constructor stub
 		this.ba = ba;

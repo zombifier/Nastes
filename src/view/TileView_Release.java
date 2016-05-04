@@ -6,6 +6,11 @@ import model.*;
 
 import java.awt.Color;
 
+/**
+ * TileView_Release class. 
+ * @author Team Nastes
+ *
+ */
 public class TileView_Release extends TileView {
 
 	/**
@@ -35,6 +40,11 @@ public class TileView_Release extends TileView {
 		}
 	}
 	
+	/**
+	 * This function set number and color for the release tile. 
+	 * @param num
+	 * @param color
+	 */
 	public void setNumAndColor(int num, int color){
 		this.removeAll();
 

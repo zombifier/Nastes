@@ -1,5 +1,10 @@
 package model;
 
+/**
+ * Square class. (inside Piece)
+ * @author Team Nastes
+ *
+ */
 public class Square implements java.io.Serializable {
 	/**
 	 *  Square class for Kabasuji.
@@ -10,6 +15,10 @@ public class Square implements java.io.Serializable {
 	PiecePosition piecePosition;
 	boolean isCoverATile;
 	
+	/**
+	 * Constructor for Square class. Take in piecePosition of the square.
+	 * @param piecePosition
+	 */
 	public Square(PiecePosition piecePosition) {
 		this.piecePosition = piecePosition;
 		this.isCoverATile = false;

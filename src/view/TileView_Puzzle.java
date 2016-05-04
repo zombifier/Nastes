@@ -7,6 +7,11 @@ import model.*;
 import java.awt.Color;
 import java.awt.Dimension;
 
+/**
+ * TileView_Puzzle class.
+ * @author Team Nastes
+ *
+ */
 public class TileView_Puzzle extends TileView {
 	
 	/**

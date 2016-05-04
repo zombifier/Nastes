@@ -1,11 +1,11 @@
 package model;
 
 /**
- * 
+ * The top level class. It is our game.
  * @param levels 	These are the levels that go into the gmae. There must be at least one
  * 					for our game there is always 15. 
  * 
- * The top level class. It is our game. 
+ *  
  *
  */
 
@@ -18,6 +18,9 @@ public class Game implements java.io.Serializable {
 	
 	Level[] levels;
 	
+	/**
+	 * Constructor for Game if there is no attribute
+	 */
 	public Game(){
 		// Put the levels here
 		levels = new Level[15];

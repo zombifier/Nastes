@@ -1,5 +1,10 @@
 package model;
 
+/**
+ * Lightning Tile class. 
+ * @author Team Nastes
+ *
+ */
 public class LightningTile extends Tile {
 	/**
 	 * 
@@ -9,6 +14,11 @@ public class LightningTile extends Tile {
 	
 	boolean isColored;
 	
+	/**
+	 * Constructor for LightningTile. set isValid and isHint to its super class and initial isColored is false
+	 * @param isValid
+	 * @param isHint
+	 */
 	public LightningTile(boolean isValid, boolean isHint) {
 		super(isValid, isHint);
 		isColored = false;

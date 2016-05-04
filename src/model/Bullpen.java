@@ -4,10 +4,11 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 /**
+ * Bullpen is where the piece will start at the start of any given level. 
  * 
  * @param pieces 	The pieces that are in the bullpen 
  * 
- * Bullpen is where the piece will start at the start of any given level. 
+ * 
  *
  */
 
@@ -20,21 +21,26 @@ public class Bullpen implements java.io.Serializable {
 	
 	ArrayList<Piece> pieces;
 	
+	/**
+	 * Constructor for Bullpen if bullpen doesn't have any attribute
+	 */
 	public Bullpen(){
-		/*
-		ArrayList<Piece> test = new ArrayList<Piece>();
-		test.add(new Piece(1,3));
-		test.add(new Piece(1,4));
-		pieces = test;
-		*/
 		pieces = new ArrayList<Piece>();
 	}
 	
+	/**
+	 * Second Constructor for Bullpen if the bullpen got load from the game storage
+	 * @param pieces
+	 */
 	public Bullpen(ArrayList<Piece> pieces){
 		this.pieces = pieces;
 		
 	}
 	
+	/**
+	 * getter method for pieces
+	 * @return ArrayList<piece>
+	 */
 	public ArrayList<Piece> getPieces(){
 		return pieces;
 	}
@@ -69,6 +75,10 @@ public class Bullpen implements java.io.Serializable {
 		
 	}
 
+	/**
+	 * return the value of piece remaining on the bullpen
+	 * @return piece.size()
+	 */
 	public int numRemainPiece() {
 		// TODO Auto-generated method stub
 		return pieces.size();

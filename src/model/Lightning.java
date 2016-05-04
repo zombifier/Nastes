@@ -1,5 +1,10 @@
 package model;
 
+/**
+ * Lightning level class. 
+ * @author Team Nastes
+ *
+ */
 public class Lightning extends Level{
 	/**
 	 * 
@@ -12,6 +17,9 @@ public class Lightning extends Level{
 	int timeElapsed;
 	int tilesUncolored;
 	
+	/**
+	 * Constructor for lightning if there is no attritube. 
+	 */
 	public Lightning() {
 		super(1);
 		this.timeLimit = 60;
@@ -19,6 +27,12 @@ public class Lightning extends Level{
 		this.tilesUncolored = board.validTiles();
 	}
 	
+	/**
+	 * Second constructor for lightning level when loaded from the storage.
+	 * @param board
+	 * @param bullpen
+	 * @param timeLimit
+	 */
 	public Lightning(Board board, Bullpen bullpen, int timeLimit) {
 		super(board, bullpen);
 		this.timeLimit = timeLimit;

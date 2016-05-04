@@ -1,8 +1,13 @@
 package model;
 
+/**
+ * PiecePosition of Square
+ * @author Team Nastes
+ *
+ */
 public class PiecePosition implements java.io.Serializable {
 	/**
-	 * 
+	 * set serialVersionUID
 	 */
 	private static final long serialVersionUID = -5144906033202040591L;
 	
@@ -10,6 +15,11 @@ public class PiecePosition implements java.io.Serializable {
 	int x;
 	int y;
 	
+	/**
+	 * Constructor for PiecePosition. Sets x and y position. 
+	 * @param x
+	 * @param y
+	 */
 	public PiecePosition(int x, int y) {
 		this.x = x;
 		this.y = y;
@@ -86,6 +96,10 @@ public class PiecePosition implements java.io.Serializable {
 		return "( "+x+" , "+y+" )";
 	}
 
+	/**
+	 * return a new PiecePosition that is the same as the original
+	 * @return PiecePosition  
+	 */
 	public PiecePosition copy() {
 		return new PiecePosition(this.x, this.y);
 	}

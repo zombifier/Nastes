@@ -3,11 +3,11 @@ package model;
 import java.util.*;
 
 /**
- * @param tiles
- * 
  * The Board class. 
  * A board is made of a double array of tiles. 12 x 12. Even if a tile is not "active" or 
- * being used, it is still part of the board. 
+ * being used, it is still part of the board.
+ * @param tiles
+ *  
  *
  */
 
@@ -22,6 +22,10 @@ public class Board implements java.io.Serializable{
 	HashMap<Piece,BoardPosition> pieces;
 	ArrayList<Piece> allPieces;
 	
+	/**
+	 * Constructor for Board. Using leveltype to create board
+	 * @param levelType
+	 */
 	public Board(int levelType){
 		pieces = new HashMap<Piece, BoardPosition>();
 		allPieces = new ArrayList<Piece>();
@@ -41,6 +45,10 @@ public class Board implements java.io.Serializable{
 		
 	}
 	
+	/**
+	 * Second Constructor for the Board for loading the level
+	 * @param tiles
+	 */
 	public Board(Tile[][] tiles){
 		pieces = new HashMap<Piece, BoardPosition>();
 		allPieces = new ArrayList<Piece>();

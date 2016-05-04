@@ -11,11 +11,20 @@ import view.BuilderApplication;
 import view.BullpenView;
 import view.PieceView;
 
+/**
+ * PieceController class for piece that in the scrollpane.
+ * @author Team Nastes
+ *
+ */
 public class PieceController extends MouseAdapter{
 	BuilderApplication app;
 	BullpenView bullpenView;
 	PieceView pieceView;
 	
+	/**
+	 * @param app
+	 * @param pieceView
+	 */
 	public PieceController(BuilderApplication app, PieceView pieceView){
 		super();
 		this.app = app;

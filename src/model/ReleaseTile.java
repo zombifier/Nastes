@@ -1,5 +1,10 @@
 package model;
 
+/**
+ * ReleaseTile class. 
+ * @author Team Nastes
+ *
+ */
 public class ReleaseTile extends Tile {
 	/**
 	 * 
@@ -11,6 +16,13 @@ public class ReleaseTile extends Tile {
 	int color; // Valid range: 1-3
 	boolean isCovered;
 	
+	/**
+	 * Constructor for ReleaseTile class. Sets releaseNumber, color and set isCovered to be false.
+	 * @param isValid
+	 * @param isHint
+	 * @param releaseNumber
+	 * @param color
+	 */
 	public ReleaseTile(boolean isValid, boolean isHint, int releaseNumber, int color) {
 		super(isValid, isHint);
 		this.releaseNumber = releaseNumber;

@@ -76,6 +76,10 @@ public class BullpenView extends JPanel {
 		return this.bullpen;
 	}
 	
+	/**
+	 * draw pieceView when the piece inside scrollpane was chosen.
+	 * @param pieceView
+	 */
 	public void drawPieceView(PieceView pieceView){
 		Random rand = new Random();
 		Dimension d = pieceView.getPreferredSize();

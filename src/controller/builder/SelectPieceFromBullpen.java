@@ -5,11 +5,22 @@ import model.Level;
 import model.Piece;
 import view.BuilderApplication;
 
+/**
+ * This move class is for Select a piece from bullpen
+ * @author Team Nastes
+ *
+ */
 public class SelectPieceFromBullpen extends BuilderMove {
 	Level level;
 	Bullpen bullpen;
 	Piece pieceChosen;
 	
+	/**
+	 * Constructor for SelectPieceFromBullpen. Sets level, bullpen and the chosen Piece.
+	 * @param level
+	 * @param bullpen
+	 * @param pieceChosen
+	 */
 	public SelectPieceFromBullpen(Level level,Bullpen bullpen,Piece pieceChosen){
 		this.level = level;
 		this.bullpen = bullpen;

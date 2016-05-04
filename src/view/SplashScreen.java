@@ -8,6 +8,11 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.LayoutStyle.ComponentPlacement;
 
+/**
+ * SplashScreen, JPanel for the the first few second.
+ * @author Team Nastes
+ *
+ */
 public class SplashScreen extends JPanel {
 	
 	/**

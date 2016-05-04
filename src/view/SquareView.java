@@ -5,6 +5,11 @@ import java.awt.FlowLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 
+/**
+ * SquareView class. 
+ * @author Team Nastes
+ *
+ */
 public class SquareView extends JPanel {
 
 	/**
@@ -15,11 +20,17 @@ public class SquareView extends JPanel {
 		setPreferredSize(new Dimension(45, 45));
 
 	}
-
+	/**
+	 * return height of the square
+	 * @return 45
+	 */
 	public int getHeight(){
 		return 45;
 	}
-	
+	/**
+	 * return width of the square
+	 * @return 45
+	 */
 	public int getWidth(){
 		return 45;
 	}

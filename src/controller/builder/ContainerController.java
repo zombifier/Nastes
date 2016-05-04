@@ -12,11 +12,21 @@ import view.BullpenView;
 import view.PieceView;
 import view.SquareView;
 
+/**
+ * This class is for the container of builder when the builder want to move the piece to make sure if the level can be complete.
+ * @author Team Nastes
+ *
+ */
 public class ContainerController extends MouseAdapter{
 	BuilderApplication app;
 	JPanel container;
 	int diffX;
 	int diffY;
+	/**
+	 * Constructor for ContainerController. Sets builder application and container.
+	 * @param app
+	 * @param container
+	 */
 	public ContainerController(BuilderApplication app, JPanel container){
 		super();
 		this.app = app;

@@ -1,5 +1,10 @@
 package model;
 
+/**
+ * Release Level Class. 
+ * @author Team Nastes
+ *
+ */
 public class Release extends Level{
 	/**
 	 * 
@@ -11,6 +16,9 @@ public class Release extends Level{
 	int yellowNumbersUncovered;
 	int greenNumbersUncovered;
 	
+	/**
+	 * Constructor for Release Level. 
+	 */
 	public Release() {
 		super(2);
 		this.redNumbersUncovered = 6;
@@ -18,6 +26,11 @@ public class Release extends Level{
 		this.greenNumbersUncovered = 6;
 	}
 	
+	/**
+	 * Second Constructor for Release Level when loaded from the game storage. 
+	 * @param board
+	 * @param bullpen
+	 */
 	public Release(Board board, Bullpen bullpen) {
 		super(board, bullpen);
 		this.redNumbersUncovered = 6;

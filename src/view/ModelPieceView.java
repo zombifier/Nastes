@@ -17,6 +17,10 @@ import model.Piece;
  */
 public class ModelPieceView extends JPanel {
 	BuilderApplication app;
+	/**
+	 * Constructor for ModelPieceView. 
+	 * @param app
+	 */
 	public ModelPieceView(BuilderApplication app){
 		this.app = app;
 		setBackground(Color.pink);

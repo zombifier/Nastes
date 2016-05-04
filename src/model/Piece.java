@@ -25,6 +25,9 @@ public class Piece implements java.io.Serializable {
 	int type;
 	int orientation;
 	Square[] squares = new Square[6];
+	/**
+	 * multi store all the piece arrangement of 6 squares. 
+	 */
 	public final static PiecePosition[][] multi = new PiecePosition[][]{
 		//PIECES 1-5
 		{new PiecePosition(0,0),new PiecePosition(0,1),new PiecePosition(0,2),new PiecePosition(0,3),new PiecePosition(0,4),new PiecePosition(0,5)},
@@ -71,6 +74,11 @@ public class Piece implements java.io.Serializable {
 	};
 	
 	
+	/**
+	 * Piece Constructor. Set pieceID and its type (its shape).
+	 * @param pieceID
+	 * @param type
+	 */
 	public Piece(int pieceID, int type) {
 		this.pieceID = pieceID;
 		this.type = type;

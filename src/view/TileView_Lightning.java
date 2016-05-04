@@ -6,6 +6,11 @@ import model.*;
 
 import java.awt.Color;
 
+/**
+ * TileView_Lighting class.
+ * @author Team Nastes
+ *
+ */
 public class TileView_Lightning extends TileView {
 
 	/**

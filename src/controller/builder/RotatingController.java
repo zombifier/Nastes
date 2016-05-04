@@ -5,10 +5,21 @@ import java.awt.event.KeyListener;
 import view.BuilderApplication;
 import view.PieceView;
 
+/**
+ * This controller is for rotating and flipping the piece when the piece is being chosen inside builder.
+ * The name of the class seem to misleading
+ * @author Team Nastes
+ *
+ */
 public class RotatingController implements KeyListener{
 	PieceView pieceView;
 	BuilderApplication app;
 	int isRelease;
+	/**
+	 * Constructor for RotatingController. Sets PieceView, Builder Application and set isRelease to 0
+	 * @param pieceBeingDrag
+	 * @param app
+	 */
 	public RotatingController(PieceView pieceBeingDrag, BuilderApplication app){
 		this.pieceView = pieceBeingDrag;
 		this.app = app;

@@ -7,9 +7,19 @@ import javax.swing.JComboBox;
 import model.*;
 import view.BuilderApplication;
 
+/**
+ * this class is for chosing level type when the builder click on the JComboBox.
+ * @author Team Nastes
+ *
+ */
 public class LevelTypeController implements ActionListener {
 	Level level;
 	BuilderApplication ba;
+	/**
+	 * Constructor for LevelTypeController. Sets level and builder application.
+	 * @param level
+	 * @param ba
+	 */
 	public LevelTypeController(Level level, BuilderApplication ba){
 		this.level = level;
 		this.ba = ba;

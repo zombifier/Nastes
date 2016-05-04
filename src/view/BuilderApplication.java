@@ -67,6 +67,10 @@ public class BuilderApplication extends JFrame {
 	Stack<BuilderMove> moves=new Stack<BuilderMove>();
 	boolean hintMode;
 	
+	/**
+	 * Constructor for Builder Application. Sets game.
+	 * @param game
+	 */
 	public BuilderApplication(Game game){
 		this.game = game;
 		setTitle("Kabasuji Editor");
@@ -93,11 +97,12 @@ public class BuilderApplication extends JFrame {
 		
 	}
 	
+	/**
+	 * initialize function for builder application. 
+	 * @param lv
+	 */
 	public void initialize(Level lv){
 		getContentPane().removeAll();
-		
-		
-		
 		
 		this.level = lv; // instantiate level
 		
@@ -295,6 +300,9 @@ public class BuilderApplication extends JFrame {
 //		this.setComponentZOrder(this.pieceBeingDragged, 0);
 	}
 	
+	/**
+	 * this function redraw Builder Application entirely.
+	 */
 	public void redraw(){
 		getContentPane().removeAll();
 		GroupLayout groupLayout = new GroupLayout(getContentPane());
@@ -317,21 +325,42 @@ public class BuilderApplication extends JFrame {
 	}
 
 
+	/**
+	 * getter method for bullpenView
+	 * @return bullpenView
+	 */
 	public BullpenView getPullpenView() {
 		// TODO Auto-generated method stub
 		return this.bullpenView;
 	}
 	
+	/**
+	 * getter method of level
+	 * @return level
+	 */
 	public Level getLevel() {
 		return level;
 	}
 	
+	/**
+	 * this function is for updating the position of piece chosen.
+	 * @param pw
+	 * @param x
+	 * @param y
+	 */
 	public void updateMovePiece(PieceView pw,int x,int y){
 //		this.setComponentZOrder(this.pieceBeingDragged, 0);
 		pw.setLocation(x, y);
 		this.repaint();
 	}
 	
+	/**
+	 * This function is for setting to the piece that just get press on.
+	 * @param countPress
+	 * @param pw
+	 * @param x
+	 * @param y
+	 */
 	public void setMovingPiece(int countPress, PieceView pw, int x, int y){
 		for (KeyListener k:this.getKeyListeners()){
 			this.removeKeyListener(k);
@@ -372,6 +401,10 @@ public class BuilderApplication extends JFrame {
 		return this.pieceBeingDragged;
 	}
 	
+	/**
+	 * Getter method for the container.
+	 * @return
+	 */
 	public JPanel getPieceContainer(){
 		return this.container;
 	}
@@ -402,9 +435,17 @@ public class BuilderApplication extends JFrame {
 		return hintMode;
 	}
 	
+	/**
+	 * getter method for boardView
+	 * @return boardView
+	 */
 	public BoardView getBoardView(){
 		return this.boardView;
 	}
+	/**
+	 * getter method for bullpenView
+	 * @return bullpenView
+	 */
 	public BullpenView getBullpenView(){
 		return this.bullpenView;
 	}

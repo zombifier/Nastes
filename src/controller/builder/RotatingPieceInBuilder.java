@@ -5,10 +5,22 @@ import model.Level;
 import model.Piece;
 import view.PieceView;
 
+/**
+ * This move class is for rotating piece in builder application.
+ * @author Team Nastes
+ *
+ */
 public class RotatingPieceInBuilder extends BuilderMove {
 	Piece pieceChosen;
 	PieceView pieceView;
 	boolean orientation = false;
+	/**
+	 * Constructor for RotatingPieceInBuilder. 
+	 * Sets pieceChosen, the pieceView that it is in and its orieantation that it want to rotate.
+	 * @param pieceChosen
+	 * @param pieceView
+	 * @param orientation
+	 */
 	public RotatingPieceInBuilder(Piece pieceChosen, PieceView pieceView, boolean orientation){
 		this.pieceChosen = pieceChosen;
 		this.pieceView = pieceView;

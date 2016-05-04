@@ -1,8 +1,13 @@
 package model;
 
+/**
+ * Puzzle level class
+ * @author Team Nastes
+ *
+ */
 public class Puzzle extends Level{
 	/**
-	 * 
+	 * set serialVersionUID
 	 */
 	private static final long serialVersionUID = -6410571738242909273L;
 	
@@ -11,6 +16,10 @@ public class Puzzle extends Level{
 	int moveElapsed;
 	int tilesUncovered;
 	
+	/**
+	 * Constructor for Puzzle level with input of moveLimit
+	 * @param moveLimit
+	 */
 	public Puzzle (int moveLimit) {
 		super(0);
 		this.moveLimit = moveLimit;
@@ -18,6 +27,12 @@ public class Puzzle extends Level{
 		this.tilesUncovered = board.validTiles();
 	}
 	
+	/**
+	 * Second Constructor for Puzzle when load from the game storage.
+	 * @param board
+	 * @param bullpen
+	 * @param moveLimit
+	 */
 	public Puzzle (Board board, Bullpen bullpen, int moveLimit) {
 		super(board, bullpen);
 		this.moveLimit = moveLimit;

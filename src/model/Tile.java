@@ -1,5 +1,12 @@
 package model;
 
+/**
+ * Tile Class. (inside Board)
+ * Each tile knows if it is a valid place for a piece, and if it contains a Square.
+ * Is extended by specific tile types for each level type.
+ * @author Team Nastes
+ *
+ */
 abstract public class Tile implements java.io.Serializable {
 	/**
 	 * Tile class for Kabasuji.
@@ -14,6 +21,11 @@ abstract public class Tile implements java.io.Serializable {
 	boolean hasSquare;
 	abstract int levelType();
 	
+	/**
+	 * Constructor for Tile. 
+	 * @param isValid
+	 * @param isHint
+	 */
 	public Tile(boolean isValid, boolean isHint) {
 		this.isValid = isValid;
 		this.isHint = isHint;

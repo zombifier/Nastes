@@ -69,6 +69,12 @@ public class BoardView extends JPanel {
 		
 		
 	}
+	/**
+	 * This function reDraw the Piece in the board
+	 * This function was not used. 
+	 * @param pw
+	 * @param mousePosition
+	 */
 	public void drawPieceView(PieceView pw, Point mousePosition) {
 		// TODO Auto-generated method stub
 		Dimension d = pw.getPreferredSize();
@@ -79,6 +85,10 @@ public class BoardView extends JPanel {
 		//pw.addMouseMotionListener(m);
 		this.repaint();
 	}
+	/**
+	 * Getter function for board. 
+	 * @return board
+	 */
 	public Board getBoard(){
 		return this.board;
 	}

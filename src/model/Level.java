@@ -4,9 +4,14 @@ import java.util.Stack;
 
 import controller.builder.BuilderMove;
 
+/**
+ * Level Class. Store information about level.
+ * @author Team Nastes
+ *
+ */
 public abstract class Level implements java.io.Serializable{
 	/**
-	 * 
+	 * set serialVersionUID
 	 */
 	private static final long serialVersionUID = -5998873478522304717L;
 	
@@ -17,14 +22,25 @@ public abstract class Level implements java.io.Serializable{
 	int starEarned;
 	boolean isUnlocked;
 	int levelNum;
+	/**
+	 * @return an integer represent the type of the level
+	 */
 	abstract public int levelType();
-	
+	/**
+	 * Constructor for Level if it was given level type
+	 * @param type
+	 */
 	public Level(int type){
 		board=new Board(type);
 		bullpen=new Bullpen();
 		pieceBeingDragged=null;
 	}
 
+	/**
+	 * Second Constructor for Level for loading from storage
+	 * @param b
+	 * @param p
+	 */
 	public Level(Board b,Bullpen p){
 		board=b;
 		bullpen=p;
@@ -148,14 +164,14 @@ public abstract class Level implements java.io.Serializable{
 		return starEarned;
 	}
 
-	/*
-	 * Unlock the state so that player is not able to play
+	/**
+	 * Lock a level
 	 */
 	public void lock(){
 		isUnlocked = false;
 	}
 
-	/*
+	/**
 	 * Unlock the state so that player is able to play
 	 */
 	public void unlock(){

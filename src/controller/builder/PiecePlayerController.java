@@ -15,6 +15,11 @@ import view.PieceView;
 import view.SquareView;
 import view.TileView;
 
+/**
+ * This Controller is for PieceView that is created inside the bullpen
+ * @author Team Nastes
+ *
+ */
 public class PiecePlayerController extends MouseAdapter{
 	BuilderApplication app;
 	BullpenView bullpenView;
@@ -23,6 +28,11 @@ public class PiecePlayerController extends MouseAdapter{
 	int diffY;
 	int countPress;
 	boolean beingMoved = false;
+	/**
+	 * Constructor for PiecePlayerController. Sets builder application and pieceView.
+	 * @param app
+	 * @param pieceView
+	 */
 	public PiecePlayerController(BuilderApplication app, PieceView pieceView){
 		super();
 		this.app = app;

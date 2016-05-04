@@ -7,6 +7,11 @@ import javax.swing.JPanel;
 import model.Piece;
 
 
+/**
+ * PieceView class. 
+ * @author Team Nastes
+ *
+ */
 public class PieceView extends JPanel{
 	Piece piece;
 	SquareView squareView[] = new SquareView[6]; 
@@ -44,10 +49,17 @@ public class PieceView extends JPanel{
 		return this.piece;
 	}
 	
+	/**
+	 * getter method for SquareView
+	 * @return SquareView[]
+	 */
 	public SquareView[] getSquare(){
 		return squareView;
 	}
 	
+	/**
+	 * this method for redrawing piece view when rotate and flip happens.
+	 */
 	public void redraw(){
 		int minX = 0;
 		int minY = 0;
