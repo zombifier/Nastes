@@ -17,8 +17,8 @@ public class LevelTypeController implements ActionListener {
 	BuilderApplication ba;
 	/**
 	 * Constructor for LevelTypeController. Sets level and builder application.
-	 * @param level
-	 * @param ba
+	 * @param level Level
+	 * @param ba BuilderApplication
 	 */
 	public LevelTypeController(Level level, BuilderApplication ba){
 		this.level = level;

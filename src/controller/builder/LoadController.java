@@ -21,8 +21,8 @@ public class LoadController {
 	
 	/**
 	 * LoadController constructor. Initializes the values of game and builderApp.
-	 * @param game
-	 * @param builderApplication
+	 * @param game Game
+	 * @param builderApplication BuilderApplication
 	 */
 	public LoadController(Game game, BuilderApplication builderApplication){
 		this.game = game;

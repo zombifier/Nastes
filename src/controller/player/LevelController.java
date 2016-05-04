@@ -16,8 +16,8 @@ public class LevelController extends MouseAdapter {
 	PlayerLevelView levelView;
 	/**
 	 * Constructor for LevelController
-	 * @param l
-	 * @param lv
+	 * @param l level
+	 * @param lv LevelView
 	 */
 	public LevelController(Level l,PlayerLevelView lv){
 		level=l;

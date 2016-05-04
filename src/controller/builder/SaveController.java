@@ -20,9 +20,9 @@ public class SaveController {
 	
 	/**
 	 * SaveController constructor. Initializes the values of game, level and builderApp
-	 * @param game
-	 * @param level
-	 * @param builderApplication
+	 * @param game Game 
+	 * @param level Level
+	 * @param builderApplication BuilderApplication
 	 */
 	public SaveController(Game game, Level level, BuilderApplication builderApplication){
 		this.game = game;

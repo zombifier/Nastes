@@ -17,8 +17,8 @@ public class RotatingController implements KeyListener{
 	int isRelease;
 	/**
 	 * Constructor for RotatingController. Sets PieceView, Builder Application and set isRelease to 0
-	 * @param pieceBeingDrag
-	 * @param app
+	 * @param pieceBeingDrag PieceView
+	 * @param app BuilderApplication
 	 */
 	public RotatingController(PieceView pieceBeingDrag, BuilderApplication app){
 		this.pieceView = pieceBeingDrag;

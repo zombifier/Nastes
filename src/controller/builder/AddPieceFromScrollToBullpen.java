@@ -22,10 +22,10 @@ public class AddPieceFromScrollToBullpen extends BuilderMove {
 	PieceView copyPieceView;
 	/**
 	 * AddPieceFromScrollToBullpen constructor
-	 * @param pieceChosen
-	 * @param pieceView
-	 * @param bullpen
-	 * @param bullpenView
+	 * @param pieceChosen Piece
+	 * @param pieceView PieceView
+	 * @param bullpen Bullpen
+	 * @param bullpenView BullpenView
 	 */
 	public AddPieceFromScrollToBullpen(Piece pieceChosen, PieceView pieceView, Bullpen bullpen, BullpenView bullpenView){
 		this.pieceChosen = pieceChosen;

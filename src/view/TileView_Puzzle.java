@@ -15,7 +15,8 @@ import java.awt.Dimension;
 public class TileView_Puzzle extends TileView {
 	
 	/**
-	 * Create the panel.
+	 * Constructor for TileView_Puzzle
+	 * @param tile Tile
 	 */
 	public TileView_Puzzle(Tile tile) {
 		super(tile);

@@ -31,7 +31,9 @@ public class BoardView extends JPanel {
 	
 	PieceView pieceView[] = new PieceView[24];
 	/**
-	 * Create the panel.
+	 * Constructor for BoardView
+	 * @param board Board
+	 * @param app BuilderApplication
 	 */
 	public BoardView(Board board, BuilderApplication app) {
 		this.board = board;
@@ -72,8 +74,8 @@ public class BoardView extends JPanel {
 	/**
 	 * This function reDraw the Piece in the board
 	 * This function was not used. 
-	 * @param pw
-	 * @param mousePosition
+	 * @param pw PieceView
+	 * @param mousePosition mousePosition
 	 */
 	public void drawPieceView(PieceView pw, Point mousePosition) {
 		// TODO Auto-generated method stub

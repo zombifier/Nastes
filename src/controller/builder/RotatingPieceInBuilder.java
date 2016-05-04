@@ -17,9 +17,9 @@ public class RotatingPieceInBuilder extends BuilderMove {
 	/**
 	 * Constructor for RotatingPieceInBuilder. 
 	 * Sets pieceChosen, the pieceView that it is in and its orieantation that it want to rotate.
-	 * @param pieceChosen
-	 * @param pieceView
-	 * @param orientation
+	 * @param pieceChosen Piece
+	 * @param pieceView PieceView
+	 * @param orientation boolean
 	 */
 	public RotatingPieceInBuilder(Piece pieceChosen, PieceView pieceView, boolean orientation){
 		this.pieceChosen = pieceChosen;

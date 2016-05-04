@@ -14,9 +14,9 @@ public class FlipPieceInBuilder extends BuilderMove {
 	boolean axis = false;
 	/**
 	 * Constructors for FlipPieceInBuilder. Sets pieceChosen, pieceView of that and axis that the player want to flip
-	 * @param pieceChosen
-	 * @param pieceView
-	 * @param axis
+	 * @param pieceChosen Piece
+	 * @param pieceView PieceView
+	 * @param axis boolean
 	 */
 	public FlipPieceInBuilder(Piece pieceChosen, PieceView pieceView, boolean axis){
 		this.pieceChosen = pieceChosen;

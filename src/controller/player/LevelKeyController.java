@@ -34,8 +34,8 @@ public class LevelKeyController extends KeyAdapter {
 	
 	/**
 	 * Constructor of the class
-	 * @param level
-	 * @param levelView
+	 * @param level Level
+	 * @param levelView LevelView
 	 */
 	public LevelKeyController(Level level,PlayerLevelView levelView){
 		this.level = level;

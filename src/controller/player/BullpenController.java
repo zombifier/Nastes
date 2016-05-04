@@ -32,8 +32,8 @@ public class BullpenController extends LevelController {
 	BullpenView bullpenView;
 	/**
 	 * Constructor for BullpenController
-	 * @param level
-	 * @param levelView
+	 * @param level Level
+	 * @param levelView LevelView
 	 */
 	public BullpenController(Level level,PlayerLevelView levelView) {
 		super(level,levelView);

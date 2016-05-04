@@ -24,8 +24,8 @@ public class ContainerController extends MouseAdapter{
 	int diffY;
 	/**
 	 * Constructor for ContainerController. Sets builder application and container.
-	 * @param app
-	 * @param container
+	 * @param app Builder Application
+	 * @param container JPanel
 	 */
 	public ContainerController(BuilderApplication app, JPanel container){
 		super();

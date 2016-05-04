@@ -14,7 +14,8 @@ import java.awt.Color;
 public class TileView_Release extends TileView {
 
 	/**
-	 * Create the panel.
+	 * Constructor for TileView_Release
+	 * @param tile Tile
 	 */
 	public TileView_Release(Tile tile) {
 		super(tile);
@@ -42,8 +43,8 @@ public class TileView_Release extends TileView {
 	
 	/**
 	 * This function set number and color for the release tile. 
-	 * @param num
-	 * @param color
+	 * @param num int
+	 * @param color int
 	 */
 	public void setNumAndColor(int num, int color){
 		this.removeAll();

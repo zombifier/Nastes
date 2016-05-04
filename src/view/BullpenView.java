@@ -31,7 +31,9 @@ public class BullpenView extends JPanel {
 	Bullpen bullpen;
 	BuilderApplication app;
 	/**
-	 * Create the panel.
+	 * Constructor for Bullpen
+	 * @param bullpen Bullpen
+	 * @param app builder Application
 	 */
 	public BullpenView(Bullpen bullpen,BuilderApplication app) {
 		this.app = app;
@@ -78,7 +80,7 @@ public class BullpenView extends JPanel {
 	
 	/**
 	 * draw pieceView when the piece inside scrollpane was chosen.
-	 * @param pieceView
+	 * @param pieceView PieceView
 	 */
 	public void drawPieceView(PieceView pieceView){
 		Random rand = new Random();

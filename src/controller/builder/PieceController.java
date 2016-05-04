@@ -22,8 +22,9 @@ public class PieceController extends MouseAdapter{
 	PieceView pieceView;
 	
 	/**
-	 * @param app
-	 * @param pieceView
+	 * Constructor for PieceController
+	 * @param app Builder Application
+	 * @param pieceView PieceView
 	 */
 	public PieceController(BuilderApplication app, PieceView pieceView){
 		super();

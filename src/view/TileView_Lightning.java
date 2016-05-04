@@ -14,7 +14,8 @@ import java.awt.Color;
 public class TileView_Lightning extends TileView {
 
 	/**
-	 * Create the panel.
+	 * Constructor for Tile
+	 * @param tile Tile
 	 */
 	public TileView_Lightning(Tile tile) {
 		super(tile);

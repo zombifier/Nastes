@@ -22,8 +22,9 @@ public class BoardController extends MouseAdapter {
 	
 	/**
 	 * BoardController constructor. Sets the board and boardView to the current board and boardView.
-	 * @param board
-	 * @param boardView
+	 * @param ba BuilderApplication
+	 * @param board Board
+	 * @param boardView BoardView
 	 */
 	public BoardController(BuilderApplication ba, Board board, BoardView boardView){
 		this.ba = ba;

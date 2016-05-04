@@ -31,8 +31,8 @@ public class BoardController extends LevelController {
 	BoardView boardView;
 	/**
 	 * Constructor for BoardController
-	 * @param level
-	 * @param levelView
+	 * @param level Level
+	 * @param levelView LevelView
 	 */
 	public BoardController(Level level,PlayerLevelView levelView){
 		super(level, levelView);

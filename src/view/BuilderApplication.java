@@ -69,7 +69,7 @@ public class BuilderApplication extends JFrame {
 	
 	/**
 	 * Constructor for Builder Application. Sets game.
-	 * @param game
+	 * @param game Game
 	 */
 	public BuilderApplication(Game game){
 		this.game = game;
@@ -99,7 +99,7 @@ public class BuilderApplication extends JFrame {
 	
 	/**
 	 * initialize function for builder application. 
-	 * @param lv
+	 * @param lv Level
 	 */
 	public void initialize(Level lv){
 		getContentPane().removeAll();
@@ -344,9 +344,9 @@ public class BuilderApplication extends JFrame {
 	
 	/**
 	 * this function is for updating the position of piece chosen.
-	 * @param pw
-	 * @param x
-	 * @param y
+	 * @param pw PieceView
+	 * @param x int 
+	 * @param y int
 	 */
 	public void updateMovePiece(PieceView pw,int x,int y){
 //		this.setComponentZOrder(this.pieceBeingDragged, 0);
@@ -356,10 +356,10 @@ public class BuilderApplication extends JFrame {
 	
 	/**
 	 * This function is for setting to the piece that just get press on.
-	 * @param countPress
-	 * @param pw
-	 * @param x
-	 * @param y
+	 * @param countPress int
+	 * @param pw PieceView
+	 * @param x int 
+	 * @param y int
 	 */
 	public void setMovingPiece(int countPress, PieceView pw, int x, int y){
 		for (KeyListener k:this.getKeyListeners()){
@@ -394,7 +394,7 @@ public class BuilderApplication extends JFrame {
 	}
 	/**
 	 * get the pieceView of piece being drag
-	 * @return
+	 * @return PieceView
 	 */
 	public PieceView getPieceBeingDrag() {
 		// TODO Auto-generated method stub
@@ -403,14 +403,16 @@ public class BuilderApplication extends JFrame {
 	
 	/**
 	 * Getter method for the container.
-	 * @return
+	 * @return JPanel
 	 */
 	public JPanel getPieceContainer(){
 		return this.container;
 	}
 	
+
 	/**
 	 * add new move
+	 * @param m
 	 */
 	public void addMove(BuilderMove m) {
 		moves.push(m);

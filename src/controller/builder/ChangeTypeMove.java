@@ -15,9 +15,9 @@ public class ChangeTypeMove extends BuilderMove {
 	int type;
 	/**
 	 * Constructor for ChangeTypeMove. Sets level, builder application and type of the level
-	 * @param level
-	 * @param ba
-	 * @param type
+	 * @param level Level
+	 * @param ba BuilderApplication
+	 * @param type int
 	 */
 	public ChangeTypeMove (Level level, BuilderApplication ba, int type) {
 		this.level = level;

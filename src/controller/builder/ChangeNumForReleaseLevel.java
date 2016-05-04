@@ -23,11 +23,11 @@ public class ChangeNumForReleaseLevel implements ActionListener{
 	int color;
 	/**
 	 * Constructor for ChangeNumForReleaseLevel. Sets builder application, JFrame of the button, TileView, number and color.
-	 * @param ba
-	 * @param selectNumColor
-	 * @param tileView
-	 * @param num
-	 * @param color
+	 * @param ba BuilderApplication
+	 * @param selectNumColor JFrame
+	 * @param tileView TileView
+	 * @param num int 
+	 * @param color int
 	 */
 	public ChangeNumForReleaseLevel(BuilderApplication ba,JFrame selectNumColor,TileView tileView, int num, int color) {
 		// TODO Auto-generated constructor stub
