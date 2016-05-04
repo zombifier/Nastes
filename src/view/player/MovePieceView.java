@@ -9,18 +9,38 @@ import javax.swing.JPanel;
 
 import model.*;
 
+/**
+ * MovePieceView
+ * @author Team Nastes
+ *
+ */
 public class MovePieceView extends JPanel {
 	/**
 	 * Keep Eclipse happy
 	 */
 	private static final long serialVersionUID = 8702825753390803623L;
 	
-	// Constant
+	/**
+	 * The size between tiles. 
+	 */
 	final public static int offset = 2;
+	/**
+	 * The size of tiles. 
+	 */
 	final public static int tileSize = 40;
+	/**
+	 * The effective size of tiles. (Size + offset)
+	 */
 	final public static int eachSize = offset + tileSize;
 
 
+	/**
+	 * Constructor for MovePieceView. 
+	 * Piece piece
+	 * HashMap<Piece,Color> data
+	 * @param piece
+	 * @param data
+	 */
 	public MovePieceView(Piece piece,HashMap<Piece,Color> data){
 		
 		JPanel outPanel,inPanel;

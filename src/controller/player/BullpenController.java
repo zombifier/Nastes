@@ -7,16 +7,34 @@ import java.util.ArrayList;
 import model.*;
 import view.player.*;
 
+/**
+ * Bull pen controller
+ * @author Team Nastes
+ *
+ */
 public class BullpenController extends LevelController {
 	
-	// Constant
+	/**
+	 * THis is the offset. Distance between tiles
+	 */
+	// constants 
 	final public static int offset = 2;
+	/**
+	 * This is the tiles size. That actual size of the tiles. (squares) 
+	 */
 	final public static int tileSize = 40;
+	/**
+	 * This is the "actual size" Size of the tiles added to offset
+	 */
 	final public static int eachSize = offset + tileSize;
 	
 	Bullpen bullpen;
 	BullpenView bullpenView;
-	
+	/**
+	 * Constructor for BullpenController
+	 * @param level
+	 * @param levelView
+	 */
 	public BullpenController(Level level,PlayerLevelView levelView) {
 		super(level,levelView);
 		
@@ -74,12 +92,20 @@ public class BullpenController extends LevelController {
 		levelView.redraw();
 		levelView.repaint();
 	}
-
+	
+	/**
+	 * Reference for X. The bull pen location in the level.
+	 * @return position 
+	 */
 	@Override
 	public int refX(){
 		return bullpenView.getBounds().x;
 	}
 
+	/**
+	 * Reference for Y. The Bull pen location in the level. 
+	 * @return position
+	 */
 	@Override
 	public int refY(){
 		return bullpenView.getBounds().y;

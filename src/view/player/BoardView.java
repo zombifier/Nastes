@@ -12,15 +12,27 @@ import javax.swing.JPanel;
 
 import model.*;
 
+/**
+ * BoardView 
+ * @author Team Nastes 
+ *
+ */
 public class BoardView extends JPanel {
-	/**
-	 * Keep Eclipse happy
-	 */
+
 	private static final long serialVersionUID = -5672387395261489437L;
 	
-	// Constant
+	
+	/**
+	 * The size between tiles. 
+	 */
 	final public static int offset = 2;
+	/**
+	 * The size of tiles. 
+	 */
 	final public static int tileSize = 40;
+	/**
+	 * The effective size of tiles. (Size + offset)
+	 */
 	final public static int eachSize = offset + tileSize;
 	
 	Level level;
@@ -34,6 +46,11 @@ public class BoardView extends JPanel {
 
 	boolean hintMode;
 	
+	/**
+	 * BoardView constructor. level is a Level and data is a Hashmap
+	 * @param level
+	 * @param data
+	 */
 	public BoardView(Level level,HashMap<Piece,Color> data){
 		this.hintMode = false;
 		this.level = level;
@@ -79,6 +96,9 @@ public class BoardView extends JPanel {
 	}
 
 	
+	/**
+	 * 
+	 */
 	public void redraw(){
 
 		if (offScreenImage == null) {
@@ -146,14 +166,26 @@ public class BoardView extends JPanel {
 		
 	}
 	
+	/**
+	 * Images are created off screen before being moved on screen 
+	 * @return off screen image
+	 */
 	public Image getImage(){
 		return offScreenImage;
 	}
 	
+	/**
+	 * It set's hint. Specifically, it inverses the hintMode boolean, telling you if there
+	 * is a hint or not
+	 */
 	public void setHint() {
 		hintMode = !hintMode;
 	}
 	
+	/**
+	 * This is for loading. Call this function 
+	 * @param b
+	 */
 	public void setBoard(Board b){
 		board=b;
 	}

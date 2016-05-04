@@ -14,6 +14,11 @@ import javax.swing.border.EmptyBorder;
 
 import model.*;
 
+/**
+ * PlayerSelectView 
+ * @author Team Nastes
+ *
+ */
 public class PlayerSelectView extends JPanel {
 	/**
 	 * Keep Eclipse happy
@@ -28,6 +33,13 @@ public class PlayerSelectView extends JPanel {
 	ImageIcon emptyStar;
 	ImageIcon filledStar;
 	
+	/**
+	 * Constructor for PlayerSelectview
+	 * Game game
+	 * PlayerApplication app
+	 * @param game
+	 * @param app
+	 */
 	public PlayerSelectView(Game game, PlayerApplication app){
 		emptyStar = new ImageIcon(this.getClass().getResource(emptyStarDir));
 		filledStar = new ImageIcon(this.getClass().getResource(filledStarDir));

@@ -7,17 +7,36 @@ import java.awt.event.KeyEvent;
 import model.*;
 import view.player.*;
 
+/**
+ * Level Key Controller 
+ * @author Team Nastes
+ *
+ */
 public class LevelKeyController extends KeyAdapter {
 	
 
+	/**
+	 * Size between tiles
+	 */
 	// Constant
 	final public static int offset = 2;
+	/**
+	 * Size of Tiles
+	 */
 	final public static int tileSize = 40;
+	/**
+	 * The total size a tiles takes 
+	 */
 	final public static int eachSize = offset + tileSize;
 	
 	Level level;
 	PlayerLevelView levelView;
 	
+	/**
+	 * Constructor of the class
+	 * @param level
+	 * @param levelView
+	 */
 	public LevelKeyController(Level level,PlayerLevelView levelView){
 		this.level = level;
 		this.levelView = levelView;

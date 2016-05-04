@@ -19,16 +19,32 @@ import javax.swing.JPanel;
 import controller.player.*;
 import model.*;
 
+/**
+ * Player level view
+ * @author Team Nastes
+ *
+ */
 public class PlayerLevelView extends JPanel {
 	/**
 	 * Keep Eclipse happy
 	 */
 	private static final long serialVersionUID = -5818449171686104200L;
 
-	// Constant
+	/**
+	 * The size between tiles. 
+	 */
 	final public static int offset = 2;
+	/**
+	 * The size of tiles. 
+	 */
 	final public static int tileSize = 40;
+	/**
+	 * The effective size of tiles. (Size + offset)
+	 */
 	final public static int eachSize = offset + tileSize;
+	/**
+	 * This is the font used in the game
+	 */
 	final public static Font font = new Font("Consolas", Font.BOLD, 28);
 
 	HashMap<Piece,Color> data;
@@ -58,6 +74,15 @@ public class PlayerLevelView extends JPanel {
 	
 	boolean done = false;
 
+	/**
+	 * This is the constructor for Player Level view
+	 * Game game
+	 * Level level
+	 * Playerapplication app
+	 * @param game
+	 * @param level
+	 * @param app
+	 */
 	public PlayerLevelView(Game game, Level level, PlayerApplication app){
 		this.game = game;
 		this.level = level;
@@ -266,6 +291,10 @@ public class PlayerLevelView extends JPanel {
 
 	}
 
+	/**
+	 * THis is the redraw function for updating. It will redraw off the screen before moving
+	 * it back on
+	 */
 	public void redraw(){
 
 		if (offScreenImage == null) {
@@ -309,22 +338,38 @@ public class PlayerLevelView extends JPanel {
 		}
 	}
 
+	/**
+	 * THis is for moving the mouse. 
+	 * @param point
+	 */
 	public void setMouse(Point point){
 		mouse = point;
 	}
 
+	/**
+	 * @param point
+	 */
 	public void setAnchor(Point point){
 		anchor = point;
 	}
 
+	/**
+	 * @return boardView
+	 */
 	public BoardView getBoardView(){
 		return boardView;
 	}
 
+	/**
+	 * @return bullpenView
+	 */
 	public BullpenView getBullpenView(){
 		return bullpenView;
 	}
 
+	/**
+	 * @param p
+	 */
 	public void setMovePieceView(Piece p){
 		remove(movePieceView);
 
@@ -340,6 +385,10 @@ public class PlayerLevelView extends JPanel {
 	}
 
 
+	/**
+	 * Get's Anchor
+	 * @return anchor
+	 */
 	public Point getAnchor() {
 		return anchor;
 	}
@@ -359,6 +408,9 @@ public class PlayerLevelView extends JPanel {
 		starView.setVisible(true);
 	}
 
+	/**
+	 * Function for showing hint
+	 */
 	public void showHint() {
 		Timer timer = new Timer();
 		boardView.setHint();

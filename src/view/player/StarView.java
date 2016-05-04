@@ -9,10 +9,13 @@ import javax.swing.*;
 import model.*;
 
 
+/**
+ * StarView
+ * @author Team Nastes
+ *
+ */
 public class StarView extends JFrame {
-	/**
-	 * Keep Eclipse happy
-	 */
+
 	private static final long serialVersionUID = -4612010243429368724L;
 	
 	Level level;
@@ -22,6 +25,15 @@ public class StarView extends JFrame {
 	String emptyStarDir = "/images/EmptyStar.png";
 	String filledStarDir = "/images/FilledStar.png";
 	
+	/**
+	 * StarView
+	 * Level level
+	 * Game game
+	 * PlayerApplication app
+	 * @param level
+	 * @param game
+	 * @param app
+	 */
 	public StarView(Level level, Game game, PlayerApplication app){
 		this.level = level;
 		this.game = game;

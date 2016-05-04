@@ -6,17 +6,34 @@ import java.util.Random;
 
 import model.*;
 import view.player.*;
-
+/**
+ * Board Controller 
+ * @author Team Nastes
+ *
+ */
 public class BoardController extends LevelController {
 	
 	// Constant
+	/**
+	 * This is space between tiles
+	 */
 	final public static int offset = 2;
+	/**
+	 * size of actual tiles
+	 */
 	final public static int tileSize = 40;
+	/**
+	 * the size of the tiles 
+	 */
 	final public static int eachSize = offset + tileSize;
 	
 	Board board;
 	BoardView boardView;
-	
+	/**
+	 * Constructor for BoardController
+	 * @param level
+	 * @param levelView
+	 */
 	public BoardController(Level level,PlayerLevelView levelView){
 		super(level, levelView);
 		board = level.getBoard();
@@ -86,12 +103,18 @@ public class BoardController extends LevelController {
 		levelView.redraw();
 		levelView.repaint();
 	}
-	*/
+	/**
+	 * Reference for X. Position of the board view in the level view. 
+	 * @return position
+	 */
 	@Override
 	public int refX(){
 		return boardView.getBounds().x;
 	}
-
+	/**
+	 * Reference for Y. Position of the board view in the level view 
+	 * @return position
+	 */
 	@Override
 	public int refY(){
 		return boardView.getBounds().y;

@@ -10,6 +10,11 @@ import javax.swing.Timer;
 import model.*;
 import view.SplashScreen;
 
+/**
+ * PlayerApplication 
+ * @author Team Nastes 
+ *
+ */
 public class PlayerApplication extends JFrame {
 	
 	/**
@@ -44,6 +49,10 @@ public class PlayerApplication extends JFrame {
 		timer.start();
 	}
 	
+	/**
+	 * THis set's the Panel and makes it visible 
+	 * @param panel
+	 */
 	public void setPanel(JPanel panel){
 		setContentPane(panel);
 		setVisible(false);

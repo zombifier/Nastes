@@ -12,15 +12,28 @@ import javax.swing.JPanel;
 
 import model.*;
 
+/**
+ * Bull pen View
+ * @author Team Nastes
+ *
+ */
 public class BullpenView extends JPanel{
 	/**
 	 * Keep Eclipse happy
 	 */
 	private static final long serialVersionUID = -1581143889245005383L;
 	
-	// Constant
+	/**
+	 * The size between tiles. 
+	 */
 	final public static int offset = 2;
+	/**
+	 * The size of tiles. 
+	 */
 	final public static int tileSize = 40;
+	/**
+	 * The effective size of tiles. (Size + offset)
+	 */
 	final public static int eachSize = offset + tileSize;
 	
 	Bullpen bullpen;
@@ -33,6 +46,11 @@ public class BullpenView extends JPanel{
 	Image offScreenImage;
 	Graphics offScreenGraphics;
 	
+	/**
+	 * Constructor for Bull pen view
+	 * @param level
+	 * @param data
+	 */
 	public BullpenView(Level level, HashMap<Piece,Color> data){
 		bullpen = level.getBullpen();
 		
@@ -80,6 +98,9 @@ public class BullpenView extends JPanel{
 		g.drawImage(offScreenImage, 0, 0, this);
 	}
 	
+	/**
+	 * 
+	 */
 	public void redraw(){
 		if (offScreenImage == null) {
 			// create on demand
@@ -177,10 +198,19 @@ public class BullpenView extends JPanel{
 		return false;
 	}
 	
+	/**
+	 * This get's the location of a piece
+	 * @param piece
+	 * @return position
+	 */
 	public Point getPiecePoint(Piece piece){
 		return pieces.get(piece);
 	}
 	
+	/**
+	 * This create's the bullpen
+	 * @param bullpen
+	 */
 	public void setBullpen(Bullpen bullpen){
 		this.bullpen = bullpen;
 	}
